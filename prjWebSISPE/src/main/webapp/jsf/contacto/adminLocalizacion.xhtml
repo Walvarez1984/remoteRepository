@@ -1,0 +1,60 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/pages/pageLayoutBlank1.xhtml"
+	xmlns:rs="http://java.sun.com/jsf/composite/components/sispe">
+
+	<ui:param name="form" value="#{empresaController.form}" />
+	<ui:param name="controller" value="#{empresaController}" />
+	<ui:param name="idForm" value="frmAdminEmpresa" />
+
+	<ui:define name="contentCenter">
+		<div id="div_localizacion" style="width:100%;height:570px;overflow-y:auto;overflow-x:hidden;">
+			<h:panelGroup id="pnlGrLocSispe">
+				<rs:localizacionSISPE2 id="locSelecCompSISPE" bindController="#{empresaController.empresaDataManager.empresaComponent}"/>
+			</h:panelGroup>
+		
+			<br/>
+		</div>
+		
+		<h:panelGroup id ="pnlOpcLocal">
+			<rich:panel style="text-align:center;width:99%;">
+				<center>
+					<h:panelGroup style="height:25px;" layout="block">
+						<h:panelGrid columns="2">
+					
+							<!-- Guardar nuevo -->
+							<h:panelGroup layout="block" styleClass="botonD" rendered="#{empresaController.empresaDataManager.empresaComponent.localizacion.localizacionVO.evento == msg_ucw['evento.nuevo']}">
+								<a4j:commandLink value="#{msg_ucw['etiqueta.guardar']}" execute="@all panelLocalizacion panelEmpresa panelLocalizacion messages"
+									styleClass="guardarD" render="panelLocalizacion busquedaEmpresaspersonas"
+									actionListener="#{empresaController.empresaDataManager.empresaComponent.guardarLocalizacionNueva}" 
+									oncomplete="if (#{facesContext.maximumSeverity == 'INFO 0'}) #{empresaController.empresaDataManager.empresaComponent.funtionCerrarPopUpLocalizacion} if (#{facesContext.maximumSeverity == 'ERROR 2'}) parent.mostrarModal()" />
+							</h:panelGroup>
+							
+							<!-- Guardar edicion -->
+							<h:panelGroup layout="block" styleClass="botonD" rendered="#{empresaController.empresaDataManager.empresaComponent.localizacion.localizacionVO.evento==msg_ucw['evento.actualizar']}">
+								<!-- oncomplete="if(#{empty facesContext.maximumSeverity}) #{rich:component('cmpPopupAddConRegTip')}.hide();" -->
+								<a4j:commandLink id="btnAceptarLocalizacion" value="#{msg_ucw['etiqueta.guardar']}" styleClass="aceptarD"
+									render="pnlOpcLocal pnlGrLocSispe pnlOpcLocal pgEditLocalizacion panelLocalizacionEdicion  pnlGrTabs"
+									execute="@this pnlGrLocSispe pnlOpcLocal pgEditLocalizacion panelLocalizacionEdicion messages pnlGrTabs" 
+									action="#{empresaController.guardarLocalizacionEmpresa}" 
+									oncomplete="if (#{facesContext.maximumSeverity == 'INFO 0'}) #{empresaController.empresaDataManager.empresaComponent.funtionCerrarPopUpLocalizacion} if (#{facesContext.maximumSeverity == 'ERROR 2'}) parent.mostrarModal()"/>
+							</h:panelGroup>
+							
+							<!-- Cancelar -->
+							<h:panelGroup layout="block" styleClass="botonD">
+								<a4j:commandLink id="btnCancelarLocalizacion" value="#{msg_ucw['etiqueta.cancelar']}" styleClass="cancelarD" execute="@this"
+									action="#{empresaController.salirLocalizacion}"
+									oncomplete="#{empresaController.empresaDataManager.empresaComponent.funtionCerrarPopUpLocalizacion}"/>
+							</h:panelGroup>
+						</h:panelGrid>
+					</h:panelGroup>
+				</center>
+			</rich:panel>
+		</h:panelGroup>
+	</ui:define>
+</ui:composition>

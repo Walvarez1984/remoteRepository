@@ -1,0 +1,1203 @@
+/***************************
+    ESTILOS PARA COMPONENTES
+***************************/
+
+@CHARSET "ISO-8859-1"
+/*----- Estilo de la Pagina ------*/
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.div_pagina{
+    width:100%;
+    height:600px;
+}
+
+p.saltoPagina
+{
+    page-break-after: always;
+}
+
+/* ESTILOS DE ERROR PARA COMPONENTES */
+.campoError {
+	background-color: #F6E1E8;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+}
+
+/*------TABLAS---------*/
+
+/*Estilo para la barra de herramientas de los sistemas*/
+.titulosAccion{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #990000;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #cccccc;
+	font-weight: bolder;
+	background-color: #f1f3f5;
+	padding-left: 10px;
+}
+
+/*Dibuja el contorno con un borde y un fondo plomo*/ 
+.fila_titulo
+{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #cccccc;
+	font-weight: bolder;
+	background-color: #ebebeb;
+}
+/*Dibuja un borde horizontal a la celda de la tabla*/
+.fila_contenido
+{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #cccccc;
+}
+.fila_contenido_sup
+{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #cccccc;
+}
+
+.fila_contenido_negro
+{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+}
+
+.fila_contenido_sup_negro
+{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #000000;
+}
+
+/*Dibuja un borde inferior estandar*/
+.fila_contenido_dif
+{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #CCCCCC;
+}
+
+/*Dibuja un borde vertical a la celda de la tabla*/
+.columna_contenido
+{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #CCCCCC;	
+}
+.columna_contenido_der
+{
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCCCCC;	
+}
+
+.columna_contenido_negro
+{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #000000;
+}
+
+.columna_contenido_der_negro
+{
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #000000;
+}
+
+.columna_contenido_blanco
+{
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #FFFFFF;
+}
+
+/*Dibuja un contorno a una tabla*/
+.tabla_informacion
+{
+	border-width: 1px;
+	border-style: solid;
+    border-color: #cccccc;
+}
+.tabla_informacion_leyendas
+{
+	border-width: 1px;
+	border-style: solid;
+    border-color: #bf6000;
+}
+
+.tabla_informacion_leyendas_amarillo
+{
+	border-width: 1px;
+	border-style: solid;
+    border-color: #FF9900;
+}
+
+.tabla_informacion_negro
+{	
+	border-width: 1px;
+	border-style: solid;
+    border-color: #000000;
+}
+
+.tabla_informacion_negro2
+{	
+	border-top: #000000 0px solid !important;
+	border-width: 1px;
+	border-style: solid;
+    border-color: #000000;
+}
+
+/*encabezado de las tabla o grids*/
+.tituloTablas{
+	background-color:#666666;
+	color: #FFFFFF;
+	font-size: 9px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+/*encabezado de las tabla o grids v1*/
+.tituloTablasB{
+	background-color:#666666;
+	color: #FFFFFF;
+	font-size: 8px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.tituloTablasRojas{
+	background-color:#FF0F0F;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.tituloTablasNaranja{
+	background-color:#FF9224;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.tituloTablasResponsableEleboracionCanastos{
+	background-color:#575757;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.tituloTablasEntregaCliente{
+	background-color:#003399;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.subtituloTablasEntregaCliente{
+	background-color:#003399;
+	color: #FFFFFF;
+	font-size: 9px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.tituloTablasPedidoCD{
+	background-color:#D90000;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.subtituloTablasPedidoCD{
+	background-color:#D90000;
+	color: #FFFFFF;
+	font-size: 9px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.subtituloTablasTrans{
+	background-color:#ffff5e;
+	color: #000000;
+	font-size: 9px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.tituloTablasRojo{
+	background-color:#990000;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+.tituloTablasRojo1{
+	background-color:#D70000;
+	color: #FFFFFF;
+	font-size: 9px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+.tituloTablasAzul{
+	background-color:#1A1AFF;
+	color: #FFFFFF;
+	font-size: 9px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+.tituloTablasCeleste{
+	background-color:#DDEEFF;
+	color: #000000;
+	font-size: 9px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana;
+	font-weight: bolder;
+}
+.tituloTablasCelesteB{
+	background-color:#DDEEFF;
+	color: #000000;
+	font-size: 8px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana;
+	font-weight: bolder;
+}
+/*encabezado de las tabla celeste*/
+.tituloTablasCeleste2{
+	background-image:url(../images/barraTabla.jpg);
+	color: #000066;
+	font-size: 10px;
+	font-style: normal;	
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+.tablaMenuBG {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-image: url(images/barraFecha.gif);
+	background-repeat: repeat-x;
+}
+.tablaLoginBG {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+}
+
+.barraTituloBG {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-image: url(../images/index_r1_c2.gif);
+	background-repeat: repeat-x;
+}
+
+.tabla_pregunta{
+    background-color: #dae2e9;
+}
+
+.datos{
+	vertical-align:top;
+	text-align: left;
+}
+.titulos_tabla{
+	font-weight: bolder;
+}
+
+.tabla_informacion_encabezado
+{
+	border: 1px solid #999999;		
+}
+.tabla_datos
+{
+	border: 1px solid #cccccc;		
+	border-bottom:none;
+	font-weight:normal;
+}
+/*encabezado de las tabla celeste*/
+.tituloTablasCel{
+	background-color:#B1C2D6;
+	color: #000066;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+/*encabezado de las tabla celeste Degradado*/
+.tituloTablasCelImg{
+	background-image:url(images/barraTabla.jpg);
+	color: #000066;
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+}
+/*
+
+/*------------ links ---------------*/
+.link {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #333333;	
+}
+.linkBlanco9
+{
+    font-size: 9px;
+    font-style: normal;
+    line-height: normal;
+    font-family: Verdana, Arial, Helvetica;
+    color: #FFFFFF;	
+}
+
+.linkBlanco9:hover
+{
+    font-size: 9px;
+    font-style: normal;
+    line-height: normal;
+    font-family: Verdana, Arial, Helvetica;
+    text-decoration: underline;
+    color: #FFFFFF;	
+}
+
+linkNegro9
+{
+    font-size: 9px;
+    font-style: normal;
+    line-height: normal;
+    font-family: Verdana, Arial, Helvetica;
+    color: #000000;	
+}
+
+.linkNegro9:hover
+{
+    font-size: 9px;
+    font-style: normal;
+    line-height: normal;
+    font-family: Verdana, Arial, Helvetica;
+    text-decoration: underline;
+    color: #000000;	
+}
+.linkBlanco8
+{
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	display: block;
+	
+	voice-family:inherit;
+	font-family:Verdana;
+	font-size:9px;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-decoration:none;
+	text-align: center;
+}
+
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #990000;
+}
+
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #990000;
+}
+
+/*---- Colores alternado para las filas de las tablas ----*/
+.blanco {
+	background-color: #FFFFFF;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #666666;
+}
+.blanco10 {	
+	background-color: #FFFFFF;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+.blanco9B {	
+	background-color: #FFFFFF;
+	font-family: Verdana;
+	font-size: 8px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bolder;
+	color: #000000;
+}
+.blanco9 {	
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	color: #003366;
+}
+.grisClaro {
+	background-color: #EBEBEB;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+}
+.grisClaro10 {
+	background-color: #f2f2f2;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+}
+.grisClaro9 {
+	background-color: #EBEBEB;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8px;
+	color: #003366;
+}
+.grisClaro9B {
+	background-color: #EBEBEB;
+	font-family: Verdana;
+	font-size: 8px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bolder;
+	color: #000000;
+}
+.violeta10 {
+	background-color: #e0dcf5;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #333;
+}
+.violetaClaro10 {
+	background-color: #e0dcf5;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+.cafeClaro10 {
+	background-color: #f3ebe4;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+.cafeClaro9 {
+	background-color: #f3ebe4;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+}
+
+.plomoClaro {
+	background-color: #EAEAEA;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+.celesteClaro{
+	background-color: #DAEEFE;
+	font-family: verdana;
+	font-size: 12px;
+	color: #000000;
+}
+.celesteClaro10{
+	background-color: #d3ebfe;
+	font-family: verdana;
+	font-size: 10px;
+	color: #000000;
+}
+.negro10{
+	background-color: #000000;
+	font-family: verdana;
+	font-size: 10px;
+	color: #000000;
+}
+.azul10{
+	background-color: #0000aa;
+	font-family: verdana;
+	font-size: 10px;
+	color: #000000;
+}
+.rojo10{
+	background-color: #E60000;
+	font-family: verdana;
+	font-size: 10px;
+	color: #000000;
+}
+
+.celesteFosforescente {
+	background-color: #CCFFFF;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+
+.naranjaClaro10 {
+	background-color: #ffedd2;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+
+.amarillo1 {
+	background-color: #ECE9D8;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+	font-weight:bold;
+}
+
+.amarilloClaro10 {
+	background-color: #ffffca;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+.amarilloClaro9B {
+	background-color: #ffffca;
+	font-family: Verdana;
+	font-size: 8px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bolder;
+	color: #000000;
+}
+
+.amarilloClaro11 {
+	background-color: #ffffca;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+}
+
+.amarilloClaro12 {
+	background-color: #ffffca;
+	font-family: Verdana;
+	font-size: 12px;
+	color: #000000;
+}
+
+.amarillo10{
+	border: 1px solid #F3F781;
+	background-color: #F2F5A9;
+	font-family: Verdana;
+	font-size: 10px;
+}
+
+.verdeClaro10 {
+	background-color: #daf2c3;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+
+.verdeClaro11 {
+	background-color: #daf2c3;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+}
+
+.rojoClaro10 {
+	background-color: #ffd2bb;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+
+.rojoClaro10B {
+	background-color: #ffd2bb;
+	font-family: Verdana;
+	font-size: 8px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bolder;
+	color: #000000;
+}
+
+.rojoObsuro10 {
+	background-color: #F3D8E0;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+
+/*---- COMBOS ------*/
+.combos{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+}
+.comboObligatorio
+{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+        background-color: #FFFFDD;
+}
+.comboDescripcionCiudad
+{
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 11px;
+    font-weight: bold;
+    color: #0000df;
+}
+
+.comboDescripcionCiudadRecomendada
+{
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FF0000;
+}
+.comboObligatorioFijo220px
+{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+    background-color: #FFFFDD;
+    width: 220px;
+}
+.comboFijo220px
+{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+    width: 220px;
+}
+.comboFijoOpacity220px
+{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+    width: 220px;
+    opacity: 0.5;
+}
+/*------CAJAS DE TEXTO y TEXTAREA--------*/
+.text{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+}
+.textNormal{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+.textError{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+	background-color: #F6E1E8;
+}
+.textObligatorio{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+	background-color: #FFFFDD;
+}
+
+.textObligatorioOpacity{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+	background-color: #FFFFDD;
+	opacity: 0.5;
+}
+
+.input{
+	border-color: #999999;
+	border-style: solid;
+	border-width: 1px;
+	width: 120px;
+	height: 25px;
+}
+
+/*-------------- botones ------------------*/
+.button{
+	background: url(images/boton.gif);
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	width: 130px;
+	height: 33px;	
+}
+.buttonMedium{
+	background: url(images/boton.gif);
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	width: 105px;
+	height: 20px;
+	text-decoration: none;	
+}
+.buttonSmall{
+	background: url(images/boton.gif);
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFFFF;
+	font-weight: bold;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #FFFFFF;
+	width: 91px;
+	height: 20px;
+	text-decoration: none;	
+}
+/*--------------------------------------------*/
+
+.WhiteMiddle {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 12px;
+	}
+.WhiteBig {
+		font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 14px;
+}
+.WhiteSystem {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-style: normal;
+	font-size: 14px;
+
+}
+/*----- estilo para el encabezado de los acordeones ------*/
+.panelHeader {
+	height: 22px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #D2D6AD;
+	text-align: left;
+	padding-left: 5px;
+}
+.panelContent {
+	background-color: #F4F5EB;
+}
+
+/*Estilo para la barra de herramientas de los sistemas*/
+.panel{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #cccccc;
+	background-color: #f1f3f5;
+	
+	border-right-width: 2px;
+	border-right-style: solid;
+	border-right-color: #CCCCCC;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+
+/*----- Estilo para los div's que emulan ventanas popup ----*/
+.popupcontenido{
+	position:relative;	
+	top:150px;
+}
+.popup{
+	position:absolute;
+	left:0px;
+	height:84% !important;
+	height:540px;
+	width:100%;
+	z-index:119;
+}
+
+.cargando{	
+	position:absolute;
+	top:50px;
+    width:100%;
+    height:540px;
+	left:0px;
+	background-image:url(images/transparent.png)!important;
+	background-image:url(images/transparent.gif);
+	filter: none !important;
+	filter: 
+	progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/transparent.png',sizingMethod='scale');
+	background-repeat:repeat;
+	z-index:120;
+}
+
+.lineaPunteada{
+    border:dotted;
+    border:#CC3300;
+}
+
+#menu DIV.barraMenu {
+	FONT-SIZE: 0pt; COLOR: white; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+#menu DIV.barraMenu A.botonMenu {
+	FONT-SIZE: 10px; COLOR: white; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+#menu DIV.barraMenu {
+	TEXT-ALIGN: right
+}
+#menu DIV.barraMenu A.botonMenu {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 2px; CURSOR: pointer; COLOR: white; PADDING-TOP: 4px; BACKGROUND-COLOR: #C14420; TEXT-DECORATION: none
+}
+#menu DIV.barraMenu A.botonMenu:hover {
+	BACKGROUND-COLOR: #637d4d
+}
+#menu DIV.barraMenu A.botonMenu:active {
+	COLOR: black; BACKGROUND-COLOR: #637d4d
+}
+.frameModal{
+	position:absolute; 
+	top:0px; 
+	left:0px;
+	-moz-opacity:0.5; 
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	height:100% !important;
+	width:100%;
+	z-index:98; 
+}
+
+.displayNo {
+	display:none;
+}
+
+/****************************
+   		ACORDEON            *
+****************************/
+#acordeon  {
+	width: 100%;
+	margin:  0px;
+	padding: 0px;	
+	overflow: hidden;
+}
+#acordeon a.head {
+	margin: 0;
+	cursor:pointer;
+	display:block;	
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	font-weight:bold;
+	color: #333333;
+	background: url(images/acordeon.gif) repeat-x;
+	border: 1px solid #999999;
+}
+#acordeon a.head:hover {
+	color: #666666;
+	background: url(images/acordeonHover.gif) repeat-x;;
+}
+#acordeon a.selected {
+	color: #333333;
+	background-color: #80cfe2;
+	background: url(images/acordeonSelected.gif) repeat-x;;
+}
+#acordeon a.current {
+	background-color:#00FF00;
+}
+#acordeon div.content {
+	background:#F4F9F0;
+	width:98%;
+	border: 1px solid #cccccc;		
+}
+#acordeon div.contentWhite {
+	background:#FFFFFF;
+	border: 1px solid #cccccc;		
+}
+.fondoBlanco{
+	border-style:solid;
+	border-color:#CCCCCC;
+	border-width:1px;
+	background:#FFFFFF;
+}
+/*****************
+	CALENDARIO SICMER  *
+*****************/	
+.fondoCrema1{
+	border-style:solid;
+	border-color:#CCCCCC;
+	border-width:1px;
+	background-color:#F5F4EB;
+}
+/* texto azul claro */
+.textoAzulC15{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 15px;
+	color: #1E02B7;
+}
+.tabla_calendario_encabezado
+{
+	border: 1px solid #4594E1;	
+	border-right: none;	
+}
+.columna_calendario_encabezado
+{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #E2EEFA;	
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #E2EEFA;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #4594E1;
+	border-bottom:none;
+	background-color:#A2C9F0;	
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #333333;
+	font-weight:bold;
+	height:20px;	
+}
+.tabla_calendario
+{
+	border: 1px solid #4594E1;	
+	border-right: none;
+	border-top: none;
+	border-bottom:none;	
+}
+.columna_calendario_dia
+{
+	border-top: none;
+	border-left:none;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #4594E1;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #4594E1;
+}
+.diaActual
+{
+	border: 1px solid #D2010D;	
+	background:#FFF9F2;	
+}
+.diaMes
+{
+	border: 1px solid #FFF9F2;	
+	background:#FFF9F2;	
+}
+.diaAnterior
+{
+	border: 1px solid #F1F3F5;	
+	background:#F1F3F5;	
+}
+/******************************************
+* Estilos para Calendario SICMER
+*******************************************/
+/*propiedades del botonMeses*/
+.botonMeses{
+	/*tamaño*/
+	height: 16px;
+	width:  65px;
+	/*bordes*/
+	border-style: solid;
+	border-color: #FFFFFF;
+	border-width: 1px;
+	background-color:#FFFFFF;
+	display: block;
+	/*texto*/
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#000000;
+	text-decoration:none;
+	padding:2px 0 0 1px;
+}
+
+/*Evento sobre el boton*/
+.botonMeses:hover{
+	border-style: solid;
+	border-color: #4594E1;
+	border-width: 1px;
+	background-color:#FFFFB0;
+	text-decoration:none;
+	padding:2px 0 0 1px;
+}
+/*Evento sobre el boton*/
+.botonMeses a, #current{
+	border-style: solid;
+	border-color: #4594E1;
+	border-width: 1px;
+	background-color:#C0DBF5;
+	text-decoration:none;
+	padding:2px 0 0 1px;
+}
+
+
+/*propiedades del boton Dia Error*/
+.error{
+	/*tamaño*/
+	height: 14px;
+	width:  100%;
+	
+	border:none;	
+	background:#FF0000;	
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #FFFFFF;
+	font-weight:bold;
+	text-align:right;	
+	text-decoration:none;
+	display:block;
+}
+
+/*Evento sobre el boton*/
+.error:hover {	
+	background-color:#FFFFB0;
+	text-decoration:none;
+	color: #666666;
+}
+
+/*propiedades del boton Dia Normal*/
+.normal{
+	/*tamaño*/
+	height: 14px;
+	width:  100%;	
+	border:none;	
+	background:#C0DBF5;	
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #333333;
+	font-weight:bold;
+	text-align:right;	
+	text-decoration:none;
+	display:block;
+}
+
+/*Evento sobre el boton  C0DBF5 */
+.normal:hover {	
+	background-color:#FFFFB0;
+	text-decoration:none;
+	color: #666666;
+}
+
+/*propiedades del boton Dia Error*/
+.anterior{
+	/*tamaño*/
+	height: 14px;
+	width:  100%;
+	
+	border:none;	
+	background:#F1F3F5;	
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #999999;
+	font-weight:bold;
+	text-align:right;	
+	text-decoration:none;
+	display:block;
+	cursor:default;
+}
+.anterior:hover{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #999999;
+	text-decoration:none;
+}
+
+/*propiedades del boton Dia Seleccionado*/
+.seleccionado{
+	/*tamaño*/
+	height: 14px;
+	width:  100%;
+	
+	border:none;	
+	background:#FFFFB0;	
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #333333;
+	font-weight:bold;
+	text-align:right;	
+	text-decoration:none;
+	display:block;
+}
+
+/*Evento sobre el boton*/
+.seleccionado:hover {	
+	background-color:#FFFFB0;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #333333;
+	font-weight:bold;
+	text-align:right;	
+	text-decoration:none;
+}
+.rojo {
+	background-color: #FFd8d7;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #666666;
+}
+
+
+}

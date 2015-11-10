@@ -1,0 +1,82 @@
+			Kruger Corporation
+
+			
+Artefacto : sispe-web
+
+#-----------------------------------------
+Version: 	1.1.1-SNAPSHOT, 1.1.1-RELEASE
+Fecha:		8 de mayo del 2014
+Notas de la version: 
+1) El alcance de los articulos se obtiene de las tablas del max ya no del sic
+2) Correccion de bug de que si abonan cero una reserva y esta expirada, volver a enviar
+ 	la trama de reservacion de stock al sic.
+
+
+#-----------------------------------------
+Version:	1.2.0-SNAPSHOT, - 1.2.0-RELEASE
+Notas de la version: 
+1) Actualizacion de versiones con nuevas dependencias de MAX
+
+
+#-----------------------------------------
+Version:	1.3.0-SNAPSHOT - 1.3.0-RELEASE
+Notas de la version: 
+1) Incluye proceso de integracion con SICMER.
+2) No desactivar precios de caja y  mayorista.
+3) Notificaciones para bodega, cuando modificamos una reserva.
+4) Cambio en envio de correo en la pantalla de resumen de reservas.
+5) Pantalla de resumen de entregas.
+6) Cambios en el componente corporativo, solicitar los contactos solo al reservar, modificar reservas y confirmar pedidos especiales.
+
+#-----------------------------------------
+Version:	1.3.1-SNAPSHOT - 1.3.1-RELEASE
+Notas de la version: 
+1) No permitir repetir detalles en la cotizacion,recotizacion, reservacion.
+
+#-----------------------------------------
+Version:	1.3.2-SNAPSHOT - 1.3.2-RELEASE
+Notas de la version: 
+1) Optimizacion del proceso de consolidacion.
+2) Impresion de convenios con SISCMER.
+3) Autorizaciones de stock en canastos especiales, envio de diferencias en mas para crear la OC.
+4) Correcion de metodos para alcances, validaciones con autorizaciones y entregas.
+5) Reporte de seguimiento de despachos.
+6) Registro de estado entregado para entregas totales a dimicilio.
+7) Permitir modificar reservas con entregas parcialmente a domicilio y a local.
+  
+
+#-----------------------------------------
+Version:	1.3.3-SNAPSHOT - 1.3.3-RELEASE
+Notas de la version: 
+1) Se sube la integracion con el SIC, cambios de reservas en estado despachado.
+2) Cambio en autorizaciones de stock.
+3) Cambio en version de MAX, 1.4.2.
+
+#-----------------------------------------
+Version:	1.3.4-SNAPSHOT - 1.3.4-RELEASE
+Notas de la version: 
+1) Correcion de las bugs presentados en control de calidad.
+2) Optimizacion de calendario de bodega.
+3) Solo modificar el 80% de un canasto de catalogo.
+4) Correcion de pesos finales.
+5) Usuarios sispeMan, sispeOpe, sispeDes
+
+#-----------------------------------------
+Version:	1.4.0-SNAPSHOT - 1.4.0-RELEASE
+Notas de la version: 
+1) Actualizacion de las versiones del max (1.6.0-RELEASE) y las dependencias de esos jars
+
+#-----------------------------------------
+Version:	1.5.0-SNAPSHOT - 1.5.0-RELEASE
+Notas de la version: 
+1) Actualizacion de las versiones del max (1.6.5-RELEASE) y las dependencias de esos jars
+2) Migracion a google chrome
+3) Creacion de campos obligatorios para las entregas a domicilio desde el CD
+4) Permitir unificar las entregas de pedidos consolidados para que el CD elabore los canastos
+
+#-----------------------------------------
+Version:	1.5.1-SNAPSHOT - 1.5.1-RELEASE
+Notas de la version:
+1)	Autorizacion variable marca propia
+2)	Check abono cero
+3)	Actualizacion a la version 1.6.6 del max

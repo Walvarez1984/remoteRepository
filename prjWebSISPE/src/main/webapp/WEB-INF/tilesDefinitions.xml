@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+    
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"  "http://struts.apache.org/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+  	<!-- <definition name="baseDef" path="/include/baseLayout.jsp">
+		<put name="vtnombre"         type="string"/>
+		<put name="vticono"          type="string"/>
+	    <put name="header"           value="/include/top.jsp"/>
+	    <put name="footer"           value="/include/bottom.jsp"/>
+	    <put name="title"            value="/include/titulo.jsp"/>
+	    <put name="messages"         value="/include/mensajes.jsp"/>
+	    <put name="bodyLeft"         value="/include/vacio.jsp"/>
+	    <put name="bodyRight"        value="/include/vacio.jsp"/>
+	    <put name="titleBar"         value="/include/baseTitleBar.jsp"/>
+  	</definition>
+  	<definition name="baseFDef" path="/include/baseFLayout.jsp">
+		<put name="vtformName"       type="string"/>
+		<put name="vtformAction"     type="string"/>
+		<put name="vtnombre"         type="string"/>
+		<put name="vticono"          type="string"/>
+	    <put name="header"           value="/include/top.jsp"/>
+	    <put name="footer"           value="/include/bottom.jsp"/>
+	    <put name="title"            value="/include/titulo.jsp"/>
+	    <put name="messages"         value="/include/mensajes.jsp"/>
+	    <put name="bodyLeft"         value="/include/vacio.jsp"/>
+	    <put name="bodyRight"        value="/include/vacio.jsp"/>
+	    <put name="titleBar"         value="/include/baseTitleBar.jsp"/>
+  	</definition>-->
+  	<definition name="base1ColumFDef" path="/include/base1ColumFDef.jsp">
+		<put name="vtformName"       type="string"/>
+		<put name="vtformAction"     type="string"/>
+		<put name="vtnombre"         type="string"/>
+		<put name="vticono"          type="string"/>
+	    <put name="header"           value="/include/topJQ.jsp"/>
+	    <put name="footer"           value="/include/bottom.jsp"/>
+	    <put name="title"            value="/include/titulo.jsp"/>
+	    <put name="messages"         value="/include/mensajes.jsp"/>
+	    <put name="body"        	 value="/include/vacio.jsp"/>
+	    <put name="titleBar"         value="/include/baseTitleBar.jsp"/>
+  	</definition>
+  	<definition name="base1ColumFDef2" path="/include/base1ColumFDef2.jsp">
+  		<put name="vtformName" 		type="string"/>
+  		<put name="vtformAction"	type="string"/>
+  		<put name="vtname"			type="string"/>
+  		<put name="vticono"			type="string"/>
+  		<put name="header"			value="/include/topJQ2.jsp"/>
+  		<put name="footer"			value="/include/bottom2.jsp"/>
+  		<put name="title"			value="/include/titulo.jsp"/>
+ 		<put name="messages"		value="/include/mensajes.jsp"/>
+	    <put name="body"			value="/include/vacio.jsp"/>
+	    <put name="titleBar"		value="/include/baseTitleBar.jsp"/>
+  	</definition>
+  	<definition name="base1ColumFDef3" path="/include/base1ColumFDef2.jsp">
+		<put name="vtformName"       type="string"/>
+		<put name="vtformAction"     type="string"/>
+		<put name="vtnombre"         type="string"/>
+		<put name="vticono"          type="string"/>
+	    <put name="header"           value="/include/top.jsp"/>
+	    <put name="footer"           value="/include/bottom.jsp"/>
+	    <put name="title"            value="/include/titulo.jsp"/>
+	    <put name="messages"         value="/include/mensajes.jsp"/>
+	    <put name="body"        	 value="/include/vacio.jsp"/>
+	    <put name="titleBar"         value="/include/baseTitleBar.jsp"/>
+  	</definition>
+  
+  <!-- /LAYOUTS: Plantillas -->
+  <!-- DEFINITIONS: Definiciones: usos de plantillas para definir paginas: estas definiciones se usan como las  jsp's en el strust -->
+  <!--================== Catalogo Canastos ========================-->
+   	<definition name="catalogoCanastosDef" extends="base1ColumFDef">
+		<put name="vtnombre"         value="Catálogo de canastos"/>
+		<put name="vticono"          value="images/detalle_canasto.gif"/>
+		<put name="vtformName"       value="catalogoCanastosForm"/>
+		<put name="vtformAction"     value="catalogoCanastos"/>
+    	<put name="body"        	 value="/administracion/catalogoCanastos/catalogoCanastos.jsp"/>
+	    <put name="titleBar"         value="/administracion/catalogoCanastos/titleBar.jsp"/>
+    </definition>
+    <!--================== Administración de plantillas para la calendarización ========================-->
+	<definition name="administradorPlantillasDef" extends="base1ColumFDef3">
+		<put name="vtnombre"         value="Ajustes de capacidad y administración de plantillas"/>
+		<put name="vticono"          value="images/adminPlantillas48.gif"/>
+		<put name="vtformName"       value="calendarizacionForm"/>
+		<put name="vtformAction"     value="adminPlantillas"/>
+	    <put name="body"        	 value="/administracion/plantillaCalendario/contenedorPrincipal.jsp"/>
+	    <!-- <put name="titleBar"         value="/administracion/plantillaCalendario/titleBar.jsp"/>-->
+   	</definition>
+   	<!--==========================================================================-->
+   	<!--============== Inicio del Modulo para Pedidos Especiales =================-->
+   	<!--==========================================================================-->
+   	<!-- Crear pedido especial -->
+	<definition name="crearPedidoEspecialDef" extends="base1ColumFDef3">
+		<put name="vtnombre"         value="Formulario de pedidos especiales"/>
+		<put name="vticono"          value="images/pedidosEspeciales48.gif"/>
+		<put name="vtformName"       value="crearPedidoEspecialForm"/>
+		<put name="vtformAction"     value="crearPedidoEspecial"/>
+	    <put name="body"        	 value="/pedidosEspeciales/creacion/crearPedidoEspecial.jsp"/>
+	    <put name="titleBar"         value="/pedidosEspeciales/creacion/titleBar.jsp"/>
+   	</definition>
+   	
+   	<definition name="pedidoEspecialPerecibleDef" extends="base1ColumFDef3">
+		<put name="vtnombre"         value="Formulario de pedidos especiales perecibles"/>
+		<put name="vticono"          value="images/pedidosEspeciales48.gif"/>
+		<put name="vtformName"       value="crearPedidoEspecialForm"/>
+		<put name="vtformAction"     value="pedidoEspecialPerecible"/>
+	    <put name="body"        	 value="/pedidosEspeciales/perecibles/detallePerecibleEspecial.jsp"/>
+	    <put name="titleBar"         value="/pedidosEspeciales/creacion/titleBar.jsp"/>
+   	</definition>
+   	
+   	
+   	<!-- Resumen del pedido especial -->
+	<definition name="resumenPedidoEspecialDef" extends="base1ColumFDef">
+		<put name="vtnombre"         value="Resumen del pedido"/>
+		<put name="vticono"          value="images/pedidosEspeciales48.gif"/>
+		<put name="vtformName"       value="crearPedidoEspecialForm"/>
+		<put name="vtformAction"     value="crearPedidoEspecial"/>
+	    <put name="body"        	 value="/pedidosEspeciales/creacion/resumenPedido.jsp"/>
+	    <put name="titleBar"         value="/pedidosEspeciales/creacion/titleBar.jsp"/>
+   	</definition>
+   	<!-- Búsqueda de pedido especial carnes-->
+   	<definition name="confirmarPedidoEspecialDef" extends="base1ColumFDef3">
+  		<put name="vtnombre"         value="Búsqueda de pedidos solicitados especiales"/>
+		<put name="vticono"          value="images/busqueda_pedido.gif"/>
+		<put name="vtformName"       value="listadoPedidosForm"/>
+		<put name="vtformAction"     value="confirmarPedidoEspecial"/>
+	    <put name="body"        	 value="/pedidosEspeciales/modificacionYDespacho/listaPedidoEspecial.jsp"/>
+	    <put name="titleBar"         value="/pedidosEspeciales/modificacionYDespacho/titleBar.jsp"/>
+   	</definition>
+   	<definition name="controlProduccionPedEspDef" extends="base1ColumFDef">
+  		<put name="vtnombre"         value="Control de despacho de pedidos especiales"/>
+		<put name="vticono"          value="images/despachoPedidos.gif"/>
+		<put name="vtformName"       value="controlProduccionPedidoEspecialForm"/>
+		<put name="vtformAction"     value="controlProduccionPedEsp"/>
+	    <put name="body"        	 value="/pedidosEspeciales/modificacionYDespacho/listaControlProduccionPedido.jsp"/>
+	    <put name="titleBar"         value="/pedidosEspeciales/modificacionYDespacho/titleBar.jsp"/>
+   	</definition>
+   	<definition name="detalleEstadoPedidoEspecialDef" extends="base1ColumFDef">
+  		<put name="vtnombre"         value="Detalle del pedido seleccionado"/>
+		<put name="vticono"          value="images/busqueda_pedido.gif"/>
+		<put name="vtformName"       value="listadoPedidosForm"/>
+		<put name="vtformAction"     value="detalleEstadoPedidoEspecial"/>
+	    <put name="body"        	 value="/pedidosEspeciales/detalleEstadoPedidoEspecial/detallePedidoCarnes.jsp"/>
+	    <put name="titleBar"         value="/pedidosEspeciales/detalleEstadoPedidoEspecial/titleBar.jsp"/>
+   	</definition>
+   	
+   	<!--==========================================================================-->
+   	<!--================ Fin del Modulo para Pedidos Especiales ==================-->
+   	<!--==========================================================================-->
+   	
+   	<!--==========================================================================-->
+   	<!--============== Inicio del Modulo para Modificar Reservaciones ============-->
+   	<!--==========================================================================-->
+   	<!-- Crear pedido especial -->
+	<definition name="listarReservacionesDef" extends="base1ColumFDef">
+		<put name="vtnombre"         value="Búsqueda para modificaciones de reserva"/>
+		<put name="vticono"          value="images/reservacion.gif"/>
+		<put name="vtformName"       value="listadoPedidosForm"/>
+		<put name="vtformAction"     value="listaModificarReserva"/>
+	    <put name="body"        	 value="/servicioCliente/modificarReserva/listarReservas.jsp"/>
+   	</definition>
+
+   	<!--==========================================================================-->
+   	<!--============= Fin del Modulo para Modificar Reservaciones ================-->
+   	<!--==========================================================================-->
+
+
+   	<!--==========================================================================-->
+   	<!--============== Inicio del Modulo para Ordenes de compra  =================-->
+   	<!--==========================================================================-->
+   	<!-- Crear pedido especial -->
+	<definition name="registrarOrdenCompraDef" extends="base1ColumFDef">
+		<put name="vtnombre"         value="Ordenes de compra"/>
+		<put name="vticono"          value="images/busqueda_pedido.gif"/>
+		<put name="vtformName"       value="registrarOrdenCompraForm"/>
+		<put name="vtformAction"     value="registrarOrdenCompra"/>
+	    <put name="body"        	 value="/servicioCliente/registrarOrdenCompra/ordenesCompraPrincipal.jsp"/>
+   	</definition>
+   	<!--==========================================================================-->
+   	<!--============= Inicio del Modulo para Ordenes de compra  ==================-->
+   	<!--==========================================================================-->
+   	
+   	<!--==========================================================================-->
+   	<!--============== Inicio del Módulo para Calendario de Bodega================-->
+   	<!--==========================================================================-->
+   	<!-- Calendario -->
+	<definition name="calendarioBodegaDef" extends="base1ColumFDef2">
+		<put name="vtnombre"		value="Calendario de bodega"/>
+		<put name="vticono"			value="images/calendarioBodega.gif"/>
+		<put name="vtformName"		value="calendarioBodegaForm"/>
+		<put name="vtformAction"	value="/calendarioBodega"/>
+		<put name="titleBar"		value="/calendarioBodega/titleBar.jsp"/>
+	    <put name="body"			value="/calendarioBodega/calendarioBodegaPrincipal.jsp"/>
+   	</definition>
+   	<!--==========================================================================-->
+   	<!--============= Inicio del Modulo para Ordenes de compra  ==================-->
+   	<!--==========================================================================-->
+
+ </tiles-definitions>

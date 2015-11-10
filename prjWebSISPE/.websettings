@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<websettings version="600">
+<webcontent>WebContent</webcontent>
+<context-root>prjWebSISPE</context-root>
+<project-type>J2EE</project-type>
+<jsp-level>1.3</jsp-level>
+<features>
+<feature>
+<feature-id>templatefeature</feature-id>
+</feature>
+<feature>
+<feature-id>com.ibm.etools.web.diagram.project.feature</feature-id>
+</feature>
+<feature>
+<feature-id>com.ibm.etools.siteedit.wizards.projectfeature.WebSiteFeature</feature-id>
+</feature>
+<feature>
+<feature-id>WebProjectCSSFileFeature</feature-id>
+</feature>
+<feature>
+<feature-id>com.ibm.etools.struts.wizards.project.feature</feature-id>
+</feature>
+<feature>
+<feature-id>com.businessobjects.integration.rad.crviewer_11_0_0</feature-id>
+</feature>
+<feature>
+<feature-id>com.businessobjects.integration.rad.jsf.ce.controls_10_0_0</feature-id>
+</feature>
+<feature>
+<feature-id>com.businessobjects.integration.rad.jrc_11_0_0</feature-id>
+</feature>
+<feature>
+<feature-id>com.businessobjects.integration.rad.jsf.crviewer_11_0_0</feature-id>
+</feature>
+</features>
+</websettings>

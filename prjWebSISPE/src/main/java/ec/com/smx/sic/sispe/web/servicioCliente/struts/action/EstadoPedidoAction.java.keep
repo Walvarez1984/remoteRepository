@@ -1,0 +1,516 @@
+/*
+ * Clase EstadoPedidoAction.java
+ * Creado el 07/04/2006
+ *
+ */
+package ec.com.smx.sic.sispe.web.servicioCliente.struts.action;
+
+import static ec.com.smx.sic.sispe.common.constantes.GlobalsStatics.CANCELAR_ARCH_BENE;
+import static ec.com.smx.sic.sispe.common.constantes.GlobalsStatics.COL_TIPOS_PEDIDO;
+import static ec.com.smx.sic.sispe.common.constantes.GlobalsStatics.ACEPTAR_ARCH_BENE;
+import static ec.com.smx.sic.sispe.common.constantes.GlobalsStatics.SUBIR_ARCH_BENE;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
+
+import ec.com.smx.framework.web.action.BaseAction;
+import ec.com.smx.sic.sispe.common.util.CotizacionReservacionUtil;
+import ec.com.smx.sic.sispe.common.util.EstadoPedidoUtil;
+import ec.com.smx.sic.sispe.common.util.MessagesWebSISPE;
+import ec.com.smx.sic.sispe.common.util.WebSISPEUtil;
+import ec.com.smx.sic.sispe.commons.exception.SISPEException;
+import ec.com.smx.sic.sispe.commons.util.LogSISPE;
+import ec.com.smx.sic.sispe.commons.util.MessagesAplicacionSISPE;
+import ec.com.smx.sic.sispe.dto.ArchivoPedidoDTO;
+import ec.com.smx.sic.sispe.dto.ArchivoPedidoID;
+import ec.com.smx.sic.sispe.dto.EstadoSICDTO;
+import ec.com.smx.sic.sispe.dto.PedidoDTO;
+import ec.com.smx.sic.sispe.dto.TipoPedidoDTO;
+import ec.com.smx.sic.sispe.dto.VistaPedidoDTO;
+import ec.com.smx.sic.sispe.web.reportes.struts.form.ReporteGeneralForm;
+import ec.com.smx.sic.sispe.web.servicioCliente.struts.form.ListadoPedidosForm;
+import ec.com.smx.sic.sispe.web.session.SessionManagerSISPE;
+
+/**
+ * <p> 
+ * Esta clase permite realizar la búsqueda de pedidos por diferentes parámetros de búsqueda:
+ * <ul>
+ * <li>NÚMERO DE PEDIDO: Se listan todos los pedidos con ese código en sus diferentes estados.</li>
+ * <li>CÉDULA DEL CONTACTO: Se listan todos los pedidos con esa cédula del contacto en sus diferentes estados.</li>
+ * <li>NOMBRE DEL CONTACTO: Se listan todos los pedidos con ese nombre del contacto en sus diferentes estados.</li>
+ * <li>FECHA DE CREACIÓN, INICIAL Y FINAL: Se listan todos los pedidos que tengan una fecha de creación entre 
+ * el rango inicial y final</li>
+ * <li>ESTADO ACTUAL DEL PEDIDO: Se listan todos los pedidos que tengan como estado actual el escogido.</li>
+ * </ul>
+ * </p>
+ * @author 	fmunoz, mbraganza
+ * @version	2.0
+ * @since	JSDK 1.4.2
+ */
+public class EstadoPedidoAction extends BaseAction
+{
+  private final String ORDEN_ASC = MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.consultas.orden.ascendente");
+  public static final String INDICE_PEDIDO_SELECCIONADO = "indicePedidoPrincipal";
+  public static final String CODIGO_PEDIDO = "codigoPedido";
+  public static final String FLAG = "archivoPedido";
+  public static final String CODIGO_LOCAL = "codigoLocal";
+  public static final String activo = MessagesWebSISPE.getString("ec.com.smx.sic.sispe.estado.activo");
+  public static final String inactivo = MessagesWebSISPE.getString("ec.com.smx.sic.sispe.estado.inactivo");
+  /**
+   * Procesa la petición HTTP (request) especificada y genera su correspondiente respuesta HTTP (response) 
+   * (o lo redirige a otro componente web que podría crear)
+   * Devuelve una instancia <code>ActionForward</code> que describe dónde y cómo se redirige el control
+   * (si la respuesta se ha completado <code>null</code>)
+   * 
+   * @param mapping			El mapeo utilizado para seleccionar esta instancia
+   * @param form			El formulario asociado a esta acción de donde se toman y establecen valores de
+   *          				campos
+   * @param request 		La petici&oacute;n que estamos procesando
+   * @param response		La respuesta HTTP que se genera
+   * @return ActionForward	Acci&oacuten o p&acute;gina jsp donde se redirige el control 
+   * @throws Exception
+   */
+  public ActionForward execute(ActionMapping mapping, ActionForm form,
+      HttpServletRequest request, HttpServletResponse response)throws Exception{
+  	
+    ActionMessages infos = new ActionMessages();
+    ActionMessages errors = new ActionMessages();
+    
+    HttpSession session = request.getSession();
+		
+    ListadoPedidosForm formulario = (ListadoPedidosForm)form;
+    //se la referencia del formulario CotizarReservarForm
+	//CotizarReservarForm formularioCotizar = (CotizarReservarForm)form;
+    String salida = "desplegar";
+    String accionEstado= "estadoPedido.do";
+    session.removeAttribute(SessionManagerSISPE.BOTON_BENEFICIARIO);
+    session.removeAttribute(SessionManagerSISPE.COLECCION_PEDIDOS_GENERAL.concat("XLS"));
+    try
+    {
+      /*-------------------------- cuando se da clic en los campos de paginación --------------------------------*/
+      if(request.getParameter("range")!=null || request.getParameter("start")!=null)
+      {
+      	LogSISPE.getLog().info("ENTRO A LA PAGINACION link");
+      	
+        //se obtiene el tamano de la coleccion total de articulos
+				int tamano = ((Integer)session.getAttribute(SessionManagerSISPE.CANTIDAD_TOTAL_PEDIDOS)).intValue();
+				LogSISPE.getLog().info("tamaño: {}" , tamano);
+				String start = request.getParameter("start");
+
+				if(tamano > 0){
+					//Recupero la vista pedido con los parametros de la busqueda
+					VistaPedidoDTO consultaPedidoDTO = (VistaPedidoDTO)session.getAttribute(SessionManagerSISPE.CONSULTA_VISTAPEDIDO);
+					//Cambio el inicio de la busqueda
+					consultaPedidoDTO.setNpFirstResult(Integer.valueOf(start));
+					Collection colVistaPedidoDTO = SessionManagerSISPE.getServicioClienteServicio().transObtenerVistaPedido(consultaPedidoDTO);
+					
+					//se asignan las variables de paginación
+					formulario.setStart(start);
+					formulario.setRange(request.getParameter("range"));
+					formulario.setSize(String.valueOf(tamano));
+					formulario.setDatos(colVistaPedidoDTO);
+					
+          //se guarda la colección general
+          session.setAttribute(SessionManagerSISPE.COLECCION_PEDIDOS_GENERAL,colVistaPedidoDTO);
+	        //se guarda en sesión el indice de la paginación
+	        session.setAttribute(ListadoPedidosForm.INDICE_PAGINACION, start);
+				}
+      }
+      /*--------------------------------- cuando se busca un pedido --------------------------------------*/
+      else if(request.getParameter("buscar") != null)
+      {
+        //colección que almacena los pedidos buscados
+        Collection <VistaPedidoDTO> colVistaPedidoDTO = new ArrayList <VistaPedidoDTO>();
+                       	        	       
+        //DTO que contiene los pedidos a buscar
+        VistaPedidoDTO consultaPedidoDTO = WebSISPEUtil.construirConsultaGeneralPedidos(request, formulario);
+        //se verifica si existe un tipo de pedido especial para filtrar la búsqueda
+        //if(session.getAttribute(WebSISPEUtil.COD_TIPO_PEDIDO_ESP_USER)!=null){
+        //	consultaPedidoDTO.setCodigoTipoPedido((String)session.getAttribute(WebSISPEUtil.COD_TIPO_PEDIDO_ESP_USER));
+        //}
+        
+        //se asignan los campos de ordenamiento
+  			String [][] camposOrden = new String [][]{{"codigoLocal",ORDEN_ASC},{"codigoPedido",ORDEN_ASC},{"fechaInicialEstado", ORDEN_ASC}};
+  			consultaPedidoDTO.setNpCamposOrden(camposOrden);
+  			//se incializa la colección
+  			formulario.setDatos(null);
+  			
+        try
+        {
+        	//metodo que trae el total de registros
+        	Integer total = SessionManagerSISPE.getServicioClienteServicio().transObtenerTotalVistaPedido(consultaPedidoDTO);
+        	session.setAttribute(SessionManagerSISPE.CANTIDAD_TOTAL_PEDIDOS, total);
+        	LogSISPE.getLog().info("total de registros: {}",total);
+        	
+        	//se asignan los parámetros para la paginación en la base de datos
+        	int start = 0;
+        	int range = Integer.parseInt(MessagesWebSISPE.getString("parametro.paginacion.rango"));
+        	consultaPedidoDTO.setNpFirstResult(start);
+        	consultaPedidoDTO.setNpMaxResult(range);
+        	
+        	//obtiene solamente los registros en el rango establecido
+        	colVistaPedidoDTO = SessionManagerSISPE.getServicioClienteServicio().transObtenerVistaPedido(consultaPedidoDTO);
+        	
+          if(colVistaPedidoDTO==null || colVistaPedidoDTO.isEmpty()){
+            infos.add("listaVacia",new ActionMessage("message.listaVaciaBusqueda","Pedidos"));
+          }else{
+            LogSISPE.getLog().info("ENTRO A LA PAGINACION");
+            formulario.setDatos(colVistaPedidoDTO);
+            formulario.setStart(String.valueOf(start));
+            formulario.setRange(String.valueOf(range));
+            formulario.setSize(String.valueOf(total));
+            
+            //se guarda la colección general
+            session.setAttribute(SessionManagerSISPE.COLECCION_PEDIDOS_GENERAL,colVistaPedidoDTO);
+            //se guarda los parametros de la busqueda para la vistaPedido
+            session.setAttribute(SessionManagerSISPE.CONSULTA_VISTAPEDIDO, consultaPedidoDTO);
+            //se elimina la variable del indice de paginación
+            session.removeAttribute(ListadoPedidosForm.INDICE_PAGINACION);
+            
+            //llamada a la función que inicializa los datos de ordenamiento
+            this.inicializarDatosOrdenamiento(request);
+          }
+        }catch(SISPEException ex){
+          LogSISPE.getLog().error("error de aplicación",ex);
+          errors.add("errorObtener",new ActionMessage("errors.llamadaServicio.obtenerDatos","Pedidos"));
+        }
+        salida = "desplegar";
+      }
+      //accion del boton editar de la pantalla estado pedido
+      else if(request.getParameter(ACEPTAR_ARCH_BENE) != null){
+			//almacena el codigo del pedido que se envia desde la jsp estadopedido
+    	  	String pedido = (String)request.getParameter(ACEPTAR_ARCH_BENE);
+    	  	String codigoLocal = (String)request.getParameter("codigoLocal");
+    	  	//Verifica si tiene el campo archivo beneficiario actico(1) o inactivo(0)
+    	  	String campoArchivoBeneficiario = (String)request.getParameter("campoArchivo");   	  
+    	  	session.setAttribute(FLAG, campoArchivoBeneficiario);
+    	  	session.setAttribute(CODIGO_PEDIDO, pedido);
+    	  	session.setAttribute(CODIGO_LOCAL, codigoLocal);
+    	  	
+    	  	LogSISPE.getLog().info("Entra a mostra la ventana para subir el archivo del beneficiario");
+			//se construye la ventana de informacion de archivos del beneficiario y sus opciones(subir,eliminar)
+			CotizacionReservacionUtil.instanciarVentanaSubirArchivoBeneficiario(request, accionEstado);
+			CotizacionReservacionUtil.listarArchivos(request, pedido);
+			salida = "desplegar";
+      }
+      /*-------------------- cuando se desea subir un archivo de configuracion del beneficiario ----------------------*/
+	  else if(request.getParameter("ayuda")!=null && request.getParameter("ayuda").equals("adjuntarArchivo")) {				
+		 
+		  LogSISPE.getLog().info("Boton Aceptar---------");
+		  String codPedido = (String)session.getAttribute(CODIGO_PEDIDO);
+		  String codLocal = (String)(session.getAttribute(CODIGO_LOCAL));
+		  String campoArchivoBeneficiario = (String)(session.getAttribute(FLAG));
+		  
+		  //si el campo del pedido archivoBenficiario esta inactivo lo actualiza en activo.
+	  	  	if(campoArchivoBeneficiario != null && campoArchivoBeneficiario.equals(inactivo)) {
+	  	  		LogSISPE.getLog().info("Este pedido no tiene el campo archivoBeneficiario(Activo)");
+	  	  		PedidoDTO pedidoDTO = new PedidoDTO();
+					PedidoDTO pedidoActualizadoDTO = new PedidoDTO();
+					//seteo el codigo de pedido y codigoCompania
+					pedidoDTO.getId().setCodigoCompania(SessionManagerSISPE.getCurrentCompanys(request).getId().getCodigoCompania());
+					pedidoDTO.getId().setCodigoPedido(codPedido);
+					//obtengo el pedido actual
+					ArrayList<PedidoDTO> pedidoActual = (ArrayList<PedidoDTO>)SessionManagerSISPE.getServicioClienteServicio().transObtenerPedidoQBE(pedidoDTO);
+					pedidoActualizadoDTO = pedidoActual.get(0);
+					//seteo el valor en el campo archivoBaneficiario
+					pedidoActualizadoDTO.setArchivoBeneficiario(activo);
+					SessionManagerSISPE.getServicioClienteServicio().transActualizarPedido(pedidoActualizadoDTO);
+	  	  	}
+		  
+		  boolean verificarArchivo = true;
+		  LogSISPE.getLog().info("CodPedido->{}",codPedido);
+		  LogSISPE.getLog().info("CodPedido->{}",codLocal);
+		  	ArchivoPedidoID archivoPedidoID = new ArchivoPedidoID();
+		    ArchivoPedidoDTO archivoPedidoDTO = new ArchivoPedidoDTO();
+			archivoPedidoID.setCodigoCompania(SessionManagerSISPE.getCurrentCompanys(request).getId().getCodigoCompania());
+		    archivoPedidoDTO.setId(archivoPedidoID);
+		    archivoPedidoDTO.setCodigoLocal(Integer.parseInt(codLocal));
+		    archivoPedidoDTO.setCodigoPedido(codPedido);
+		    archivoPedidoDTO.setNombreArchivo(formulario.getArchivo().getFileName());
+		    archivoPedidoDTO.setTipoArchivo(MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.tipo.archivo.Beneficiario"));
+		    archivoPedidoDTO.setTamanioArchivo(Long.valueOf(formulario.getArchivo().getFileSize()));
+		    archivoPedidoDTO.setArchivo(formulario.getArchivo().getFileData());
+		    archivoPedidoDTO.setUserId(SessionManagerSISPE.getDefault().getLoggedUser(request).getUserId());
+		    session.removeAttribute(SessionManagerSISPE.ARCHIVO_DTO);
+		    //verifica si el nuevo archivo no tiene el mismo nombre.
+		    verificarArchivo = CotizacionReservacionUtil.validarArchivo(request, formulario.getArchivo().getFileName());
+		    if(verificarArchivo){
+		    	LogSISPE.getLog().info("Archivo Diferente");
+		    	//se acepta el archivo del beneficiario
+				CotizacionReservacionUtil.aceptarArchivoBeneficiario(request,archivoPedidoDTO);
+		    } else {
+		    	LogSISPE.getLog().info("Archivo Repetido");
+		    	CotizacionReservacionUtil.instanciarVentanaAuxiliarArchivo(request, accionEstado);
+		    }
+		    	
+			salida = "desplegar";
+	  }
+      //accion del boton reemplazar archivo existente.
+	  else if(request.getParameter("reemplazarArchivo") != null){
+			LogSISPE.getLog().info("Acepto el reeplazo del archivo");
+			ArchivoPedidoDTO archivoDTO =(ArchivoPedidoDTO)session.getAttribute(SessionManagerSISPE.ARCHIVO_DTO);
+			LogSISPE.getLog().info("Compania->{}",archivoDTO.getId().getCodigoCompania());
+			LogSISPE.getLog().info("secuencial->{}",archivoDTO.getId().getSecuencialArchivoPedido());
+			LogSISPE.getLog().info("local->{}",archivoDTO.getCodigoLocal());
+			LogSISPE.getLog().info("codpedido->{}",archivoDTO.getCodigoPedido());
+			LogSISPE.getLog().info("tamaño->{}",archivoDTO.getTamanioArchivo());
+			LogSISPE.getLog().info("tipo->{}",archivoDTO.getTipoArchivo());
+			LogSISPE.getLog().info("nombe->{}",archivoDTO.getNombreArchivo());
+			//LogSISPE.getLog().info("bytes->{}",archivoDTO.getArchivo());
+			
+			LogSISPE.getLog().info("Nombre_Nuevo->{}",formulario.getArchivo().getFileName());
+			//LogSISPE.getLog().info("Bytes Nuevo->{}",formulario.getArchivo().getFileData());
+			LogSISPE.getLog().info("Tamaño Nuevo->{}",formulario.getArchivo().getFileSize());
+			
+			//setea el tamaño, bytes, nombre.
+			archivoDTO.setNombreArchivo(formulario.getArchivo().getFileName());
+			archivoDTO.setArchivo(formulario.getArchivo().getFileData());
+			archivoDTO.setTamanioArchivo(Long.valueOf(formulario.getArchivo().getFileSize()));	
+			//creo el nuevo archivo.
+			CotizacionReservacionUtil.confirmarReemplazo(request, archivoDTO);
+			//finalmente oculta el popUpAuxiliar.
+			CotizacionReservacionUtil.cancelarReeplazoArchivo(request, accionEstado);
+			salida = "desplegar";	
+	  }
+      /*-------- cuando se cancela el reemplazo del archivo existente----------*/
+	  else if(request.getParameter("cancelarReemplazo") != null){
+			//se cancela el archivo del beneficiario 
+			CotizacionReservacionUtil.cancelarReeplazoArchivo(request, accionEstado);
+			salida = "desplegar";
+	  }
+      //accion del icono eliminar archivo del popUp mostrarArchivoBeneficiario
+	  else if(request.getParameter("eliminarArchivo") != null){
+		  //almacena el codigo del pedido que se envia desde la jsp estadopedido
+  	  		String pedido = (String)session.getAttribute(CODIGO_PEDIDO);
+		  	Long secuencialArchivo = Long.valueOf(request.getParameter("eliminarArchivo"));
+			//se cancela el archivo del beneficiario 
+			LogSISPE.getLog().info("Boton Eliminar de la lista de archivos",secuencialArchivo);
+			LogSISPE.getLog().info("Boton Eliminar de la lista de archivos",pedido);
+			//session.removeAttribute(SessionManagerSISPE.POPUP);
+			CotizacionReservacionUtil.eliminarArchivoBeneficiario(request, secuencialArchivo, pedido);
+			salida = "desplegar";	
+	  }
+	  else if(request.getParameter("verArchivo") != null){
+			LogSISPE.getLog().info("Presiono el Boton ver archivo del icono del PopUp");
+			CotizacionReservacionUtil.verArchivo(request, response);
+	  }
+      /*-------- cuando se cancela el la subida de un archivo de configuracion del beneficiario----------*/
+	  else if(request.getParameter(CANCELAR_ARCH_BENE) != null){
+			//se cancela el archivo del beneficiario 
+			CotizacionReservacionUtil.cancelarArchivoBeneficiario(request, accionEstado);
+			salida = "desplegar";
+	  }
+	 /*-------------------- cuando se desea subir un archivo de configuracion del beneficiario ----------------------*/
+	  else if(request.getParameter(SUBIR_ARCH_BENE) != null){
+			//se cancela el archivo del beneficiario 
+			LogSISPE.getLog().info("Se confirmo la subida del Archivo");
+			//remueve la variable de session
+			CotizacionReservacionUtil.cancelarArchivoBeneficiario(request, accionEstado);
+			salida = "desplegar";
+	  }
+      //obtener los pedidos relacionados
+      else if(request.getParameter("pedidoRelacionado") != null){
+      	VistaPedidoDTO vistaPedidoDTO = (VistaPedidoDTO)((List)session.getAttribute(SessionManagerSISPE.COLECCION_PEDIDOS_GENERAL)).get(Integer.parseInt(request.getParameter("pedidoRelacionado")));
+      	if(vistaPedidoDTO.getVistaPedidoDTOCol() == null)
+      		vistaPedidoDTO.setVistaPedidoDTOCol(SessionManagerSISPE.getServicioClienteServicio().transObtenerHistoricoModificacionesReserva(vistaPedidoDTO));
+      }
+      //obtener el detalle de algún pedido relacionado
+      else if(request.getParameter("indiceRelacionado")!=null){
+      	VistaPedidoDTO pedidoPrincipal = (VistaPedidoDTO)((List)session.getAttribute(SessionManagerSISPE.COLECCION_PEDIDOS_GENERAL)).get(Integer.parseInt(request.getParameter("indicePrincipal")));
+      	VistaPedidoDTO pedidoRelacionado = ((List<VistaPedidoDTO>)pedidoPrincipal.getVistaPedidoDTOCol()).get(Integer.parseInt(request.getParameter("indiceRelacionado")));
+      	EstadoPedidoUtil.obtenerDetallesPedido(pedidoRelacionado, request);
+      	session.setAttribute(INDICE_PEDIDO_SELECCIONADO, request.getParameter("indicePrincipal"));
+      	salida = "detallePedido";
+      }
+      //esta es otra forma de manejar la ventana emergente del detalle
+			//crea una variable request para mostrar posteriormente una ventana con del detalle del pedido
+      else if(request.getParameter("indicePedido")!=null){
+				//se crea la variable
+				request.setAttribute("indicePedidoSeleccionado", request.getParameter("indicePedido"));
+      }
+      //------------------- ordenar la colección de datos ---------------------
+      else if(request.getParameter("indiceOrdenar")!=null){
+      	LogSISPE.getLog().info("Ordenar la tabla de datos");
+      	int indiceColumna = Integer.parseInt(request.getParameter("indiceOrdenar"));
+      	Collection colVistaPedidoDTO = (Collection)session.getAttribute(SessionManagerSISPE.COLECCION_PEDIDOS_GENERAL);
+      	
+      	if(colVistaPedidoDTO != null){
+      		//se llama a la función que realiza el ordenamiento
+      		colVistaPedidoDTO = WebSISPEUtil.ordenarColeccionDatos(request, indiceColumna, colVistaPedidoDTO,null);
+	      	
+	      	//se incializa el indice de la paginación actual
+	      	int indicePaginacion = 0;
+	      	if(session.getAttribute(ListadoPedidosForm.INDICE_PAGINACION)!=null)
+	      		indicePaginacion = Integer.parseInt((String)session.getAttribute(ListadoPedidosForm.INDICE_PAGINACION));
+	      	
+	      	LogSISPE.getLog().info("indice paginacion: {}",indicePaginacion);
+	        //llamada al método que realiza la paginación
+	      	Collection datosPagina = formulario.paginarDatos(colVistaPedidoDTO, indicePaginacion, colVistaPedidoDTO.size(),false);
+	      	formulario.setDatos(datosPagina);
+      	}
+      	//se actualiza la colección en sesión
+      	session.setAttribute(SessionManagerSISPE.COLECCION_PEDIDOS_GENERAL, colVistaPedidoDTO);
+      }
+      //-----------------------generar reporte excel------------------------------
+      else if(request.getParameter("ayuda") != null && request.getParameter("ayuda").equals(MessagesWebSISPE.getString("ec.com.smx.sic.sispe.extension.excel.reportesExcel"))){
+    	  LogSISPE.getLog().info("Se procede a presentar el reporte en formato de hoja de cálculo...");
+    		  
+    	  //colección que almacena los pedidos buscados
+    	  Collection <VistaPedidoDTO> colVistaPedidoDTO = new ArrayList <VistaPedidoDTO>();
+    	 
+    	  //DTO que contiene los pedidos a buscar
+    	  VistaPedidoDTO consultaPedidoDTO = ((VistaPedidoDTO)session.getAttribute(SessionManagerSISPE.CONSULTA_VISTAPEDIDO)).clone();
+    	  consultaPedidoDTO.setNpFirstResult(null);
+    	  consultaPedidoDTO.setNpMaxResult(null);
+
+    	  try{
+    		  //obtiene solamente los registros en el rango establecido
+    		  colVistaPedidoDTO = SessionManagerSISPE.getServicioClienteServicio().transObtenerVistaPedido(consultaPedidoDTO);
+    		  
+    		  //recorre la colección obteniedo los pedidos relacionados
+    		  for(VistaPedidoDTO vistaPedidoDTO : colVistaPedidoDTO){
+    			  if(vistaPedidoDTO.getId().getCodigoEstado().equals(MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.estado.anulado"))){
+    				  vistaPedidoDTO.setVistaPedidoDTOCol(SessionManagerSISPE.getServicioClienteServicio().transObtenerHistoricoModificacionesReserva(vistaPedidoDTO));
+    			  }
+    		  }
+
+    		  //se guarda la colección general
+    		  session.setAttribute(SessionManagerSISPE.COLECCION_PEDIDOS_GENERAL.concat("XLS"), colVistaPedidoDTO);
+  
+    		  request.setAttribute("ec.com.smx.sic.sispe.reporte.nombreArchivo", WebSISPEUtil.generarNombreArchivo("estadoPedido", MessagesWebSISPE.getString("ec.com.smx.sic.sispe.extension.excel.reportesExcel")));							
+    		  salida = "reporteEstadoPedidoXLS";
+  
+    	  }catch(SISPEException ex){
+    		  salida = "desplegar";
+    		  LogSISPE.getLog().error("error de aplicación",ex);
+    		  errors.add("errorReporteGeneral", new ActionMessage("errors.exportarDatos.sinDatos", MessagesWebSISPE.getString("ec.com.smx.sic.sispe.tipo.excel.reportesExcel")));
+    	  }  
+      }
+      //------------------- caso por omisión ---------------------
+      else{
+      	LogSISPE.getLog().info("Ingreso a caso por omisión x...");
+      	//se eliminan las variables de sesión que comienzen con "ec.com"
+      	SessionManagerSISPE.removeVarSession(request);
+
+      	//se consultan los estados de pago
+      	EstadoSICDTO estadoSICDTO = new EstadoSICDTO();
+      	estadoSICDTO.getId().setCodigoEstado(new StringBuilder()
+      		.append(MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.estado.pagado.totalmente"))
+      		.append(",")
+      		.append(MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.estado.pagado.parcialmente"))
+      		.append(",")
+      		.append(MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.estado.pagado.sinPago")).toString());
+      	session.setAttribute("ec.com.smx.sic.sispe.estadosPago", SessionManagerSISPE.getServicioClienteServicio().transObtenerEstado(estadoSICDTO));
+
+      	//se consultan los tipos de pedido
+      	TipoPedidoDTO tipoPedidoFiltro = new TipoPedidoDTO();
+      	tipoPedidoFiltro.getId().setCodigoCompania(SessionManagerSISPE.getCurrentCompanys(request).getId().getCodigoCompania());
+      	session.setAttribute(COL_TIPOS_PEDIDO, SessionManagerSISPE.getServicioClienteServicio().transObtenerTipoPedido(tipoPedidoFiltro));
+      	
+      	String estadoActivo = (String)session.getAttribute(SessionManagerSISPE.ESTADO_ACTIVO);
+      	String entidadLocal = MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.entidadResponsable.local");
+      	String entidadBodega = MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.entidadResponsable.bodega");
+      	
+      	//se realiza la consulta de estados
+      	EstadoSICDTO consultaEstadoDTO = new EstadoSICDTO();
+      	consultaEstadoDTO.setContextoEstado(MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.tipoEstado.estadoNormal"));
+      	//Obtener datos de la colección de estados, en la base de datos
+      	Collection estados = SessionManagerSISPE.getServicioClienteServicio().transObtenerEstado(consultaEstadoDTO);
+
+      	//se verifica si la entidad responsable es un local
+      	if(!SessionManagerSISPE.getCurrentEntidadResponsable(request).getTipoEntidadResponsable().equals(entidadLocal)){
+      		//se obtienen los locales por ciudad
+      		SessionManagerSISPE.getColeccionVistaEstablecimientoCiudadLocalDTO(request);
+      		
+  				//primero se verifica si el rol del usuario logeado está configurado en los parámetros
+  				//WebSISPEUtil.verificarUsuarioPedidoEspecial(SessionManagerSISPE.getCurrentEntidadResponsable(request), request);
+       	}
+
+      	//ASIGNACION DE LAS VARIABLES DE SESION NECESARIAS
+      	session.setAttribute(SessionManagerSISPE.TITULO_VENTANA,"Estado de los Pedidos");
+      	//La primera vez se muestra el cuadro de texto de número de pedido
+      	session.setAttribute("ec.com.smx.sic.sispe.opcionBusqueda",
+      			MessagesWebSISPE.getString("ec.com.smx.sic.sispe.opcion.numeroPedido"));
+      	session.setAttribute(SessionManagerSISPE.ACCION_ACTUAL,
+      			MessagesWebSISPE.getString("ec.com.smx.sic.sispe.accion.estadoPedido"));
+      	
+      	session.setAttribute(SessionManagerSISPE.ACCION_SECCION_BUSQUEDA, "ok");
+      	
+      	//variable para controlar el filtro por entidad responsable
+      	session.setAttribute("ec.com.smx.sic.sispe.busqueda.opEntidadResponsable", "ok");
+      	//guardar en sesión esta colección
+      	session.setAttribute(SessionManagerSISPE.COL_ESTADOS,estados);
+
+      	//se inicializan los atributos del formulario
+      	formulario.setDatos(null);
+      	formulario.setEtiquetaFechas("Fecha de Estado");
+      	
+      	formulario.setOpcionFecha(MessagesWebSISPE.getString("ec.com.smx.sic.sispe.opcion.hoy"));
+      	if(SessionManagerSISPE.getCurrentEntidadResponsable(request).getTipoEntidadResponsable().equals(entidadBodega)){
+      		formulario.setOpEntidadResponsable(entidadBodega);
+      	}
+      	
+      	formulario.setOpEstadoActivo(estadoActivo);
+      	
+      	//se sube a sesión el código para el tipo de pedido normal
+      	session.setAttribute("ec.com.smx.sic.sispe.tipoPedido.normal",
+      			MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.tipoPedido.normal"));
+      	
+      	session.setAttribute("ec.com.smx.sic.sispe.tipoPedido.devolucion",
+      			MessagesAplicacionSISPE.getString("ec.com.smx.sic.sispe.tipoPedido.devolucion"));
+      	
+      	session.setAttribute(SessionManagerSISPE.TIPO_FECHA_BUSQUEDA, "Fecha de Estado");
+      	//Variable de sesiòn para que no presente el combo de estados
+      	session.setAttribute(SessionManagerSISPE.ESTADO_CHECK,"ok");
+      }
+      
+    }
+    catch(Exception ex){
+      LogSISPE.getLog().error("error de aplicación",ex);
+      salida="errorGlobal";
+    }
+    
+    //se guardan los mensajes generados
+    saveInfos(request, infos);
+    saveErrors(request, errors);
+    
+    LogSISPE.getLog().info("Se procede a través de: {}",salida);
+    
+    return mapping.findForward(salida);
+  }
+  
+  /**
+   * Inicializa los datos para el ordenamiento
+   * @param request
+   */
+  private void inicializarDatosOrdenamiento(HttpServletRequest request){
+  	
+    //se incializan los datos de la tabla
+    String[][] datosTabla = {
+      {"id.codigoPedido", "Código del Pedido", null},
+      {"llaveContratoPOS", "Llave del Contrato", null},
+      {"fechaInicialEstado", "Fecha de Pedido", null},
+      {"nombreContacto", "Nombre del Cliente", null},
+      {"totalPedido", "Valor Total", null},
+      {"abonoPedido", "Valor Abonado", null},
+      {"descripcionEstado", "Estado", null},
+      {"etapaEstadoActual", "Etapa del Estado", null},
+      {"estadoActual", "Estado Actual", null}
+    };
+    //se guardan los datos en sesión
+    request.getSession().setAttribute(SessionManagerSISPE.DATOS_TABLA_ORDENAR, datosTabla);
+    //se inicializa los datos de la culumna ordenada 
+    request.getSession().setAttribute(SessionManagerSISPE.DATOS_COLUMNA_ORDENADA, new String [] {"Código del Pedido", "Ascendente"});
+  }
+}

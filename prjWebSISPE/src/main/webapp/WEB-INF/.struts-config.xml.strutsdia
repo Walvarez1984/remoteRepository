@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="usuarioNoAutorizado" NAME="forward0"
+  PATH="/usuarioNoAutorizado.jsp" SHAPE="32,17,0,0" TARGET="page0"
+  TITLE="usuarioNoAutorizado" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="listado" NAME="forward1"
+  PATH="/administracionListado.do" SHAPE="32,129,0,0" TARGET="action87"
+  TITLE="listado" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="confirmacion" NAME="forward2"
+  PATH="/administracion/preguntaConfirmacion/confirmacion.jsp"
+  SHAPE="32,561,0,0" TARGET="page1" TITLE="confirmacion" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="createSession" NAME="forward3"
+  PATH="/createSession.do" SHAPE="32,5793,0,0" TARGET="action36"
+  TITLE="createSession" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="mensajeReporte" NAME="forward4"
+  PATH="/administracion/mensajes/mensajeReporte.jsp" SHAPE="32,5905,0,0"
+  TARGET="page2" TITLE="mensajeReporte" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="rptDespachoEntrega" NAME="forward5"
+  PATH="/reportes/despachosEntregas/vistaPreviaDespachoEntrega.jsp"
+  SHAPE="1648,3665,0,0" TARGET="page3" TITLE="rptDespachoEntrega"
+  TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="reporteDespachoXLS" NAME="forward6"
+  PATH="/reportes/despachosEntregas/rptDespachoEntregaXLS.jsp"
+  SHAPE="32,6017,0,0" TARGET="page4" TITLE="reporteDespachoXLS"
+  TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="logout" NAME="forward7" PATH="/logout.do"
+  SHAPE="32,6129,0,0" TARGET="action81" TITLE="logout" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="principal" NAME="forward8" PATH="/script.jsp"
+  SHAPE="32,6241,0,0" TARGET="page5" TITLE="principal" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="registro" NAME="forward9"
+  PATH="/servicioCliente/cotizarRecotizarReservar/registroPedido.jsp"
+  SHAPE="304,1297,0,0" TARGET="page6" TITLE="registro" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="menuPrincipal" NAME="forward10"
+  PATH="/menuPrincipal.do" SHAPE="2464,577,0,0" TARGET="action76"
+  TITLE="menuPrincipal" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="errorGlobal" NAME="forward11"
+  PATH="/administracion/mensajes/error.jsp" SHAPE="32,6353,0,0"
+  TARGET="page7" TITLE="errorGlobal" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="login" NAME="forward12" PATH="/login.jsp"
+  SHAPE="32,6465,0,0" TARGET="page8" TITLE="login" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="rptDespacho" NAME="forward13"
+  PATH="/reportes/despachosEntregas/vistaPreviaDespacho.jsp"
+  SHAPE="1648,3809,0,0" TARGET="page9" TITLE="rptDespacho"
+  TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="reporteEntregaXLS" NAME="forward14"
+  PATH="/reportes/entregas/rptEntregaXLS.jsp" SHAPE="32,6577,0,0"
+  TARGET="page10" TITLE="reporteEntregaXLS" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#catalogoCanastos" NAME="action0"
+  PATH="/catalogoCanastos" SHAPE="32,6689,0,0"
+  TITLE="catalogoCanastosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="catalogoCanastos" NAME="forward0"
+   PATH="catalogoCanastosDef" TARGET="page11" TITLE="catalogoCanastos"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="detalleCanasto" NAME="forward1"
+   PATH="/administracion/catalogoCanastos/detalleCanasto.jsp"
+   TARGET="page12" TITLE="detalleCanasto" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#listaConfirmarReservacion" NAME="action1"
+  PATH="/listaConfirmarReservacion" SHAPE="1120,561,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/servicioCliente/confirmarReservacion/listaConfirmarReserva.jsp"
+   TARGET="page13" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#reservar" NAME="action2" PATH="/reservar"
+  SHAPE="1120,1489,0,0" TITLE="cotizarRecotizarReservarForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listado" NAME="forward0"
+   PATH="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp"
+   TARGET="page14" TITLE="listado" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/servicioCliente/cotizarReservar.jsp" TARGET="page15"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#reporteVentas" NAME="action3" PATH="/reporteVentas"
+  SHAPE="32,3953,0,0" TITLE="reporteGeneralForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="reporteVentasExcel" NAME="forward0"
+   PATH="/reportes/ventas/reporteVentasExcel.jsp" TARGET="page16"
+   TITLE="reporteVentasExcel" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteVentasPDF" NAME="forward1"
+   PATH="/reportes/ventas/reporteVentasPDF.jsp" TARGET="page17"
+   TITLE="reporteVentasPDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward2"
+   PATH="/reportes/reporteGeneral.jsp" TARGET="page18" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#entregaPedido" NAME="action4" PATH="/entregaPedido"
+  SHAPE="2192,3665,0,0" TITLE="despachosEntregasForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/servicioCliente/entregaPedido.jsp" TARGET="page19"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarProduccion" NAME="action5"
+  PATH="/actualizarProduccion" SHAPE="848,3505,0,0"
+  TITLE="controlProduccionForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="actualizacion" NAME="forward0"
+   PATH="/servicioCliente/ActualizacionProduccion.jsp" TARGET="page20"
+   TITLE="actualizacion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteProduccionPDF" NAME="forward1"
+   PATH="/reportes/actualizacionProduccion/reporteActualizacionProduccionPDF.jsp"
+   TARGET="page21" TITLE="reporteProduccionPDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteProduccionXLS" NAME="forward2"
+   PATH="/reportes/actualizacionProduccion/reporteActualizacionProduccionExcel.jsp"
+   TARGET="page22" TITLE="reporteProduccionXLS" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarDespacho" NAME="action6"
+  PATH="/actualizarDespacho" SHAPE="32,1281,0,0"
+  TITLE="controlProduccionForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="actualizacionDespacho" NAME="forward0"
+   PATH="/servicioCliente/actualizacionDespacho.jsp" TARGET="page23"
+   TITLE="actualizacionDespacho" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="detallePedido" NAME="forward1"
+   PATH="/detalleEstadoPedido.do" TARGET="action70"
+   TITLE="detallePedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="rptDespachoArticulo" NAME="forward2"
+   PATH="/reportes/vistaArticulo/reporteVistaArticulo.jsp"
+   TARGET="page24" TITLE="rptDespachoArticulo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="xlsReporteTotales" NAME="forward3"
+   PATH="/reportes/vistaArticulo/rptArticulosSinDespachoPendiente.jsp"
+   TARGET="page25" TITLE="xlsReporteTotales" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#detalleCanasta" NAME="action7"
+  PATH="/detalleCanasta" SHAPE="32,1489,0,0"
+  TITLE="cotizarRecotizarReservarForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="cotizacion" NAME="forward0"
+   PATH="/servicioCliente/cotizarReservar.jsp" TARGET="page15"
+   TITLE="cotizacion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="detalleCanasta" NAME="forward1"
+   PATH="/servicioCliente/cotizarRecotizarReservar/detalleCanasta.jsp"
+   TARGET="page26" TITLE="detalleCanasta" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#planogramaPorLocal" NAME="action8"
+  PATH="/planogramaPorLocal" SHAPE="32,6945,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/common/redirectSystem.jsp" TARGET="page27" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#reporteArticulosReservados" NAME="action9"
+  PATH="/reporteArticulosReservados" SHAPE="304,2593,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/reportes/articulosReservados/reporteArticulosReservados.jsp"
+   TARGET="page28" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteArticulosReservadosXLS"
+   NAME="forward1"
+   PATH="/reportes/articulosReservados/reporteArticulosReservadosExcel.jsp"
+   TARGET="page29" TITLE="reporteArticulosReservadosXLS" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevaClasificacionUsuario" NAME="action10"
+  PATH="/nuevaClasificacionUsuario" SHAPE="1648,1985,0,0"
+  TITLE="clasificacionUsuarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="nueva" NAME="forward0"
+   PATH="/administracion/clasificacionUsuario/nuevaClasificacionUsuario.jsp"
+   TARGET="page30" TITLE="nueva" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="clasificacionUsuario" NAME="forward1"
+   PATH="/clasificacionUsuario.do" TARGET="action64"
+   TITLE="clasificacionUsuario" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#administracionAutorizadores" NAME="action11"
+  PATH="/administracionAutorizadores" SHAPE="2192,2577,0,0"
+  TITLE="administracionAutorizadoresForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="nuevoAdminAutorizadores" NAME="forward0"
+   PATH="/administracion/nuevoAdminAutorizadores.jsp" TARGET="page31"
+   TITLE="nuevoAdminAutorizadores" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listadoAdminAutorizadores" NAME="forward1"
+   PATH="/administracion/administracionAutorizadores.jsp"
+   TARGET="page32" TITLE="listadoAdminAutorizadores" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarAdminAutorizadores" NAME="forward2"
+   PATH="/administracion/actualizarAdminAutorizadores.jsp"
+   TARGET="page33" TITLE="actualizarAdminAutorizadores" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#registrarOrdenCompra" NAME="action12"
+  PATH="/registrarOrdenCompra" SHAPE="1376,1297,0,0"
+  TITLE="registrarOrdenCompraForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="detallePedido" NAME="forward0"
+   PATH="/detalleEstadoPedido.do" TARGET="action70"
+   TITLE="detallePedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="registrarOrdenCompra" NAME="forward1"
+   PATH="/servicioCliente/registrarOrdenCompra/registroOrdenCompra.jsp"
+   TARGET="page34" TITLE="registrarOrdenCompra" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="ordenCompra" NAME="forward2"
+   PATH="registrarOrdenCompraDef" TARGET="page35" TITLE="ordenCompra"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#descuentos" NAME="action13" PATH="/descuentos"
+  SHAPE="32,7649,0,0" TITLE="descuentosForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#nuevaFrecuenciaArticulos" NAME="action14"
+  PATH="/nuevaFrecuenciaArticulos" SHAPE="32,3809,0,0"
+  TITLE="frecuenciaArticulosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="frecuenciaArticulos" NAME="forward0"
+   PATH="/frecuenciaArticulos.do" TARGET="action44"
+   TITLE="frecuenciaArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaFrecuenciaArticulos" NAME="forward1"
+   PATH="/administracion/nuevaFrecuenciaArticulos.jsp" TARGET="page36"
+   TITLE="nuevaFrecuenciaArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#filtrosDespachoReservaciones" NAME="action15"
+  PATH="/filtrosDespachoReservaciones" SHAPE="32,4577,0,0"
+  TITLE="reporteDespachoReservacionForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="reporteVentasExcel" NAME="forward0"
+   PATH="/reportes/produccionPedidos/reporteDespachosExcel.jsp"
+   TARGET="page37" TITLE="reporteVentasExcel" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteVentasPDF" NAME="forward1"
+   PATH="/reportes/produccionPedidos/reporteDespachosPDF.jsp"
+   TARGET="page38" TITLE="reporteVentasPDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward2"
+   PATH="/servicioCliente/filtrosDespachoReservacion.jsp"
+   TARGET="page39" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#confirmacion" NAME="action16" PATH="/confirmacion"
+  SHAPE="576,129,0,0" TITLE="confirmacionForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="recotizarReservar" NAME="forward0"
+   PATH="/recotizarReservar.do" TARGET="action49"
+   TITLE="recotizarReservar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="entregaPedido" NAME="forward1"
+   PATH="/entregaPedido.do" TARGET="action4" TITLE="entregaPedido"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarProduccion" NAME="forward2"
+   PATH="/actualizarProduccion.do" TARGET="action5"
+   TITLE="actualizarProduccion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="registrar" NAME="forward3"
+   PATH="/crearCotizacion.do" TARGET="action69" TITLE="registrar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="cambiarClave" NAME="forward4"
+   PATH="/cambiarClave.do" TARGET="action48" TITLE="cambiarClave"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="autorizacion" NAME="forward5"
+   PATH="/autorizaciones.do" TARGET="action59" TITLE="autorizacion"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="anulacionPedido" NAME="forward6"
+   PATH="/anulacionPedido.do" TARGET="action51" TITLE="anulacionPedido"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="estadoPedido" NAME="forward7"
+   PATH="/estadoPedido.do" TARGET="action80" TITLE="estadoPedido"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="despachoPedido" NAME="forward8"
+   PATH="/despachoPedido.do" TARGET="action19" TITLE="despachoPedido"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="controlProduccion" NAME="forward9"
+   PATH="/controlProduccion.do" TARGET="action20"
+   TITLE="controlProduccion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="cotizarRecotizarReservar" NAME="forward10"
+   PATH="/servicioCliente/cotizarReservar.jsp" TARGET="page15"
+   TITLE="cotizarRecotizarReservar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#modificarFechasEntrega" NAME="action17"
+  PATH="/modificarFechasEntrega" SHAPE="2192,2369,0,0"
+  TITLE="modificarFechasEntregaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="busqueda" NAME="forward0"
+   PATH="/listaModificarFechasEntrega.do" TARGET="action33"
+   TITLE="busqueda" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="principal" NAME="forward1"
+   PATH="/servicioCliente/modificarFechasEntrega/modificarFechasEntrega.jsp"
+   TARGET="page40" TITLE="principal" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevoTipoDescuento" NAME="action18"
+  PATH="/nuevoTipoDescuento" SHAPE="576,3313,0,0"
+  TITLE="tipoDescuentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/nuevoTipoDescuento.jsp" TARGET="page41"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#despachoPedido" NAME="action19"
+  PATH="/despachoPedido" SHAPE="2192,3809,0,0"
+  TITLE="despachosEntregasForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/servicioCliente/despachoPedido.jsp" TARGET="page42"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#controlProduccion" NAME="action20"
+  PATH="/controlProduccion" SHAPE="848,1297,0,0"
+  TITLE="controlProduccionForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="detallePedido" NAME="forward0"
+   PATH="/detalleEstadoPedido.do" TARGET="action70"
+   TITLE="detallePedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="controlProduccion" NAME="forward1"
+   PATH="/servicioCliente/controlProduccion.jsp" TARGET="page43"
+   TITLE="controlProduccion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="rptVistaArticulo" NAME="forward2"
+   PATH="/reportes/vistaArticulo/reporteVistaArticulo.jsp"
+   TARGET="page24" TITLE="rptVistaArticulo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarParametro" NAME="action21"
+  PATH="/actualizarParametro" SHAPE="304,3505,0,0"
+  TITLE="parametrosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/actualizarParametro.jsp" TARGET="page44"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarDescuento" NAME="action22"
+  PATH="/actualizarDescuento" SHAPE="304,3681,0,0"
+  TITLE="descuentosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/actualizarDescuento.jsp" TARGET="page45"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#login" NAME="action23" PATH="/login"
+  SHAPE="448,6465,0,0" TITLE="loginForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#actualizarAdminAutorizadores" NAME="action24"
+  PATH="/actualizarAdminAutorizadores" SHAPE="1648,2577,0,0"
+  TITLE="administracionAutorizadoresForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="actualizarAdminAut" NAME="forward0"
+   PATH="/administracion/actualizarAdminAutorizadores.jsp"
+   TARGET="page33" TITLE="actualizarAdminAut" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="guardarActualizacionAdminAut" NAME="forward1"
+   PATH="/administracionAutorizadores.do" TARGET="action11"
+   TITLE="guardarActualizacionAdminAut" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarMotivoDescuento" NAME="action25"
+  PATH="/actualizarMotivoDescuento" SHAPE="304,3825,0,0"
+  TITLE="motivoDescuentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/actualizarMotivoDescuento.jsp" TARGET="page46"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevaAutorizacion" NAME="action26"
+  PATH="/nuevaAutorizacion" SHAPE="576,1489,0,0"
+  TITLE="autorizacionesForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/nuevaAutorizacion.jsp" TARGET="page47"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarArticulo" NAME="action27"
+  PATH="/actualizarArticulo" SHAPE="1648,129,0,0"
+  TITLE="mantenimientoArticulosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="actualizarArticulo" NAME="forward0"
+   PATH="/administracion/articulos/actualizarArticulo.jsp"
+   TARGET="page48" TITLE="actualizarArticulo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listadoArticulos" NAME="forward1"
+   PATH="/administracion/articulos/listadoArticulos.jsp" TARGET="page49"
+   TITLE="listadoArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarTipoDescuento" NAME="action28"
+  PATH="/actualizarTipoDescuento" SHAPE="304,4913,0,0"
+  TITLE="tipoDescuentoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/actualizarTipoDescuento.jsp" TARGET="page50"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#condicionReserva" NAME="action29"
+  PATH="/condicionReserva" SHAPE="32,2193,0,0" TITLE="kardexForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="kardex" NAME="forward0" PATH="/kardex.do"
+   TARGET="action42" TITLE="kardex" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="condiciones" NAME="forward1"
+   PATH="/calendarizacion/condicionesReservas.jsp" TARGET="page51"
+   TITLE="condiciones" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#detalleEstadoPedidoEspecial" NAME="action30"
+  PATH="/detalleEstadoPedidoEspecial" SHAPE="2192,561,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="rptEstadoPedidoEspecialXLS" NAME="forward0"
+   PATH="/pedidosEspeciales/detalleEstadoPedidoEspecial/rptEstadoPedidoEspecialXLS.jsp"
+   TARGET="page52" TITLE="rptEstadoPedidoEspecialXLS" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="resumenDetalle" NAME="forward1"
+   PATH="detalleEstadoPedidoEspecialDef" TARGET="page53"
+   TITLE="resumenDetalle" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="detallePedido" NAME="forward2"
+   PATH="detalleEstadoPedidoEspecialDef" TARGET="page53"
+   TITLE="detallePedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="anulacionPedido" NAME="forward3"
+   PATH="/servicioCliente/anulacionPedido.jsp" TARGET="page54"
+   TITLE="anulacionPedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="estadoPedido" NAME="forward4"
+   PATH="/servicioCliente/estadoPedido/estadoPedido.jsp" TARGET="page55"
+   TITLE="estadoPedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listaControlProduccionPedEsp" NAME="forward5"
+   PATH="controlProduccionPedEspDef" TARGET="page56"
+   TITLE="listaControlProduccionPedEsp" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listaPedidosEspeciales" NAME="forward6"
+   PATH="confirmarPedidoEspecialDef" TARGET="page57"
+   TITLE="listaPedidosEspeciales" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reportePDF" NAME="forward7"
+   PATH="/pedidosEspeciales/detalleEstadoPedidoEspecial/rptPedidoPDF.jsp"
+   TARGET="page58" TITLE="reportePDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevoComprador" NAME="action31"
+  PATH="/nuevoComprador" SHAPE="1920,3969,0,0" TITLE="compradorForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="guardarComprador" NAME="forward0"
+   PATH="/comprador.do" TARGET="action78" TITLE="guardarComprador"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#listaModificarReserva" NAME="action32"
+  PATH="/listaModificarReserva" SHAPE="1120,1633,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="listarReservacionesDef" TARGET="page59" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="modificarReservacion" NAME="forward1"
+   PATH="/modificarReserva.do" TARGET="action39"
+   TITLE="modificarReservacion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#listaModificarFechasEntrega" NAME="action33"
+  PATH="/listaModificarFechasEntrega" SHAPE="32,2369,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/servicioCliente/busqueda/listaPedidos.jsp" TARGET="page60"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#registrarAbonoPedido" NAME="action34"
+  PATH="/registrarAbonoPedido" SHAPE="1120,2577,0,0"
+  TITLE="registrarAbonoPedidoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listarPedidosAbonos" NAME="forward0"
+   PATH="/servicioCliente/registroAbonosPedido/listaPedidosAbonos.jsp"
+   TARGET="page61" TITLE="listarPedidosAbonos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="registrarAbonos" NAME="forward1"
+   PATH="/servicioCliente/registroAbonosPedido/registroAbonoPedido.jsp"
+   TARGET="page62" TITLE="registrarAbonos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#calendarizacion" NAME="action35"
+  PATH="/calendarizacion" SHAPE="2192,2193,0,0"
+  TITLE="calendarizacionForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="calendarizacion" NAME="forward0"
+   PATH="/calendarizacion/calendarizacion.jsp" TARGET="page63"
+   TITLE="calendarizacion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#createSession" NAME="action36" PATH="/createSession"
+  SHAPE="240,5809,0,0" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#mantenimientoArticulos" NAME="action37"
+  PATH="/mantenimientoArticulos" SHAPE="2192,3137,0,0"
+  TITLE="mantenimientoArticulosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="mantenimientoArticulos" NAME="forward0"
+   PATH="/administracion/articulos/listadoArticulos.jsp" TARGET="page49"
+   TITLE="mantenimientoArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarArticulo" NAME="forward1"
+   PATH="/administracion/articulos/actualizarArticulo.jsp"
+   TARGET="page48" TITLE="actualizarArticulo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#obtenerImagen" NAME="action38" PATH="/obtenerImagen"
+  SHAPE="240,7665,0,0" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#modificarReserva" NAME="action39"
+  PATH="/modificarReserva" SHAPE="1376,1505,0,0"
+  TITLE="cotizarRecotizarReservarForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listado" NAME="forward0"
+   PATH="listarReservacionesDef" TARGET="page59" TITLE="listado"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="modificarReserva" NAME="forward1"
+   PATH="/servicioCliente/cotizarReservar.jsp" TARGET="page15"
+   TITLE="modificarReserva" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#administracionMotivoMovimiento" NAME="action40"
+  PATH="/administracionMotivoMovimiento" SHAPE="304,5089,0,0"
+  TITLE="administracionMotivoMovimientoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="motivoMovimiento" NAME="forward0"
+   PATH="/calendarizacion/administracionMotivoMovimiento.jsp"
+   TARGET="page64" TITLE="motivoMovimiento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#crearPedidoEspecial" NAME="action41"
+  PATH="/crearPedidoEspecial" SHAPE="32,2929,0,0"
+  TITLE="crearPedidoEspecialForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listaCotizadosRecotizados" NAME="forward0"
+   PATH="/confirmarPedidoEspecial.do" TARGET="action66"
+   TITLE="listaCotizadosRecotizados" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="crearPedidoEspecialDef" TARGET="page65" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="resumen" NAME="forward2"
+   PATH="resumenPedidoEspecialDef" TARGET="page66" TITLE="resumen"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reportePDF" NAME="forward3"
+   PATH="/pedidosEspeciales/pedido/rptPedidoPDF.jsp" TARGET="page67"
+   TITLE="reportePDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#kardex" NAME="action42" PATH="/kardex"
+  SHAPE="1120,2193,0,0" TITLE="kardexForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="kardex" NAME="forward0"
+   PATH="/calendarizacion/ingresoKardex.jsp" TARGET="page68"
+   TITLE="kardex" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"
+   TARGET="page69" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarEspecial" NAME="action43"
+  PATH="/actualizarEspecial" SHAPE="304,5201,0,0" TITLE="especialForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/actualizarEspecial.jsp" TARGET="page70"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#frecuenciaArticulos" NAME="action44"
+  PATH="/frecuenciaArticulos" SHAPE="576,1809,0,0"
+  TITLE="frecuenciaArticulosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="frecuenciaArticulos" NAME="forward0"
+   PATH="/administracion/frecuenciaArticulos.jsp" TARGET="page71"
+   TITLE="frecuenciaArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaFrecuenciaArticulos" NAME="forward1"
+   PATH="/administracion/nuevaFrecuenciaArticulos.jsp" TARGET="page36"
+   TITLE="nuevaFrecuenciaArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarFrecuenciaArticulos"
+   NAME="forward2"
+   PATH="/administracion/actualizarFrecuenciaArticulos.jsp"
+   TARGET="page72" TITLE="actualizarFrecuenciaArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#tipoDescuentos" NAME="action45"
+  PATH="/tipoDescuentos" SHAPE="576,3665,0,0" TITLE="tipoDescuentoForm"
+  TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#confirmacionReservacion" NAME="action46"
+  PATH="/confirmacionReservacion" SHAPE="848,577,0,0"
+  TITLE="cotizarRecotizarReservarForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listaReservasPorConfirmar" NAME="forward0"
+   PATH="/listaConfirmarReservacion.do" TARGET="action1"
+   TITLE="listaReservasPorConfirmar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/servicioCliente/confirmarReservacion/confirmarReservacion.jsp"
+   TARGET="page73" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarClasificacionUsuario" NAME="action47"
+  PATH="/actualizarClasificacionUsuario" SHAPE="1648,2193,0,0"
+  TITLE="clasificacionUsuarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="clasificacionUsuario" NAME="forward0"
+   PATH="/clasificacionUsuario.do" TARGET="action64"
+   TITLE="clasificacionUsuario" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizar" NAME="forward1"
+   PATH="/administracion/clasificacionUsuario/actualizarClasificacionUsuario.jsp"
+   TARGET="page74" TITLE="actualizar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#cambiarClave" NAME="action48" PATH="/cambiarClave"
+  SHAPE="848,2209,0,0" TITLE="actualizarPasswordForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/cambiarClave.jsp" TARGET="page75"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#recotizarReservar" NAME="action49"
+  PATH="/recotizarReservar" SHAPE="1120,129,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp"
+   TARGET="page14" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevaFormaPago" NAME="action50"
+  PATH="/nuevaFormaPago" SHAPE="1920,3329,0,0" TITLE="formaPagoForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="guardarFormaPago" NAME="forward0"
+   PATH="/formaPago.do" TARGET="action88" TITLE="guardarFormaPago"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#anulacionPedido" NAME="action51"
+  PATH="/anulacionPedido" SHAPE="1648,1281,0,0" TITLE="anulacionesForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/servicioCliente/anulacionPedido.jsp" TARGET="page54"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#lineaProduccion" NAME="action52"
+  PATH="/lineaProduccion" SHAPE="304,577,0,0"
+  TITLE="lineaProduccionForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="detalleRegistro" NAME="forward0"
+   PATH="/calendarioBodega/lineaProduccion/detalleLineaProduccion.jsp"
+   TARGET="page76" TITLE="detalleRegistro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/calendarioBodega/lineaProduccion/lineaProduccionPrincipal.jsp"
+   TARGET="page77" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#parametros" NAME="action53" PATH="/parametros"
+  SHAPE="448,7649,0,0" TITLE="parametrosForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#actualizarFrecuenciaArticulos" NAME="action54"
+  PATH="/actualizarFrecuenciaArticulos" SHAPE="304,1825,0,0"
+  TITLE="frecuenciaArticulosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="frecuenciaArticulos" NAME="forward0"
+   PATH="/frecuenciaArticulos.do" TARGET="action44"
+   TITLE="frecuenciaArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarFrecuenciaArticulos"
+   NAME="forward1"
+   PATH="/administracion/actualizarFrecuenciaArticulos.jsp"
+   TARGET="page72" TITLE="actualizarFrecuenciaArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#estadoDetalleCanasto" NAME="action55"
+  PATH="/estadoDetalleCanasto" SHAPE="304,1649,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="estadoDetallePedido" NAME="forward0"
+   PATH="/detalleEstadoPedido.do" TARGET="action70"
+   TITLE="estadoDetallePedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegarDetalleEntregasKardex"
+   NAME="forward1" PATH="/calendarizacion/detallePedido.jsp"
+   TARGET="page78" TITLE="desplegarDetalleEntregasKardex" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="estadoDetalleCanasto" NAME="forward2"
+   PATH="/servicioCliente/estadoPedido/estadoDetalleCanasto.jsp"
+   TARGET="page79" TITLE="estadoDetalleCanasto" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevoEspecial" NAME="action56" PATH="/nuevoEspecial"
+  SHAPE="576,2753,0,0" TITLE="especialForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/nuevoEspecial.jsp" TARGET="page80"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#adminPlantillas" NAME="action57"
+  PATH="/adminPlantillas" SHAPE="32,7169,0,0"
+  TITLE="calendarizacionForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="administradorPlantillasDef" TARGET="page81" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#catalogoArticulos" NAME="action58"
+  PATH="/catalogoArticulos" SHAPE="32,7281,0,0"
+  TITLE="buscarArticuloForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="catalogo" NAME="forward0"
+   PATH="/servicioCliente/estructuraComercial/catalogoArticulos.jsp"
+   TARGET="page82" TITLE="catalogo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listaArticulos" NAME="forward1"
+   PATH="/servicioCliente/estructuraComercial/listaArticulos.jsp"
+   TARGET="page83" TITLE="listaArticulos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#autorizaciones" NAME="action59"
+  PATH="/autorizaciones" SHAPE="2192,129,0,0" TITLE="autorizacionesForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/administracionListado.jsp" TARGET="page84"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#bodegas" NAME="action60" PATH="/bodegas"
+  SHAPE="576,2929,0,0" TITLE="bodegasForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listarBodegas" NAME="forward0"
+   PATH="/administracion/listaBodegas.jsp" TARGET="page85"
+   TITLE="listarBodegas" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaBodega" NAME="forward1"
+   PATH="/administracion/nuevaBodega.jsp" TARGET="page86"
+   TITLE="nuevaBodega" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarBodega" NAME="forward2"
+   PATH="/administracion/actualizarBodega.jsp" TARGET="page87"
+   TITLE="actualizarBodega" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#buscarArticulo" NAME="action61"
+  PATH="/buscarArticulo" SHAPE="464,7425,0,0" TITLE="buscarArticuloForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listado" NAME="forward0"
+   PATH="/servicioCliente/estructuraComercial/listaArticulos.jsp"
+   TARGET="page83" TITLE="listado" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#calendarioBodega" NAME="action62"
+  PATH="/calendarioBodega" SHAPE="32,7537,0,0"
+  TITLE="calendarioBodegaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="calendarioBodegaDef" TARGET="page88" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#motivoDescuentos" NAME="action63"
+  PATH="/motivoDescuentos" SHAPE="656,7665,0,0"
+  TITLE="motivoDescuentoForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#clasificacionUsuario" NAME="action64"
+  PATH="/clasificacionUsuario" SHAPE="2192,1985,0,0"
+  TITLE="clasificacionUsuarioForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="nuevaConfiguracionClasificacion"
+   NAME="forward0"
+   PATH="/administracion/clasificacionUsuario/nuevaClasificacionUsuario.jsp"
+   TARGET="page30" TITLE="nuevaConfiguracionClasificacion"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="clasificacionUsuario" NAME="forward1"
+   PATH="/administracion/clasificacionUsuario/clasificacionUsuario.jsp"
+   TARGET="page89" TITLE="clasificacionUsuario" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarConfiguracionClasificacion"
+   NAME="forward2"
+   PATH="/administracion/clasificacionUsuario/actualizarClasificacionUsuario.jsp"
+   TARGET="page74" TITLE="actualizarConfiguracionClasificacion"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevaTemporada" NAME="action65"
+  PATH="/nuevaTemporada" SHAPE="576,3137,0,0" TITLE="temporadasForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/nuevaTemporada.jsp" TARGET="page90"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#confirmarPedidoEspecial" NAME="action66"
+  PATH="/confirmarPedidoEspecial" SHAPE="2192,2929,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="confirmarPedidoEspecialDef" TARGET="page57" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#entregaLocalCalendario" NAME="action67"
+  PATH="/entregaLocalCalendario" SHAPE="1120,1809,0,0"
+  TITLE="cotizarRecotizarReservarForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="cotizar" NAME="forward0"
+   PATH="/servicioCliente/cotizarReservar.jsp" TARGET="page15"
+   TITLE="cotizar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/servicioCliente/cotizarRecotizarReservar/entregas/entregaArticuloLocal.jsp"
+   TARGET="page91" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevoAdminAutorizadores" NAME="action68"
+  PATH="/nuevoAdminAutorizadores" SHAPE="1648,2753,0,0"
+  TITLE="administracionAutorizadoresForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="guardarAdminAutorizadores" NAME="forward0"
+   PATH="/administracionAutorizadores.do" TARGET="action11"
+   TITLE="guardarAdminAutorizadores" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevoAdminAutorizadores" NAME="forward1"
+   PATH="/administracion/nuevoAdminAutorizadores.jsp" TARGET="page31"
+   TITLE="nuevoAdminAutorizadores" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#crearCotizacion" NAME="action69"
+  PATH="/crearCotizacion" SHAPE="848,145,0,0"
+  TITLE="cotizarRecotizarReservarForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="reporteCotizarXLS" NAME="forward0"
+   PATH="/reportes/cotizacion_reservacion/rptPedidoXSL.jsp"
+   TARGET="page92" TITLE="reporteCotizarXLS" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listaModificarReservacion" NAME="forward1"
+   PATH="/listaModificarReserva.do" TARGET="action32"
+   TITLE="listaModificarReservacion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listaCotizadosRecotizados" NAME="forward2"
+   PATH="/recotizarReservar.do" TARGET="action49"
+   TITLE="listaCotizadosRecotizados" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward3"
+   PATH="/servicioCliente/cotizarReservar.jsp" TARGET="page15"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="entregaCalendario" NAME="forward4"
+   PATH="/entregaLocalCalendario.do" TARGET="action67"
+   TITLE="entregaCalendario" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reportePDF" NAME="forward5"
+   PATH="/reportes/cotizacion_reservacion/rptPedidoPDF.jsp"
+   TARGET="page93" TITLE="reportePDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegarLinkConsolidado" NAME="forward6"
+   PATH="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"
+   TARGET="page69" TITLE="desplegarLinkConsolidado" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegarConsolidarPedido" NAME="forward7"
+   PATH="/servicioCliente/consolidarPedido/consolidarPedido.jsp"
+   TARGET="page110" TITLE="desplegarConsolidarPedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteResEntPDF" NAME="forward8"
+   PATH="/reportes/cotizacion_reservacion/rptResEntPDF.jsp"
+   TARGET="page114" TITLE="reporteResEntPDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#detalleEstadoPedido" NAME="action70"
+  PATH="/detalleEstadoPedido" SHAPE="1648,561,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="ordenesCompra" NAME="forward0"
+   PATH="registrarOrdenCompraDef" TARGET="page35" TITLE="ordenesCompra"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteEstadoPedidoPDF" NAME="forward1"
+   PATH="/reportes/estadoDetallePedido/rptEstadoDetallePedidoPDF.jsp"
+   TARGET="page94" TITLE="reporteEstadoPedidoPDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="registroPago" NAME="forward2"
+   PATH="/servicioCliente/registroAbonosPedido/listaPedidosAbonos.jsp"
+   TARGET="page61" TITLE="registroPago" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarProduccion" NAME="forward3"
+   PATH="/servicioCliente/ActualizacionProduccion.jsp" TARGET="page20"
+   TITLE="actualizarProduccion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteEntregas" NAME="forward4"
+   PATH="/reportes/entregas/reporteEntregas.jsp" TARGET="page95"
+   TITLE="reporteEntregas" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward5"
+   PATH="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"
+   TARGET="page69" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="estadoPedido" NAME="forward6"
+   PATH="/servicioCliente/estadoPedido/estadoPedido.jsp" TARGET="page55"
+   TITLE="estadoPedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="anulacion" NAME="forward7"
+   PATH="/servicioCliente/anulacionPedido.jsp" TARGET="page54"
+   TITLE="anulacion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="entrega" NAME="forward8"
+   PATH="/servicioCliente/entregaPedido.jsp" TARGET="page19"
+   TITLE="entrega" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listaConfirmarReserva" NAME="forward9"
+   PATH="/servicioCliente/confirmarReservacion/listaConfirmarReserva.jsp"
+   TARGET="page13" TITLE="listaConfirmarReserva" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listaPedidos" NAME="forward10"
+   PATH="/servicioCliente/busqueda/listaPedidos.jsp" TARGET="page60"
+   TITLE="listaPedidos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegarDetalle" NAME="forward11"
+   PATH="/calendarizacion/detallePedido.jsp" TARGET="page78"
+   TITLE="desplegarDetalle" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="despacho" NAME="forward12"
+   PATH="/servicioCliente/despachoPedido.jsp" TARGET="page42"
+   TITLE="despacho" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="listaCotizadosRecotizados" NAME="forward13"
+   PATH="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp"
+   TARGET="page14" TITLE="listaCotizadosRecotizados" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="controlProduccion" NAME="forward14"
+   PATH="/servicioCliente/controlProduccion.jsp" TARGET="page43"
+   TITLE="controlProduccion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteEstadoXLS" NAME="forward15"
+   PATH="/reportes/estadoDetallePedido/rptEstadoDetallePedidoXSL.jsp"
+   TARGET="page96" TITLE="reporteEstadoXLS" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteArticuloPedidos" NAME="forward16"
+   PATH="/calendarizacion/ingresoKardex.jsp" TARGET="page68"
+   TITLE="reporteArticuloPedidos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="modificarReserva" NAME="forward17"
+   PATH="listarReservacionesDef" TARGET="page59"
+   TITLE="modificarReserva" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="enviarDespacho" NAME="forward18"
+   PATH="/servicioCliente/actualizacionDespacho.jsp" TARGET="page23"
+   TITLE="enviarDespacho" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteVentas" NAME="forward19"
+   PATH="/reportes/reporteGeneral.jsp" TARGET="page18"
+   TITLE="reporteVentas" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="consolidarPedido" NAME="forward20"
+   PATH="/servicioCliente/consolidarPedido/consolidarPedido.jsp"
+   TARGET="page110" TITLE="consolidarPedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteDespachos" NAME="forward21"
+   PATH="/reportes/reporteGeneral.jsp" TARGET="page18"
+   TITLE="reporteDespachos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarFormaPago" NAME="action71"
+  PATH="/actualizarFormaPago" SHAPE="1648,3137,0,0"
+  TITLE="formaPagoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="actualizacionFormaPago" NAME="forward0"
+   PATH="/administracion/actualizarFormaPago.jsp" TARGET="page97"
+   TITLE="actualizacionFormaPago" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="guardarActualizacionFormaPago"
+   NAME="forward1" PATH="/formaPago.do" TARGET="action88"
+   TITLE="guardarActualizacionFormaPago" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevaBodega" NAME="action72" PATH="/nuevaBodega"
+  SHAPE="304,5457,0,0" TITLE="bodegasForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listarBodegas" NAME="forward0"
+   PATH="/bodegas.do" TARGET="action60" TITLE="listarBodegas"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#graficaPlanogramaLocal" NAME="action73"
+  PATH="/graficaPlanogramaLocal" SHAPE="32,7057,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/common/redirectSystem.jsp" TARGET="page27" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#temporadas" NAME="action74" PATH="/temporadas"
+  SHAPE="864,7649,0,0" TITLE="temporadasForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#reporteEntregas" NAME="action75"
+  PATH="/reporteEntregas" SHAPE="32,1985,0,0" TITLE="listadoPedidosForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="reporteEntregasXLS" NAME="forward0"
+   PATH="/reportes/entregas/reporteEntregasExcel.jsp" TARGET="page98"
+   TITLE="reporteEntregasXLS" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/reportes/entregas/reporteEntregas.jsp" TARGET="page95"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="detalles" NAME="forward2"
+   PATH="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"
+   TARGET="page69" TITLE="detalles" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#menuPrincipal" NAME="action76" PATH="/menuPrincipal"
+  SHAPE="2736,561,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="menu" NAME="forward0"
+   PATH="/administracion/menuPrincipal.jsp" TARGET="page99" TITLE="menu"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarBodega" NAME="action77"
+  PATH="/actualizarBodega" SHAPE="304,5633,0,0" TITLE="bodegasForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listarBodegas" NAME="forward0"
+   PATH="/bodegas.do" TARGET="action60" TITLE="listarBodegas"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#comprador" NAME="action78" PATH="/comprador"
+  SHAPE="2192,3489,0,0" TITLE="compradorForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listadoCompradores" NAME="forward0"
+   PATH="/administracion/comprador.jsp" TARGET="page100"
+   TITLE="listadoCompradores" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarComprador" NAME="forward1"
+   PATH="/administracion/actualizarComprador.jsp" TARGET="page101"
+   TITLE="actualizarComprador" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevoComprador" NAME="forward2"
+   PATH="/administracion/nuevoComprador.jsp" TARGET="page102"
+   TITLE="nuevoComprador" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#especiales" NAME="action79" PATH="/especiales"
+  SHAPE="1072,7665,0,0" TITLE="especialForm" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#estadoPedido" NAME="action80" PATH="/estadoPedido"
+  SHAPE="848,2001,0,0" TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="detallePedido" NAME="forward0"
+   PATH="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"
+   TARGET="page69" TITLE="detallePedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/servicioCliente/estadoPedido/estadoPedido.jsp" TARGET="page55"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteEstadoPedidoXLS" NAME="forward2"
+   PATH="/servicioCliente/estadoPedido/estadoPedidoExcel.jsp"
+   TARGET="page103" TITLE="reporteEstadoPedidoXLS" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#logout" NAME="action81" PATH="/logout"
+  SHAPE="240,6145,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="salir" NAME="forward0" PATH="/salir.jsp"
+   TARGET="page104" TITLE="salir" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#controlProduccionPedEsp" NAME="action82"
+  PATH="/controlProduccionPedEsp" SHAPE="1920,145,0,0"
+  TITLE="controlProduccionPedidoEspecialForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="detallePedido" NAME="forward0"
+   PATH="/detalleEstadoPedidoEspecial.do" TARGET="action30"
+   TITLE="detallePedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="controlProduccionPedEspDef" TARGET="page56" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="mismaAccion" NAME="forward2"
+   PATH="/controlProduccionPedEsp.do" TARGET="action82"
+   TITLE="mismaAccion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporte" NAME="forward3"
+   PATH="controlProduccionPedEspDef" TARGET="page56" TITLE="reporte"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#nuevoDescuento" NAME="action83"
+  PATH="/nuevoDescuento" SHAPE="576,3489,0,0" TITLE="descuentosForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/administracion/nuevoDescuento.jsp" TARGET="page105"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#recotizar" NAME="action84" PATH="/recotizar"
+  SHAPE="1120,1985,0,0" TITLE="cotizarRecotizarReservarForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listado" NAME="forward0"
+   PATH="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp"
+   TARGET="page14" TITLE="listado" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/servicioCliente/cotizarReservar.jsp" TARGET="page15"
+   TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#actualizarComprador" NAME="action85"
+  PATH="/actualizarComprador" SHAPE="1920,4145,0,0"
+  TITLE="compradorForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="actualizarComprador" NAME="forward0"
+   PATH="/administracion/actualizarComprador.jsp" TARGET="page101"
+   TITLE="actualizarComprador" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="guardarActualizacionComprador"
+   NAME="forward1" PATH="/comprador.do" TARGET="action78"
+   TITLE="guardarActualizacionComprador" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#reporteDespachos" NAME="action86"
+  PATH="/reporteDespachos" SHAPE="32,4129,0,0"
+  TITLE="reporteGeneralForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="reporteVentasExcel" NAME="forward0"
+   PATH="/reportes/ventas/reporteVentasExcel.jsp" TARGET="page16"
+   TITLE="reporteVentasExcel" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteVentasPDF" NAME="forward1"
+   PATH="/reportes/ventas/reporteVentasPDF.jsp" TARGET="page17"
+   TITLE="reporteVentasPDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward2"
+   PATH="/reportes/reporteGeneral.jsp" TARGET="page18" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#administracionListado" NAME="action87"
+  PATH="/administracionListado" SHAPE="304,145,0,0"
+  TITLE="administracionListadoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listado" NAME="forward0"
+   PATH="/administracion/administracionListado.jsp" TARGET="page84"
+   TITLE="listado" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevoEspecial" NAME="forward1"
+   PATH="/nuevoEspecial.do" TARGET="action56" TITLE="nuevoEspecial"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevoDescuento" NAME="forward2"
+   PATH="/nuevoDescuento.do" TARGET="action83" TITLE="nuevoDescuento"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaAutorizacion" NAME="forward3"
+   PATH="/nuevaAutorizacion.do" TARGET="action26"
+   TITLE="nuevaAutorizacion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="tipoDescuentos" NAME="forward4"
+   PATH="/tipoDescuentos.do" TARGET="action45" TITLE="tipoDescuentos"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevoTipoDescuento" NAME="forward5"
+   PATH="/nuevoTipoDescuento.do" TARGET="action18"
+   TITLE="nuevoTipoDescuento" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaTemporada" NAME="forward6"
+   PATH="/nuevaTemporada.do" TARGET="action65" TITLE="nuevaTemporada"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#formaPago" NAME="action88" PATH="/formaPago"
+  SHAPE="2192,3313,0,0" TITLE="formaPagoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listadoFormaPago" NAME="forward0"
+   PATH="/administracion/formaPago.jsp" TARGET="page106"
+   TITLE="listadoFormaPago" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaFormaPago" NAME="forward1"
+   PATH="/administracion/nuevaFormaPago.jsp" TARGET="page107"
+   TITLE="nuevaFormaPago" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="actualizarFormaPago" NAME="forward2"
+   PATH="/administracion/actualizarFormaPago.jsp" TARGET="page97"
+   TITLE="actualizarFormaPago" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#reporteGeneral" NAME="action89"
+  PATH="/reporteGeneral" SHAPE="32,4305,0,0" TITLE="reporteGeneralForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="despachospdf" NAME="forward0"
+   PATH="/reportes/produccionPedidos/reporteDespachosPDF.jsp"
+   TARGET="page38" TITLE="despachospdf" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporteVentas1XLS" NAME="forward1"
+   PATH="/reportes/ventas/reporteVentasExcelAux.jsp" TARGET="page108"
+   TITLE="reporteVentas1XLS" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward2"
+   PATH="/reportes/reporteGeneral.jsp" TARGET="page18" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="despachosxls" NAME="forward3"
+   PATH="/reportes/produccionPedidos/reporteDespachosExcel.jsp"
+   TARGET="page37" TITLE="despachosxls" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="ventasxls" NAME="forward4"
+   PATH="/reportes/ventas/reporteVentasExcel.jsp" TARGET="page16"
+   TITLE="ventasxls" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="ventaspdf" NAME="forward5"
+   PATH="/reportes/ventas/reporteVentasPDF.jsp" TARGET="page17"
+   TITLE="ventaspdf" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0" PATH="/usuarioNoAutorizado.jsp"
+  SHAPE="240,34,0,0" SUBTYPE="jsp" TITLE="usuarioNoAutorizado.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1"
+  PATH="/administracion/preguntaConfirmacion/confirmacion.jsp"
+  SHAPE="304,578,0,0" SUBTYPE="jsp" TITLE="confirmacion.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/confirmacion.do"
+   SUBTYPE="confirmed" TARGET="action16" TITLE="/confirmacion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page2"
+  PATH="/administracion/mensajes/mensajeReporte.jsp"
+  SHAPE="240,5922,0,0" SUBTYPE="jsp" TITLE="mensajeReporte.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page3"
+  PATH="/reportes/despachosEntregas/vistaPreviaDespachoEntrega.jsp"
+  SHAPE="1920,3682,0,0" SUBTYPE="jsp"
+  TITLE="vistaPreviaDespachoEntrega.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/entregaPedido.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/entregaPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page4"
+  PATH="/reportes/despachosEntregas/rptDespachoEntregaXLS.jsp"
+  SHAPE="240,6034,0,0" SUBTYPE="jsp" TITLE="rptDespachoEntregaXLS.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page5" PATH="/script.jsp" SHAPE="240,6258,0,0"
+  SUBTYPE="jsp" TITLE="script.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page6"
+  PATH="/servicioCliente/cotizarRecotizarReservar/registroPedido.jsp"
+  SHAPE="576,562,0,0" SUBTYPE="jsp" TITLE="registroPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/crearCotizacion.do"
+   SUBTYPE="confirmed" TARGET="action69" TITLE="/crearCotizacion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page7" PATH="/administracion/mensajes/error.jsp"
+  SHAPE="240,6370,0,0" SUBTYPE="jsp" TITLE="error.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page8" PATH="/login.jsp" SHAPE="240,6482,0,0"
+  SUBTYPE="jsp" TITLE="login.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/login.do" SUBTYPE="confirmed"
+   TARGET="action23" TITLE="/login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page9"
+  PATH="/reportes/despachosEntregas/vistaPreviaDespacho.jsp"
+  SHAPE="1920,3826,0,0" SUBTYPE="jsp" TITLE="vistaPreviaDespacho.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/despachoPedido.do"
+   SUBTYPE="confirmed" TARGET="action19" TITLE="/despachoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page10" PATH="/reportes/entregas/rptEntregaXLS.jsp"
+  SHAPE="240,6594,0,0" SUBTYPE="jsp" TITLE="rptEntregaXLS.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page11" PATH="catalogoCanastosDef"
+  SHAPE="256,6706,0,0" SUBTYPE="tile" TITLE="catalogoCanastosDef"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page12"
+  PATH="/administracion/catalogoCanastos/detalleCanasto.jsp"
+  SHAPE="256,6850,0,0" SUBTYPE="jsp" TITLE="detalleCanasto.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/catalogoCanastos.do"
+   SUBTYPE="confirmed" TARGET="action0" TITLE="/catalogoCanastos.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page13"
+  PATH="/servicioCliente/confirmarReservacion/listaConfirmarReserva.jsp"
+  SHAPE="1376,578,0,0" SUBTYPE="jsp" TITLE="listaConfirmarReserva.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/confirmacionReservacion.do"
+   SUBTYPE="confirmed" TARGET="action46"
+   TITLE="/confirmacionReservacion.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/listaConfirmarReservacion.do"
+   SUBTYPE="confirmed" TARGET="action1"
+   TITLE="/listaConfirmarReservacion.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link3" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page14"
+  PATH="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp"
+  SHAPE="1376,146,0,0" SUBTYPE="jsp"
+  TITLE="listaCotizadosRecotizados.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/reservar.do"
+   SUBTYPE="confirmed" TARGET="action2" TITLE="/reservar.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/recotizarReservar.do"
+   SUBTYPE="confirmed" TARGET="action49" TITLE="/recotizarReservar.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link3" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link4" PATH="/recotizar.do"
+   SUBTYPE="confirmed" TARGET="action84" TITLE="/recotizar.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page15" PATH="/servicioCliente/cotizarReservar.jsp"
+  SHAPE="1648,1490,0,0" SUBTYPE="jsp" TITLE="cotizarReservar.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/crearCotizacion.do"
+   SUBTYPE="confirmed" TARGET="action69" TITLE="/crearCotizacion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page16"
+  PATH="/reportes/ventas/reporteVentasExcel.jsp" SHAPE="304,3970,0,0"
+  SUBTYPE="jsp" TITLE="reporteVentasExcel.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page17"
+  PATH="/reportes/ventas/reporteVentasPDF.jsp" SHAPE="304,4146,0,0"
+  SUBTYPE="jsp" TITLE="reporteVentasPDF.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page18" PATH="/reportes/reporteGeneral.jsp"
+  SHAPE="2464,3970,0,0" SUBTYPE="jsp" TITLE="reporteGeneral.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/reporteGeneral.do"
+   SUBTYPE="confirmed" TARGET="action89" TITLE="/reporteGeneral.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page19" PATH="/servicioCliente/entregaPedido.jsp"
+  SHAPE="2464,3682,0,0" SUBTYPE="jsp" TITLE="entregaPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/entregaPedido.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/entregaPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page20"
+  PATH="/servicioCliente/ActualizacionProduccion.jsp"
+  SHAPE="2464,3506,0,0" SUBTYPE="jsp"
+  TITLE="ActualizacionProduccion.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarProduccion.do"
+   SUBTYPE="confirmed" TARGET="action5" TITLE="/actualizarProduccion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page21"
+  PATH="/reportes/actualizacionProduccion/reporteActualizacionProduccionPDF.jsp"
+  SHAPE="1120,3490,0,0" SUBTYPE="jsp"
+  TITLE="reporteActualizacionProduccionPDF.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page22"
+  PATH="/reportes/actualizacionProduccion/reporteActualizacionProduccionExcel.jsp"
+  SHAPE="1120,3666,0,0" SUBTYPE="jsp"
+  TITLE="reporteActualizacionProduccionExcel.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page23"
+  PATH="/servicioCliente/actualizacionDespacho.jsp"
+  SHAPE="2464,1298,0,0" SUBTYPE="jsp" TITLE="actualizacionDespacho.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarDespacho.do"
+   SUBTYPE="confirmed" TARGET="action6" TITLE="/actualizarDespacho.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page24"
+  PATH="/reportes/vistaArticulo/reporteVistaArticulo.jsp"
+  SHAPE="1120,1282,0,0" SUBTYPE="jsp" TITLE="reporteVistaArticulo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page25"
+  PATH="/reportes/vistaArticulo/rptArticulosSinDespachoPendiente.jsp"
+  SHAPE="304,1506,0,0" SUBTYPE="jsp"
+  TITLE="rptArticulosSinDespachoPendiente.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page26"
+  PATH="/servicioCliente/cotizarRecotizarReservar/detalleCanasta.jsp"
+  SHAPE="304,1826,0,0" SUBTYPE="jsp" TITLE="detalleCanasta.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleCanasta.do"
+   SUBTYPE="confirmed" TARGET="action7" TITLE="/detalleCanasta.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page27" PATH="/common/redirectSystem.jsp"
+  SHAPE="256,6962,0,0" SUBTYPE="jsp" TITLE="redirectSystem.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page28"
+  PATH="/reportes/articulosReservados/reporteArticulosReservados.jsp"
+  SHAPE="32,1810,0,0" SUBTYPE="jsp"
+  TITLE="reporteArticulosReservados.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0"
+   PATH="/reporteArticulosReservados.do" SUBTYPE="confirmed"
+   TARGET="action9" TITLE="/reporteArticulosReservados.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page29"
+  PATH="/reportes/articulosReservados/reporteArticulosReservadosExcel.jsp"
+  SHAPE="576,2578,0,0" SUBTYPE="jsp"
+  TITLE="reporteArticulosReservadosExcel.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page30"
+  PATH="/administracion/clasificacionUsuario/nuevaClasificacionUsuario.jsp"
+  SHAPE="1920,2002,0,0" SUBTYPE="jsp"
+  TITLE="nuevaClasificacionUsuario.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/nuevaClasificacionUsuario.do"
+   SUBTYPE="confirmed" TARGET="action10"
+   TITLE="/nuevaClasificacionUsuario.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/clasificacionUsuario.do"
+   SUBTYPE="confirmed" TARGET="action64"
+   TITLE="/clasificacionUsuario.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page31"
+  PATH="/administracion/nuevoAdminAutorizadores.jsp"
+  SHAPE="1920,2594,0,0" SUBTYPE="jsp"
+  TITLE="nuevoAdminAutorizadores.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0"
+   PATH="/administracionAutorizadores.do" SUBTYPE="confirmed"
+   TARGET="action11" TITLE="/administracionAutorizadores.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/nuevoAdminAutorizadores.do"
+   SUBTYPE="confirmed" TARGET="action68"
+   TITLE="/nuevoAdminAutorizadores.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page32"
+  PATH="/administracion/administracionAutorizadores.jsp"
+  SHAPE="2464,4322,0,0" SUBTYPE="jsp"
+  TITLE="administracionAutorizadores.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0"
+   PATH="/administracionAutorizadores.do" SUBTYPE="confirmed"
+   TARGET="action11" TITLE="/administracionAutorizadores.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page33"
+  PATH="/administracion/actualizarAdminAutorizadores.jsp"
+  SHAPE="1920,2770,0,0" SUBTYPE="jsp"
+  TITLE="actualizarAdminAutorizadores.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0"
+   PATH="/administracionAutorizadores.do" SUBTYPE="confirmed"
+   TARGET="action11" TITLE="/administracionAutorizadores.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1"
+   PATH="/actualizarAdminAutorizadores.do" SUBTYPE="confirmed"
+   TARGET="action24" TITLE="/actualizarAdminAutorizadores.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page34"
+  PATH="/servicioCliente/registrarOrdenCompra/registroOrdenCompra.jsp"
+  SHAPE="2464,1650,0,0" SUBTYPE="jsp" TITLE="registroOrdenCompra.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/registrarOrdenCompra.do"
+   SUBTYPE="confirmed" TARGET="action12"
+   TITLE="/registrarOrdenCompra.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page35" PATH="registrarOrdenCompraDef"
+  SHAPE="1920,1298,0,0" SUBTYPE="tile" TITLE="registrarOrdenCompraDef"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page36"
+  PATH="/administracion/nuevaFrecuenciaArticulos.jsp"
+  SHAPE="304,5314,0,0" SUBTYPE="jsp"
+  TITLE="nuevaFrecuenciaArticulos.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/frecuenciaArticulos.do"
+   SUBTYPE="confirmed" TARGET="action44" TITLE="/frecuenciaArticulos.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/nuevaFrecuenciaArticulos.do"
+   SUBTYPE="confirmed" TARGET="action14"
+   TITLE="/nuevaFrecuenciaArticulos.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page37"
+  PATH="/reportes/produccionPedidos/reporteDespachosExcel.jsp"
+  SHAPE="304,4594,0,0" SUBTYPE="jsp" TITLE="reporteDespachosExcel.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page38"
+  PATH="/reportes/produccionPedidos/reporteDespachosPDF.jsp"
+  SHAPE="304,4322,0,0" SUBTYPE="jsp" TITLE="reporteDespachosPDF.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page39"
+  PATH="/servicioCliente/filtrosDespachoReservacion.jsp"
+  SHAPE="2464,4594,0,0" SUBTYPE="jsp"
+  TITLE="filtrosDespachoReservacion.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0"
+   PATH="/filtrosDespachoReservaciones.do" SUBTYPE="confirmed"
+   TARGET="action15" TITLE="/filtrosDespachoReservaciones.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page40"
+  PATH="/servicioCliente/modificarFechasEntrega/modificarFechasEntrega.jsp"
+  SHAPE="2464,3330,0,0" SUBTYPE="jsp" TITLE="modificarFechasEntrega.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/modificarFechasEntrega.do"
+   SUBTYPE="confirmed" TARGET="action17"
+   TITLE="/modificarFechasEntrega.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page41"
+  PATH="/administracion/nuevoTipoDescuento.jsp" SHAPE="304,3330,0,0"
+  SUBTYPE="jsp" TITLE="nuevoTipoDescuento.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/nuevoTipoDescuento.do"
+   SUBTYPE="confirmed" TARGET="action18" TITLE="/nuevoTipoDescuento.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page42" PATH="/servicioCliente/despachoPedido.jsp"
+  SHAPE="2464,3826,0,0" SUBTYPE="jsp" TITLE="despachoPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/despachoPedido.do"
+   SUBTYPE="confirmed" TARGET="action19" TITLE="/despachoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page43"
+  PATH="/servicioCliente/controlProduccion.jsp" SHAPE="2464,1506,0,0"
+  SUBTYPE="jsp" TITLE="controlProduccion.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/controlProduccion.do"
+   SUBTYPE="confirmed" TARGET="action20" TITLE="/controlProduccion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page44"
+  PATH="/administracion/actualizarParametro.jsp" SHAPE="32,2578,0,0"
+  SUBTYPE="jsp" TITLE="actualizarParametro.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarParametro.do"
+   SUBTYPE="confirmed" TARGET="action21" TITLE="/actualizarParametro.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page45"
+  PATH="/administracion/actualizarDescuento.jsp" SHAPE="32,2754,0,0"
+  SUBTYPE="jsp" TITLE="actualizarDescuento.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarDescuento.do"
+   SUBTYPE="confirmed" TARGET="action22" TITLE="/actualizarDescuento.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page46"
+  PATH="/administracion/actualizarMotivoDescuento.jsp"
+  SHAPE="32,3138,0,0" SUBTYPE="jsp"
+  TITLE="actualizarMotivoDescuento.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarMotivoDescuento.do"
+   SUBTYPE="confirmed" TARGET="action25"
+   TITLE="/actualizarMotivoDescuento.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page47"
+  PATH="/administracion/nuevaAutorizacion.jsp" SHAPE="304,578,0,0"
+  SUBTYPE="jsp" TITLE="nuevaAutorizacion.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/nuevaAutorizacion.do"
+   SUBTYPE="confirmed" TARGET="action26" TITLE="/nuevaAutorizacion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page48"
+  PATH="/administracion/articulos/actualizarArticulo.jsp"
+  SHAPE="2464,578,0,0" SUBTYPE="jsp" TITLE="actualizarArticulo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarArticulo.do"
+   SUBTYPE="confirmed" TARGET="action27" TITLE="/actualizarArticulo.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page49"
+  PATH="/administracion/articulos/listadoArticulos.jsp"
+  SHAPE="1920,2946,0,0" SUBTYPE="jsp" TITLE="listadoArticulos.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/mantenimientoArticulos.do"
+   SUBTYPE="confirmed" TARGET="action37"
+   TITLE="/mantenimientoArticulos.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page50"
+  PATH="/administracion/actualizarTipoDescuento.jsp" SHAPE="32,3314,0,0"
+  SUBTYPE="jsp" TITLE="actualizarTipoDescuento.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarTipoDescuento.do"
+   SUBTYPE="confirmed" TARGET="action28"
+   TITLE="/actualizarTipoDescuento.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page51"
+  PATH="/calendarizacion/condicionesReservas.jsp" SHAPE="304,2210,0,0"
+  SUBTYPE="jsp" TITLE="condicionesReservas.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/condicionReserva.do"
+   SUBTYPE="confirmed" TARGET="action29" TITLE="/condicionReserva.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page52"
+  PATH="/pedidosEspeciales/detalleEstadoPedidoEspecial/rptEstadoPedidoEspecialXLS.jsp"
+  SHAPE="2464,2594,0,0" SUBTYPE="jsp"
+  TITLE="rptEstadoPedidoEspecialXLS.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page53" PATH="detalleEstadoPedidoEspecialDef"
+  SHAPE="2464,2770,0,0" SUBTYPE="tile"
+  TITLE="detalleEstadoPedidoEspecialDef" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page54" PATH="/servicioCliente/anulacionPedido.jsp"
+  SHAPE="1920,578,0,0" SUBTYPE="jsp" TITLE="anulacionPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/anulacionPedido.do"
+   SUBTYPE="confirmed" TARGET="action51" TITLE="/anulacionPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2"
+   PATH="/detalleEstadoPedidoEspecial.do" SUBTYPE="confirmed"
+   TARGET="action30" TITLE="/detalleEstadoPedidoEspecial.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link3" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page55"
+  PATH="/servicioCliente/estadoPedido/estadoPedido.jsp"
+  SHAPE="2464,2002,0,0" SUBTYPE="jsp" TITLE="estadoPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/estadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action80" TITLE="/estadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2"
+   PATH="/detalleEstadoPedidoEspecial.do" SUBTYPE="confirmed"
+   TARGET="action30" TITLE="/detalleEstadoPedidoEspecial.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link3" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page56" PATH="controlProduccionPedEspDef"
+  SHAPE="2464,1826,0,0" SUBTYPE="tile"
+  TITLE="controlProduccionPedEspDef" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page57" PATH="confirmarPedidoEspecialDef"
+  SHAPE="2464,2946,0,0" SUBTYPE="tile"
+  TITLE="confirmarPedidoEspecialDef" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page58"
+  PATH="/pedidosEspeciales/detalleEstadoPedidoEspecial/rptPedidoPDF.jsp"
+  SHAPE="2464,3154,0,0" SUBTYPE="jsp" TITLE="rptPedidoPDF.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page59" PATH="listarReservacionesDef"
+  SHAPE="1920,1650,0,0" SUBTYPE="tile" TITLE="listarReservacionesDef"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page60"
+  PATH="/servicioCliente/busqueda/listaPedidos.jsp" SHAPE="304,2386,0,0"
+  SUBTYPE="jsp" TITLE="listaPedidos.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/modificarFechasEntrega.do"
+   SUBTYPE="confirmed" TARGET="action17"
+   TITLE="/modificarFechasEntrega.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/${accion}.do"
+   SUBTYPE="confirmed" TARGET="action90" TITLE="/${accion}.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link3" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page61"
+  PATH="/servicioCliente/registroAbonosPedido/listaPedidosAbonos.jsp"
+  SHAPE="1376,1650,0,0" SUBTYPE="jsp" TITLE="listaPedidosAbonos.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/registrarAbonoPedido.do"
+   SUBTYPE="confirmed" TARGET="action34"
+   TITLE="/registrarAbonoPedido.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link3" PATH="/${vformulario}.do"
+   SUBTYPE="confirmed" TARGET="action96" TITLE="/${vformulario}.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link4" PATH="/reenviarModificarAbonos.do"
+   SUBTYPE="confirmed" TARGET="action93"
+   TITLE="/reenviarModificarAbonos.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page62"
+  PATH="/servicioCliente/registroAbonosPedido/registroAbonoPedido.jsp"
+  SHAPE="848,2594,0,0" SUBTYPE="jsp" TITLE="registroAbonoPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/registrarAbonoPedido.do"
+   SUBTYPE="confirmed" TARGET="action34"
+   TITLE="/registrarAbonoPedido.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page63" PATH="/calendarizacion/calendarizacion.jsp"
+  SHAPE="2464,2210,0,0" SUBTYPE="jsp" TITLE="calendarizacion.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/calendarizacion.do"
+   SUBTYPE="confirmed" TARGET="action35" TITLE="/calendarizacion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page64"
+  PATH="/calendarizacion/administracionMotivoMovimiento.jsp"
+  SHAPE="32,3490,0,0" SUBTYPE="jsp"
+  TITLE="administracionMotivoMovimiento.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0"
+   PATH="/administracionMotivoMovimiento.do" SUBTYPE="confirmed"
+   TARGET="action40" TITLE="/administracionMotivoMovimiento.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page65" PATH="crearPedidoEspecialDef"
+  SHAPE="304,2946,0,0" SUBTYPE="tile" TITLE="crearPedidoEspecialDef"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page66" PATH="resumenPedidoEspecialDef"
+  SHAPE="304,3154,0,0" SUBTYPE="tile" TITLE="resumenPedidoEspecialDef"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page67"
+  PATH="/pedidosEspeciales/pedido/rptPedidoPDF.jsp" SHAPE="304,2770,0,0"
+  SUBTYPE="jsp" TITLE="rptPedidoPDF.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page68" PATH="/calendarizacion/ingresoKardex.jsp"
+  SHAPE="1920,2210,0,0" SUBTYPE="jsp" TITLE="ingresoKardex.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/calendarizacion.do"
+   SUBTYPE="confirmed" TARGET="action35" TITLE="/calendarizacion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/kardex.do"
+   SUBTYPE="confirmed" TARGET="action42" TITLE="/kardex.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page69"
+  PATH="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"
+  SHAPE="1376,2002,0,0" SUBTYPE="jsp" TITLE="detalleEstadoPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/enviarOCPerecibles.do"
+   SUBTYPE="confirmed" TARGET="action94" TITLE="/enviarOCPerecibles.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page70"
+  PATH="/administracion/actualizarEspecial.jsp" SHAPE="32,3666,0,0"
+  SUBTYPE="jsp" TITLE="actualizarEspecial.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarEspecial.do"
+   SUBTYPE="confirmed" TARGET="action43" TITLE="/actualizarEspecial.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page71"
+  PATH="/administracion/frecuenciaArticulos.jsp" SHAPE="304,578,0,0"
+  SUBTYPE="jsp" TITLE="frecuenciaArticulos.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/frecuenciaArticulos.do"
+   SUBTYPE="confirmed" TARGET="action44" TITLE="/frecuenciaArticulos.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page72"
+  PATH="/administracion/actualizarFrecuenciaArticulos.jsp"
+  SHAPE="848,1826,0,0" SUBTYPE="jsp"
+  TITLE="actualizarFrecuenciaArticulos.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/frecuenciaArticulos.do"
+   SUBTYPE="confirmed" TARGET="action44" TITLE="/frecuenciaArticulos.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1"
+   PATH="/actualizarFrecuenciaArticulos.do" SUBTYPE="confirmed"
+   TARGET="action54" TITLE="/actualizarFrecuenciaArticulos.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page73"
+  PATH="/servicioCliente/confirmarReservacion/confirmarReservacion.jsp"
+  SHAPE="576,1282,0,0" SUBTYPE="jsp" TITLE="confirmarReservacion.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/confirmacionReservacion.do"
+   SUBTYPE="confirmed" TARGET="action46"
+   TITLE="/confirmacionReservacion.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page74"
+  PATH="/administracion/clasificacionUsuario/actualizarClasificacionUsuario.jsp"
+  SHAPE="1920,2386,0,0" SUBTYPE="jsp"
+  TITLE="actualizarClasificacionUsuario.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/clasificacionUsuario.do"
+   SUBTYPE="confirmed" TARGET="action64"
+   TITLE="/clasificacionUsuario.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1"
+   PATH="/actualizarClasificacionUsuario.do" SUBTYPE="confirmed"
+   TARGET="action47" TITLE="/actualizarClasificacionUsuario.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page75" PATH="/administracion/cambiarClave.jsp"
+  SHAPE="576,1986,0,0" SUBTYPE="jsp" TITLE="cambiarClave.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/cambiarClave.do"
+   SUBTYPE="confirmed" TARGET="action48" TITLE="/cambiarClave.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page76"
+  PATH="/calendarioBodega/lineaProduccion/detalleLineaProduccion.jsp"
+  SHAPE="576,2194,0,0" SUBTYPE="jsp" TITLE="detalleLineaProduccion.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/lineaProduccion.do"
+   SUBTYPE="confirmed" TARGET="action52" TITLE="/lineaProduccion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page77"
+  PATH="/calendarioBodega/lineaProduccion/lineaProduccionPrincipal.jsp"
+  SHAPE="32,562,0,0" SUBTYPE="jsp" TITLE="lineaProduccionPrincipal.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/lineaProduccion.do"
+   SUBTYPE="confirmed" TARGET="action52" TITLE="/lineaProduccion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page78" PATH="/calendarizacion/detallePedido.jsp"
+  SHAPE="576,1634,0,0" SUBTYPE="jsp" TITLE="detallePedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/estadoDetalleCanasto.do"
+   SUBTYPE="confirmed" TARGET="action55"
+   TITLE="/estadoDetalleCanasto.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page79"
+  PATH="/servicioCliente/estadoPedido/estadoDetalleCanasto.jsp"
+  SHAPE="32,1634,0,0" SUBTYPE="jsp" TITLE="estadoDetalleCanasto.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/estadoDetalleCanasto.do"
+   SUBTYPE="confirmed" TARGET="action55"
+   TITLE="/estadoDetalleCanasto.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page80" PATH="/administracion/nuevoEspecial.jsp"
+  SHAPE="304,578,0,0" SUBTYPE="jsp" TITLE="nuevoEspecial.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/nuevoEspecial.do"
+   SUBTYPE="confirmed" TARGET="action56" TITLE="/nuevoEspecial.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page81" PATH="administradorPlantillasDef"
+  SHAPE="240,7186,0,0" SUBTYPE="tile" TITLE="administradorPlantillasDef"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page82"
+  PATH="/servicioCliente/estructuraComercial/catalogoArticulos.jsp"
+  SHAPE="256,7298,0,0" SUBTYPE="jsp" TITLE="catalogoArticulos.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/catalogoArticulos.do"
+   SUBTYPE="confirmed" TARGET="action58" TITLE="/catalogoArticulos.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page83"
+  PATH="/servicioCliente/estructuraComercial/listaArticulos.jsp"
+  SHAPE="256,7442,0,0" SUBTYPE="jsp" TITLE="listaArticulos.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/buscarArticulo.do"
+   SUBTYPE="confirmed" TARGET="action61" TITLE="/buscarArticulo.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page84"
+  PATH="/administracion/administracionListado.jsp" SHAPE="2464,146,0,0"
+  SUBTYPE="jsp" TITLE="administracionListado.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/administracionListado.do"
+   SUBTYPE="confirmed" TARGET="action87"
+   TITLE="/administracionListado.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page85" PATH="/administracion/listaBodegas.jsp"
+  SHAPE="304,578,0,0" SUBTYPE="jsp" TITLE="listaBodegas.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/bodegas.do"
+   SUBTYPE="confirmed" TARGET="action60" TITLE="/bodegas.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page86" PATH="/administracion/nuevaBodega.jsp"
+  SHAPE="32,5442,0,0" SUBTYPE="jsp" TITLE="nuevaBodega.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/nuevaBodega.do"
+   SUBTYPE="confirmed" TARGET="action72" TITLE="/nuevaBodega.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/bodegas.do"
+   SUBTYPE="confirmed" TARGET="action60" TITLE="/bodegas.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page87" PATH="/administracion/actualizarBodega.jsp"
+  SHAPE="32,5618,0,0" SUBTYPE="jsp" TITLE="actualizarBodega.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarBodega.do"
+   SUBTYPE="confirmed" TARGET="action77" TITLE="/actualizarBodega.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/bodegas.do"
+   SUBTYPE="confirmed" TARGET="action60" TITLE="/bodegas.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page88" PATH="calendarioBodegaDef"
+  SHAPE="240,7554,0,0" SUBTYPE="tile" TITLE="calendarioBodegaDef"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page89"
+  PATH="/administracion/clasificacionUsuario/clasificacionUsuario.jsp"
+  SHAPE="2464,4146,0,0" SUBTYPE="jsp" TITLE="clasificacionUsuario.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/clasificacionUsuario.do"
+   SUBTYPE="confirmed" TARGET="action64"
+   TITLE="/clasificacionUsuario.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page90" PATH="/administracion/nuevaTemporada.jsp"
+  SHAPE="304,578,0,0" SUBTYPE="jsp" TITLE="nuevaTemporada.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/nuevaTemporada.do"
+   SUBTYPE="confirmed" TARGET="action65" TITLE="/nuevaTemporada.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page91"
+  PATH="/servicioCliente/cotizarRecotizarReservar/entregas/entregaArticuloLocal.jsp"
+  SHAPE="1376,1826,0,0" SUBTYPE="jsp" TITLE="entregaArticuloLocal.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/entregaLocalCalendario.do"
+   SUBTYPE="confirmed" TARGET="action67"
+   TITLE="/entregaLocalCalendario.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page92"
+  PATH="/reportes/cotizacion_reservacion/rptPedidoXSL.jsp"
+  SHAPE="1120,2754,0,0" SUBTYPE="jsp" TITLE="rptPedidoXSL.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page93"
+  PATH="/reportes/cotizacion_reservacion/rptPedidoPDF.jsp"
+  SHAPE="1120,2930,0,0" SUBTYPE="jsp" TITLE="rptPedidoPDF.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page94"
+  PATH="/reportes/estadoDetallePedido/rptEstadoDetallePedidoPDF.jsp"
+  SHAPE="1920,1506,0,0" SUBTYPE="jsp"
+  TITLE="rptEstadoDetallePedidoPDF.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page95"
+  PATH="/reportes/entregas/reporteEntregas.jsp" SHAPE="2464,2386,0,0"
+  SUBTYPE="jsp" TITLE="reporteEntregas.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/reporteEntregas.do"
+   SUBTYPE="confirmed" TARGET="action75" TITLE="/reporteEntregas.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page96"
+  PATH="/reportes/estadoDetallePedido/rptEstadoDetallePedidoXSL.jsp"
+  SHAPE="1920,1826,0,0" SUBTYPE="jsp"
+  TITLE="rptEstadoDetallePedidoXSL.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page97"
+  PATH="/administracion/actualizarFormaPago.jsp" SHAPE="1920,3154,0,0"
+  SUBTYPE="jsp" TITLE="actualizarFormaPago.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/formaPago.do"
+   SUBTYPE="confirmed" TARGET="action88" TITLE="/formaPago.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/actualizarFormaPago.do"
+   SUBTYPE="confirmed" TARGET="action71" TITLE="/actualizarFormaPago.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page98"
+  PATH="/reportes/entregas/reporteEntregasExcel.jsp"
+  SHAPE="304,2002,0,0" SUBTYPE="jsp" TITLE="reporteEntregasExcel.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page99" PATH="/administracion/menuPrincipal.jsp"
+  SHAPE="2944,578,0,0" SUBTYPE="jsp" TITLE="menuPrincipal.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page100" PATH="/administracion/comprador.jsp"
+  SHAPE="1920,3506,0,0" SUBTYPE="jsp" TITLE="comprador.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/comprador.do"
+   SUBTYPE="confirmed" TARGET="action78" TITLE="/comprador.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page101"
+  PATH="/administracion/actualizarComprador.jsp" SHAPE="2464,4914,0,0"
+  SUBTYPE="jsp" TITLE="actualizarComprador.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/actualizarComprador.do"
+   SUBTYPE="confirmed" TARGET="action85" TITLE="/actualizarComprador.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/comprador.do"
+   SUBTYPE="confirmed" TARGET="action78" TITLE="/comprador.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page102" PATH="/administracion/nuevoComprador.jsp"
+  SHAPE="1648,3954,0,0" SUBTYPE="jsp" TITLE="nuevoComprador.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/nuevoComprador.do"
+   SUBTYPE="confirmed" TARGET="action31" TITLE="/nuevoComprador.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/comprador.do"
+   SUBTYPE="confirmed" TARGET="action78" TITLE="/comprador.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page103"
+  PATH="/servicioCliente/estadoPedido/estadoPedidoExcel.jsp"
+  SHAPE="1120,2370,0,0" SUBTYPE="jsp" TITLE="estadoPedidoExcel.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page104" PATH="/salir.jsp" SHAPE="448,6130,0,0"
+  SUBTYPE="jsp" TITLE="salir.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page105" PATH="/administracion/nuevoDescuento.jsp"
+  SHAPE="304,578,0,0" SUBTYPE="jsp" TITLE="nuevoDescuento.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/nuevoDescuento.do"
+   SUBTYPE="confirmed" TARGET="action83" TITLE="/nuevoDescuento.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page106" PATH="/administracion/formaPago.jsp"
+  SHAPE="2464,4770,0,0" SUBTYPE="jsp" TITLE="formaPago.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/formaPago.do"
+   SUBTYPE="confirmed" TARGET="action88" TITLE="/formaPago.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page107" PATH="/administracion/nuevaFormaPago.jsp"
+  SHAPE="1648,3314,0,0" SUBTYPE="jsp" TITLE="nuevaFormaPago.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/nuevaFormaPago.do"
+   SUBTYPE="confirmed" TARGET="action50" TITLE="/nuevaFormaPago.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/formaPago.do"
+   SUBTYPE="confirmed" TARGET="action88" TITLE="/formaPago.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page108"
+  PATH="/reportes/ventas/reporteVentasExcelAux.jsp" SHAPE="304,4770,0,0"
+  SUBTYPE="jsp" TITLE="reporteVentasExcelAux.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#${accion}" NAME="action90" PATH="/${accion}"
+  SHAPE="576,2369,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page109"
+  PATH="/servicioCliente/estadoPedido/diferidoEstadoPedido.jsp"
+  SHAPE="1856,673,0,0" SUBTYPE="jsp" TITLE="diferidoEstadoPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#worklistBpm" NAME="action91" PATH="/worklistBpm"
+  SHAPE="32,10417,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward0"
+   PATH="/common/redirectSystem.jsp" TARGET="page27" TITLE="desplegar"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#calendarioBodegaHoras" NAME="action92"
+  PATH="/calendarioBodegaHoras" SHAPE="32,10641,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="redirect" NAME="forward0"
+   PATH="/common/redireccionarSispev2.jsp" TARGET="page111"
+   TITLE="redirect" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#reenviarModificarAbonos" NAME="action93"
+  PATH="/reenviarModificarAbonos" SHAPE="848,4401,0,0"
+  TITLE="registrarAbonoPedidoForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="listarPedidosAbonos" NAME="forward0"
+   PATH="/servicioCliente/registroAbonosPedido/listaPedidosAbonos.jsp"
+   TARGET="page61" TITLE="listarPedidosAbonos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="registrarAbonos" NAME="forward1"
+   PATH="/servicioCliente/registroAbonosPedido/registroAbonoPedido.jsp"
+   TARGET="page62" TITLE="registrarAbonos" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#enviarOCPerecibles" NAME="action94"
+  PATH="/enviarOCPerecibles" SHAPE="1376,3585,0,0"
+  TITLE="listadoPedidosForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="desplegarDetalleArticulo" NAME="forward0"
+   PATH="/servicioCliente/monitorStockPerecibles/detalleMovimientosArticulo.jsp"
+   TARGET="page112" TITLE="desplegarDetalleArticulo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/servicioCliente/monitorStockPerecibles/listaOrdenCompraPerecibles.jsp"
+   TARGET="page113" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegarDetallePedido" NAME="forward2"
+   PATH="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"
+   TARGET="page69" TITLE="desplegarDetallePedido" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#consolidacion" NAME="action95" PATH="/consolidacion"
+  SHAPE="1104,561,0,0" TITLE="cotizarRecotizarReservarForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="menuPrincipal" NAME="forward0"
+   PATH="/menuPrincipal.do" TARGET="action76" TITLE="menuPrincipal"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="desplegar" NAME="forward1"
+   PATH="/servicioCliente/consolidarPedido/consolidarPedido.jsp"
+   TARGET="page110" TITLE="desplegar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page110"
+  PATH="/servicioCliente/consolidarPedido/consolidarPedido.jsp"
+  SHAPE="1056,257,0,0" SUBTYPE="jsp" TITLE="consolidarPedido.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/detalleEstadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action70" TITLE="/detalleEstadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/crearCotizacion.do"
+   SUBTYPE="confirmed" TARGET="action69" TITLE="/crearCotizacion.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link2" PATH="/estadoPedido.do"
+   SUBTYPE="confirmed" TARGET="action80" TITLE="/estadoPedido.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link3"
+   PATH="/detalleEstadoPedidoEspecial.do" SUBTYPE="confirmed"
+   TARGET="action30" TITLE="/detalleEstadoPedidoEspecial.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link4" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page111" PATH="/common/redireccionarSispev2.jsp"
+  SHAPE="240,10770,0,0" SUBTYPE="jsp" TITLE="redireccionarSispev2.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page112"
+  PATH="/servicioCliente/monitorStockPerecibles/detalleMovimientosArticulo.jsp"
+  SHAPE="1104,3570,0,0" SUBTYPE="jsp"
+  TITLE="detalleMovimientosArticulo.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/enviarOCPerecibles.do"
+   SUBTYPE="confirmed" TARGET="action94" TITLE="/enviarOCPerecibles.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page113"
+  PATH="/servicioCliente/monitorStockPerecibles/listaOrdenCompraPerecibles.jsp"
+  SHAPE="1104,3922,0,0" SUBTYPE="jsp"
+  TITLE="listaOrdenCompraPerecibles.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/enviarOCPerecibles.do"
+   SUBTYPE="confirmed" TARGET="action94" TITLE="/enviarOCPerecibles.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/menuPrincipal.do"
+   SUBTYPE="confirmed" TARGET="action76" TITLE="/menuPrincipal.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#${vformulario}" NAME="action96"
+  PATH="/${vformulario}" SHAPE="1584,1762,0,0" SUBTYPE="unknown"
+  TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page114"
+  PATH="/reportes/cotizacion_reservacion/rptResEntPDF.jsp"
+  SHAPE="1264,145,0,0" SUBTYPE="jsp" TITLE="rptResEntPDF.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+</PROCESS>

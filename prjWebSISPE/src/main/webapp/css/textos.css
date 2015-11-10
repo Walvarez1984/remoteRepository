@@ -1,0 +1,201 @@
+
+/***************************
+    ESTILOS PARA TEXTOS
+***************************/
+/* texto blanco */
+.textoBlanco12{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #ffffff;
+}
+.textoBlanco11{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #ffffff;
+}
+.textoBlanco10{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #ffffff;
+}
+
+/* texto azul */
+.textoAzul12{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 12px;
+	color: #0000aa;
+}
+.textoAzul11{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #0000aa;
+}
+
+.textoAzul11N{
+	font-family: Verdana, Arial, Helvetica;
+        font-weight: bolder;
+	font-size: 11px;
+	color: #0000aa;
+}
+
+.textoAzul10{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #0000aa;
+}
+.textoAzul9{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9px;
+	color: #0000aa;
+}
+.textoAzul9N{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9px;
+	color: #0000aa;
+	font-weight:bold;
+}
+
+/* texto celeste */
+.textoCeleste11{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #0099FF;
+}
+
+/* texto negro */
+.textoNegro13{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 13px;
+	color: #000000;
+}
+.textoNegro12{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 12px;
+	color: #000000;
+}
+.textoNegro11{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #000000;
+}
+.textoNegro10{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+}
+.textoNegro9{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9px;
+	color: #000000;
+}
+.textoNegro9B{
+	font-family: Verdana;
+	font-size: 8px;
+	color: #000000;
+}
+.textoNegroB{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	color: #000000;
+	font-weight: bolder;
+}
+/* texto rojo */
+.textoRojo14{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 14px;
+	color: #990000;
+}
+.textoRojo12{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 12px;
+	color: #990000;
+}
+.textoRojo11{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #990000;
+}
+.textoRojo10{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #990000;
+}
+.textoRojo9{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9px;
+	color: #990000;
+}
+
+/* texto rojo encendido */
+.textoRojoE11{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #DD0000;
+}
+/* texto rojo normal */
+.textoRojoNuevo{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #E60000;
+}
+
+/* texto naranja */
+.textoNaranja10{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #e67300;
+}
+/* texto naranja 9 Bod */
+.textoNaranja9B{
+	font-family: Verdana , Arial, Helvetica;
+	font-size: 8px;
+	color: #e67300;
+}
+/* texto naranja */
+.textoNaranja11{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #e67300;
+}
+
+/* texto verde*/
+.textoVerde12{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 12px;
+	color: #339933;
+}
+.textoVerde11{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #339933;
+}
+.textoVerde10{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #339933;
+}
+/* texto cafe */
+.textoCafe10{
+   	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #996600;
+}
+.textoCafe11{
+   	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #996600;
+}
+
+/* textoGris */
+.textoGris10 {
+   	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #666066;
+}
+
+.textoGris11 {
+   	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: #666066;
+}
+/*--------------------------------*/

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>prjWebSISPE</display-name>
+	<icon>
+		<small-icon>/images/SISPE_16.gif</small-icon>
+		<large-icon>/images/SISPE_32.gif</large-icon>
+	</icon>
+	
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+	
+	<!-- Filtro para controlar el acceso a las páginas -->
+	<filter>
+    	<filter-name>LoginFilter</filter-name>
+    	<filter-class>ec.com.smx.framework.web.filters.LoginFilter</filter-class>
+		<init-param>
+			<param-name>logindo</param-name>
+			<param-value>/login.do</param-value>
+		</init-param>
+		<init-param>
+			<param-name>menuPrincipal</param-name>
+			<param-value>/menuPrincipal.do</param-value>
+		</init-param>
+		<init-param>
+			<param-name>login</param-name>
+			<param-value>salir.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>autoriza</param-name>
+			<param-value>noAutorizada.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>logout</param-name>
+			<param-value>/logout.do</param-value>
+		</init-param>
+  	</filter>
+	<filter-mapping>
+    	<filter-name>LoginFilter</filter-name>
+    	<url-pattern>*.do</url-pattern>		
+  	</filter-mapping>
+	
+	<!-- OANDINO: Mapping con servlet "GenerarCodigoBarrasAction" en prjUtilitarioWeb, para generación de código de barras -->
+	<servlet>
+		<servlet-name>GenerarCodigoBarrasAction</servlet-name>					
+		<servlet-class>ec.com.smx.framework.web.util.GenerarCodigoBarrasAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GenerarCodigoBarrasAction</servlet-name>
+		<url-pattern>/CodigoBarras</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+		<param-name>com.sun.faces.expressionFactory</param-name>
+		<param-value>com.sun.el.ExpressionFactoryImpl</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	
+	<context-param>
+		<description>Para tomar los templates del proyecto de recursos</description>
+		<param-name>javax.faces.FACELETS_RESOURCE_RESOLVER</param-name>
+		<param-value>ec.com.smx.framework.jsf.commons.util.FaceletsResourceResolver</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.FULL_STATE_SAVING_VIEW_IDS</param-name>
+		<param-value>/index.xhtml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<description>
+            Define the value returned by Application.getProjectStage(). Allowed values: Production, Development,
+            UnitTest, SystemTest, Extension. Default value is Production.
+		</description>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Production</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>server</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.faces.VALIDATE_EMPTY_FIELDS</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.richfaces.fileUpload.createTempFiles</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>org.richfaces.fileUpload.maxRequestSize</param-name>
+		<param-value>1000000</param-value>
+	</context-param>
+	<context-param>
+		<param-name>org.richfaces.skin</param-name>
+		<param-value>super</param-value>
+	</context-param>
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>bluesky</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>ec.com.smx.framework.jsf.listeners.ContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>	org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>chainConfig</param-name>
+			<param-value>org/apache/struts/tiles/chain-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>validate</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>	
+
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>	
+
+	<mime-mapping>
+		<extension>ecss</extension>
+		<mime-type>text/css</mime-type>
+	</mime-mapping>
+	<!-- Archivos de bienvenida -->
+
+	<welcome-file-list>
+		<welcome-file>loader.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>		
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
+	</welcome-file-list>
+	
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+			<taglib-location>/WEB-INF/struts-bean.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+			<taglib-location>/WEB-INF/struts-html.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+			<taglib-location>/WEB-INF/struts-logic.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-nested.tld</taglib-uri>
+			<taglib-location>/WEB-INF/struts-nested.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-template.tld</taglib-uri>
+			<taglib-location>/WEB-INF/struts-template.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+			<taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/crystal-tags-reportviewer.tld</taglib-uri>
+			<taglib-location>/WEB-INF/crystal-tags-reportviewer.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>

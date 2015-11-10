@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+ <managed-bean>
+  <managed-bean-name>loginController</managed-bean-name>
+  <managed-bean-class>ec.com.smx.sic.sispe.web.jsf2.login.controller.LoginController</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+  <managed-property>
+   <property-name>sessionDataManagerBase</property-name>
+   <value>#{sessionDataManagerBase}</value>
+  </managed-property>
+ </managed-bean>
+
+ <managed-bean>
+ 	<managed-bean-name>imageBean</managed-bean-name>
+ 	<managed-bean-class>ec.com.smx.corpv2.jsf.commons.beans.ImagenBean</managed-bean-class>
+ 	<managed-bean-scope>view</managed-bean-scope>
+ </managed-bean>
+
+ <validator>
+  <validator-id>ValidarRuc</validator-id>
+  <validator-class>ec.com.smx.framework.jsf.validators.ValidatorRuc</validator-class>
+ </validator>
+ <validator>
+  <validator-id>ValidarCedula</validator-id>
+  <validator-class>ec.com.smx.framework.jsf.validators.ValidatorCedula</validator-class>
+ </validator>
+ <validator>
+  <validator-id>ValidarEmail</validator-id>
+  <validator-class>ec.com.smx.framework.jsf.validators.ValidatorEmail</validator-class>
+ </validator>
+
+ 
+</faces-config>

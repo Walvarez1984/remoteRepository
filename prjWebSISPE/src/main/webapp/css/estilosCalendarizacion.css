@@ -1,0 +1,310 @@
+
+/******************************************
+* Estilo Filas y Columnas para el calendario
+*******************************************/
+
+#seleccionMes a {
+	/*tamaño*/
+	height: 17px;
+	width: 17px;
+	
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-width: 0px;
+	
+	background-color:#D8EDFC;
+	
+	voice-family: inherit;
+	color:#252525;
+	display: block;
+}
+
+/*Evento sobre el dia*/
+
+#seleccionMes a:hover,#seleccionMes #current {
+	color: #FFFFFF;
+	background-position: 0px -20px;
+	background-color: #94CDF8;
+	font-weight: bold;
+}
+#tituloColumnas a {
+	/*tamaño*/
+	height: 14px;
+	width:95px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	padding: 2px 0 0 0px;
+	
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-width: 0px;
+	
+	background-color:#D8EDFC;
+	
+	voice-family: inherit;
+	color:#252525;
+	display: block;
+}
+
+/*Evento sobre el dia*/
+
+#tituloColumnas a:hover,#tituloColumnas #current {
+	color: #FFFFFF;
+	background-position: 0px -20px;
+	background-color: #94CDF8;
+	font-weight: bold;
+}
+
+#tituloFilas a {
+	/*tamaño*/
+	height: 84px;
+	width:18px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	font-weight: normal;
+	text-align: center;
+	text-decoration: none;
+	padding: 2px 0 0 0px;
+	
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-width: 0px;
+	
+	background-color:#D8EDFC;
+	
+	voice-family: inherit;
+	color:#252525;
+	display: block;
+}
+
+/*Evento sobre el dia*/
+
+#tituloFilas a:hover,#tituloFilas #current {
+	color: #FFFFFF;
+	background-position: 0px -20px;
+	background-color: #94CDF8;
+	font-weight: bold;
+}
+
+#marcoDias a {
+	/*tamaño*/
+	height: 14px;
+	width:90px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	font-weight:normal;
+	text-decoration: none;
+	voice-family: inherit;
+	display: block;
+	color:red;
+}
+
+/*Evento sobre el dia*/
+
+#marcoDias a:hover,#marcoDias #current {
+	
+	color: #FFFFFF;
+	background-position: 0px -20px;
+	background-color: #94CDF8;
+	
+	
+	
+}
+/*dias con la plantilla por defecto*/
+#marcoDiasDefecto a {
+	/*tamaño*/
+	height: 14px;
+	width:90px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	font-weight:normal;
+	text-decoration: none;
+	voice-family: inherit;
+	display: block;
+	color:#000000;
+}
+
+/*Evento sobre el dia*/
+
+#marcoDiasDefecto a:hover,#marcoDiasDefecto #current {
+	
+	color: #FFFFFF;
+	background-position: 0px -20px;
+	background-color: #94CDF8;
+	
+	
+	
+}
+
+/*texto azul*/
+.textoAzul8{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	color: #003366;
+}
+
+
+/* texto negro */
+.textoNegro8{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	color: #000000;
+}
+
+/*texto azul*/
+.textoAzul7{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 7px;
+	color: #003366;
+}
+
+
+/* texto negro */
+.textoNegro7{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 7px;
+	color: #000000;
+}
+
+/* texto negro */
+.textoNegros9{
+	font-family: "Courier New", Courier, monospace;
+	font-size: 9px;
+	color: #000000;
+}
+
+/* texto negro */
+.textoNegros10{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 10px;
+	color: #000000;
+}
+/* tabla mes actual */
+.tabla_actual
+{
+	background-color: #EFEFEF;
+	border: 0px solid #CDCDCD;
+}
+
+/* tabla mes actual */
+.tabla_pasada
+{
+	background-color: #FFFFFF;
+	border: 0px solid #CDCDCD;
+}
+
+.tabla_sel
+{
+	background-color: #94CDF8;
+	border: 0px solid #CDCDCD;
+}
+
+.contenido
+{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #CDCDCD;
+	border-right-color: #CDCDCD;
+	border-bottom-color: #CDCDCD;
+	border-left-color: #CDCDCD;
+}
+
+.paleta
+{
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+
+
+.reservado {
+	background-color: #FFFFB7;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+}
+.tabla_informacion_rojo
+{
+	border: 1px solid #FF0000;
+}
+
+#marcoDiasLocal a {
+	/*tamaño*/
+	height: 11px;
+	width:42px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	font-weight:bold;
+	text-decoration: none;
+	voice-family: inherit;
+	display: block;
+	color:#000000;
+}
+
+.diaSinSeleccion{
+	/*tamaño*/
+	height: 11px;
+	width:42px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	font-weight:bold;
+	text-decoration: none;
+	voice-family: inherit;
+	display: block;
+	color:#000000;
+}
+
+.diaSeleccionado{
+	/*tamaño*/
+	height: 11px;
+	width:42px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	font-weight:bold;
+	text-decoration: none;
+	voice-family: inherit;
+	display: block;
+	color:#0099FF;
+}
+
+/*Evento sobre el dia*/
+
+#marcoDiasLocal a:hover,#marcoDiasLocal #current {
+	
+	color: #FFFFFF;
+	background-position: 0px -20px;
+	background-color: #FF9900;
+}
+.displayNo {
+	display:none;
+}
+
+.rojoClaroA10 {
+	background-color: #FFDFDF;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+.naranjaA10 {
+	background-color: #FFDFBF;
+	font-family: Verdana;
+	font-size: 10px;
+	color: #000000;
+}
+

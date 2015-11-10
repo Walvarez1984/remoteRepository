@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>sispe-web</artifactId>
+	<packaging>war</packaging>
+	<name>prjWebSISPE</name>
+	<parent>
+		<groupId>ec.com.smx.sic.sispe</groupId>
+		<version>1.5.1-RELEASE</version>
+		<artifactId>sispe-root</artifactId>
+		<relativePath>../prjSISPERoot</relativePath>
+	</parent>
+
+	<distributionManagement>
+		<repository>
+			<id>supermaxi</id>
+			<name>Repositorio Supermaxi</name>
+			<url>http://svr-kruger1:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>supermaxi</id>
+			<name>Repositorio Supermaxi</name>
+			<url>http://svr-kruger1:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>xmlgraphics-commons</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.as400</groupId>
+			<artifactId>jtopen</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-el</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-extras</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-mailreader-dao</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-scripting</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-taglib</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-tiles</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>datetime</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>mailer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>string</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.ostermiller</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+		</dependency>
+
+		<!-- SICMER -->
+		<dependency>
+			<groupId>ec.com.smx.mercancias</groupId>
+			<artifactId>sicmer-aplicacion</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>jarimbak-util</artifactId>
+					<groupId>ec.com.kruger.jarimbak.util</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- JARIMBA -->
+		<!-- <dependency>
+			<groupId>ec.com.kruger.jarimbak.util</groupId>
+			<artifactId>jarimbak-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.kruger.jarimbak</groupId>
+			<artifactId>jarimbak-core</artifactId>
+		</dependency> -->
+
+		<!-- FRAMEWORK V1 -->
+		<dependency>
+			<groupId>ec.com.smx.framework</groupId>
+			<artifactId>fwk-aplicacion</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.kruger</groupId>
+			<artifactId>fwk-utilitario-aplicacion</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.framework</groupId>
+			<artifactId>fwk-utilitario-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.kruger</groupId>
+			<artifactId>fwk-log-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.kruger</groupId>
+			<artifactId>fwk-utilitario-dao</artifactId>
+		</dependency>
+
+		<!-- FRAMEWORK V2 -->
+		<dependency>
+			<groupId>ec.com.smx.frameworkv2</groupId>
+			<artifactId>fwk-integracion-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.frameworkv2</groupId>
+			<artifactId>fwk-message-push-movil</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.frameworkv2</groupId>
+			<artifactId>fwk-utilitario-jsf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.frameworkv2</groupId>
+			<artifactId>fwk-utilitario-componentes</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.frameworkv2</groupId>
+			<artifactId>fwk-utilitario-recursos</artifactId>
+		</dependency>
+
+		<!-- MAX -->
+		<dependency>
+			<groupId>ec.com.smx.sic</groupId>
+			<artifactId>max-cliente-sic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.sic</groupId>
+			<artifactId>max-proveedores</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.sic</groupId>
+			<artifactId>max-bodegas</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.sic</groupId>
+			<artifactId>max-articulos</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.sic</groupId>
+			<artifactId>max-administracion</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.sic</groupId>
+			<artifactId>max-integracion-loyalty</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.sic</groupId>
+			<artifactId>max-utilitario-jsf</artifactId>
+		</dependency>
+
+		<!-- CORPORATIVO -->
+		<dependency>
+			<groupId>ec.com.smx.corpv2</groupId>
+			<artifactId>corp-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.corpv2</groupId>
+			<artifactId>corp-cliente</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.corpv2</groupId>
+			<artifactId>corp-utilitario-corp-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.corpv2</groupId>
+			<artifactId>corp-cliente-etiquetado</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.corpv2</groupId>
+			<artifactId>corp-etiquetado</artifactId>
+		</dependency>
+
+		<!-- AUTORIZACIONES -->
+		<dependency>
+			<groupId>ec.com.smx.autorizaciones</groupId>
+			<artifactId>autorizaciones-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.autorizaciones</groupId>
+			<artifactId>autorizaciones-cliente</artifactId>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>ec.com.smx.autorizaciones</groupId> -->
+		<!-- <artifactId>autorizaciones-utilitario-web</artifactId> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>struts</groupId>
+			<artifactId>struts</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
+		<!-- WORKFLOW -->
+		<dependency>
+			<groupId>ec.com.kruger.workflow</groupId>
+			<artifactId>workflow-core</artifactId>
+		</dependency>
+
+		<!-- MENSAJERIA -->
+		<dependency>
+			<groupId>ec.com.smx.mensajeria</groupId>
+			<artifactId>mensajeria-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ec.com.smx.mensajeria</groupId>
+			<artifactId>mensajeria-taglib</artifactId>
+		</dependency>
+
+		<!-- VENTAS POR INTERNET -->
+		<dependency>
+			<groupId>ec.com.smx.ventasinternet</groupId>
+			<artifactId>vpi-cliente</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includePom>true</includePom>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

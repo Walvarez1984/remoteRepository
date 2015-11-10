@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+
+	<!-- =============== Orígenes de datos ================= -->
+	<data-sources>
+	</data-sources>
+
+	<!-- ====================================== Beans de formulario ======================================= -->
+	<form-beans>
+		<!-- ==================== Formularios del Servicio al cliente ======================= -->
+	  	<form-bean name ="loginForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.LoginForm"></form-bean>
+	  	<form-bean name ="cotizarRecotizarReservarForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.CotizarReservarForm"></form-bean>
+	  	<form-bean name ="buscarArticuloForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.BuscarArticuloForm"></form-bean>
+	  	<form-bean name="controlProduccionForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.ControlProduccionForm"></form-bean>
+	  	<form-bean name="listadoPedidosForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.ListadoPedidosForm"></form-bean>
+	  	<form-bean name="despachosEntregasForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.DespachosEntregasForm"/>
+	  	<form-bean name="modificarFechasEntregaForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.ModificarFechasEntregaForm"/>
+	  	<form-bean name="bloquearReservaPOSForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.BloquearReservaPOSForm"/>
+	  	<!-- ==================== Formularios de mantenimiento ======================= -->
+	  	<form-bean name="administracionListadoForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.AdministracionListadoForm"></form-bean>
+	  	<form-bean name="parametrosForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.ParametrosForm"></form-bean>
+	  	<form-bean name="confirmacionForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.ConfirmacionForm"></form-bean>
+	  	<form-bean name="temporadasForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.TemporadasForm"></form-bean>
+	  	<form-bean name="autorizacionesForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.AutorizacionesForm"></form-bean>
+	  	<form-bean name="anulacionesForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.AnulacionesForm"></form-bean>
+	  	<form-bean name="registrarAbonoPedidoForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.RegistrarAbonoPedidoForm"></form-bean>
+	  	<form-bean name="registrarOrdenCompraForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.RegistrarOrdenCompraForm"></form-bean>
+	  	<form-bean name="tipoDescuentoForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.TipoDescuentoForm"></form-bean>
+	  	<form-bean name="motivoDescuentoForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.MotivoDescuentoForm"></form-bean>
+	  	<form-bean name="descuentosForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.DescuentosForm"></form-bean>
+		<form-bean name="actualizarPasswordForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.ActualizarPasswordForm"></form-bean>
+	  	<form-bean name="especialForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.EspecialForm"></form-bean>
+	  	<form-bean name="formaPagoForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.FormaPagoForm"></form-bean>	  	
+	  	<form-bean name="compradorForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.CompradorForm"></form-bean>	  	
+	  	<form-bean name="administracionAutorizadoresForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.AdministracionAutorizadoresForm"></form-bean>	  	
+	  	<form-bean name="clasificacionUsuarioForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.ClasificacionUsuarioForm"></form-bean>	  		  	
+	  	<form-bean name="mantenimientoArticulosForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.MantenimientoArticulosForm"></form-bean>	  		  	
+	  	<!-- ==================== Formularios para reportes ======================= -->	  	
+	  	<form-bean name="reporteDespachoReservacionForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.ReporteDespachoReservacionForm"></form-bean>
+	  	<form-bean name="reporteGeneralForm" type="ec.com.smx.sic.sispe.web.reportes.struts.form.ReporteGeneralForm"></form-bean>
+	  	<!-- ==================== Formularios para calendarizacion ======================= -->	  	
+	  	<form-bean name="calendarizacionForm" type="ec.com.smx.sic.sispe.web.calendarizacionlocales.struts.form.CalendarizacionForm"></form-bean>
+	  	<form-bean name="kardexForm" type="ec.com.smx.sic.sispe.web.calendarizacionlocales.struts.form.KardexForm"></form-bean>
+	  	<form-bean name="frecuenciaArticulosForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.FrecuenciaArticulosForm"></form-bean>
+	  	<form-bean name="administracionMotivoMovimientoForm" type="ec.com.smx.sic.sispe.web.calendarizacionlocales.struts.form.AdministracionMotivoMovimientoForm"></form-bean>
+	  	<form-bean name="bodegasForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.BodegaForm"></form-bean>
+	  	<!-- ==================== Formularios para catálogo de canastos ======================= -->	  	
+	 	<form-bean name="catalogoCanastosForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.CatalogoCanastosForm"></form-bean>
+	 	<!-- ==================== Formulario para pedidos especiales ======================= -->	  	
+	 	<form-bean name="crearPedidoEspecialForm" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.form.CrearPedidoForm"></form-bean>
+	 	<form-bean name="controlProduccionPedidoEspecialForm" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.form.ControlProduccionPedidoEspecialForm"></form-bean>
+	 	<!-- ==================== Formulario para calendario de bodega ======================= -->	  	
+	 	<form-bean name="calendarioBodegaForm" type="ec.com.smx.sic.sispe.web.calendarioBodega.struts.form.CalendarioBodegaForm"></form-bean>
+	 	<form-bean name="lineaProduccionForm" type="ec.com.smx.sic.sispe.web.calendarioBodega.struts.form.LineaProduccionForm"></form-bean>
+	 	
+	 	<!-- ==================== Formulario para la pantalla de consolidacion ======================= -->
+	 	<form-bean name="consolidarForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.ConsolidarForm"></form-bean>
+		<!-- ======================================== REDIRECCIONAR_SISPEV2 ========================================= -->
+		<form-bean name="redireccionarV2Form" type="ec.com.smx.sic.sispe.web.redireccionar.sispev2.struts.form.RedireccionarV2Form"/>
+	
+		<form-bean name="migrarAutorizacionesForm" type="ec.com.smx.sic.sispe.web.administracion.struts.form.MigrarAutorizacionesForm"/>
+		<form-bean name="envioMailForm" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.form.EnvioMailForm"/>
+	
+	</form-beans>
+	<!-- ================================================================================================== -->
+
+	<!-- =============== Excepciones globales =================== -->
+	<global-exceptions>
+	</global-exceptions>
+	<!-- ======================================================== -->
+
+	<!-- ================== Reenvíos globales =================== -->
+	<global-forwards>
+		<forward name="login" path="/login.jsp"/>
+		<forward name="usuarioNoAutorizado" path="/usuarioNoAutorizado.jsp"/>
+		<forward name="createSession" path="/createSession.do"/>
+		<forward name="logout" path="/logout.do"/>
+		<forward name="principal" path="/script.jsp"/>
+      	<forward name="menuPrincipal" path="/menuPrincipal.do"/>
+     	<forward name="errorGlobal" path="/administracion/mensajes/error.jsp"/>
+      	<forward name="confirmacion" path="/administracion/preguntaConfirmacion/confirmacion.jsp"/>
+	  	<forward name="listado" path="/administracionListado.do" redirect="true"/>
+	  	<!-- <forward name="registro" path="/registroPedido.do"/>   -->
+		<forward name="registro" path="/servicioCliente/cotizarRecotizarReservar/registroPedido.jsp"/>
+		<forward name="mensajeReporte" path="/administracion/mensajes/mensajeReporte.jsp"/>   
+		<forward name="rptDespachoEntrega" path="/reportes/despachosEntregas/vistaPreviaDespachoEntrega.jsp"/> 
+		<forward name="rptDespacho" path="/reportes/despachosEntregas/vistaPreviaDespacho.jsp"/>
+		<forward name="reporteDespachoXLS" path="/reportes/despachosEntregas/rptDespachoEntregaXLS.jsp"/>
+		<forward name="reporteEntregaXLS" path="/reportes/entregas/rptEntregaXLS.jsp"/>
+		<!-- <forward name="rptPedido" path="/reportes/rptPedido.jsp"/>-->
+		<forward name="imprimirEtiquetas" path="/servicioCliente/despachoPedido/imprimirEtiquetas.jsp"></forward>
+	</global-forwards>
+	<!-- ======================================================== -->
+
+	<!-- ================================= Correlaciones de acción ========================================= -->
+	<action-mappings>
+		<!-- MONITOR PERECIBLES ======================================================-->
+		<action path="/enviarOCPerecibles" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.EnviarOrdenCompraPereciblesAction"
+		input="/servicioCliente/monitorStockPerecibles/listaOrdenCompraPerecibles.jsp"
+		name="listadoPedidosForm" validate="true">
+			<forward name="desplegar" path="/servicioCliente/monitorStockPerecibles/listaOrdenCompraPerecibles.jsp"/>
+			<forward name="desplegarDetalleArticulo" path="/servicioCliente/monitorStockPerecibles/detalleMovimientosArticulo.jsp"/>
+			<forward name="desplegarDetallePedido" path="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"/>
+		</action>
+		<!-- WORKLIST ======================================================-->
+		<action path="/worklistBpm" type="ec.com.smx.sic.sispe.web.workListBPM.struts.action.WorkListBPMAction">
+			<forward name="desplegar" path="/common/redirectSystem.jsp"/>																																																									
+		</action>
+      	<!-- ===================== Acción de ingreso de usuario ========================== -->
+      	<action path="/login" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.LoginAction" name="loginForm" scope="request">
+      	</action>
+      	
+      	<!-- ===================== Subir parámetros de sistema a sesión ========================== -->
+      	<action path="/createSession" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.CreateSessionAction">
+      	</action>
+
+      	<!-- ===================== Acción del menú principal ============================= -->
+      	<action path="/menuPrincipal" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.MenuPrincipalAction" >
+			<forward name="menu" path="/administracion/menuPrincipal.jsp"/>
+      	</action>
+      	
+      	<!-- ===================== Acción de consolidacion ============================ -->
+	   	<action path="/consolidacion"
+	   		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ConsolidarAction"
+	   		name="cotizarRecotizarReservarForm" validate="true"
+	   		input="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp">
+	   		<forward name="desplegar" path="/servicioCliente/consolidarPedido/consolidarPedido.jsp" />
+	   		<forward name="menuPrincipal" path="/menuPrincipal.do" />
+	   		
+	   	</action>
+      	
+	   	<!-- ===================== Acción de crear cotización ============================ -->
+	   	<action path="/crearCotizacion"
+	   		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.CotizarReservarAction"
+	   		name="cotizarRecotizarReservarForm" validate="true"
+	   		input="/servicioCliente/cotizarReservar.jsp">
+	   		<forward name="desplegar" path="/servicioCliente/cotizarReservar.jsp" />
+			<forward name="listaCotizadosRecotizados" path="/recotizarReservar.do" redirect="true"/>
+			<forward name="listaModificarReservacion" path="/listaModificarReserva.do" redirect="true"/>
+			<forward name="reportePDF" path="/reportes/cotizacion_reservacion/rptPedidoPDF.jsp"/>
+			<forward name="reporteResEntPDF" path="/reportes/cotizacion_reservacion/rptResEntPDF.jsp"/>
+			<forward name="entregaCalendario" path="/entregaLocalCalendario.do"/>
+			<forward name="reservarStockEntrega" path="/servicioCliente/cotizarRecotizarReservardetallePedido.jsp"/>
+			<forward name="reporteCotizarXLS" path="/reportes/cotizacion_reservacion/rptPedidoXSL.jsp"/>
+			<forward name="desplegarConsolidarPedido" path="/servicioCliente/consolidarPedido/consolidarPedido.jsp" />
+			<forward name="desplegarLinkConsolidado" path="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"/>
+	   	</action>
+	   	
+	   	<!-- ===================== Acción de crear linea Produccion ============================ -->
+	   	<action path="/lineaProduccion"
+	   		type="ec.com.smx.sic.sispe.web.calendarioBodega.struts.action.LineaProduccionAction"
+	   		name="lineaProduccionForm" validate="true"
+	   		input="/calendarioBodega/lineaProduccion/lineaProduccionPrincipal.jsp">
+	   		<forward name="desplegar" path="/calendarioBodega/lineaProduccion/lineaProduccionPrincipal.jsp"/>
+	   		<forward name="detalleRegistro" path="/calendarioBodega/lineaProduccion/detalleLineaProduccion.jsp"/>
+	   	</action>
+	   	
+	   	<!-- =================== Acción de mostrar el Detalle de las canastas ================ -->
+      	<action path="/detalleCanasta"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.DetalleCanastaAction"
+      		name="cotizarRecotizarReservarForm" validate="true"
+      		input="/servicioCliente/cotizarRecotizarReservar/detalleCanasta.jsp">
+      		<forward name="detalleCanasta" path="/servicioCliente/cotizarRecotizarReservar/detalleCanasta.jsp"/>
+      		<forward name="cotizacion" path="/servicioCliente/cotizarReservar.jsp"/>
+      	</action>
+
+      	<!-- =================== Acción para buscar los pedidos Cotizados o Recotizados =================== -->
+	  	<action path="/recotizarReservar"
+	  		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ListaCotizadosRecotizadosAction"
+	  		name="listadoPedidosForm" validate="true"
+	  		input="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp">
+	  		<forward name="desplegar" path="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp" />
+	  	</action>
+	  	<!-- ==================== Acción de crear reservacion ============================= -->
+      	<action path="/reservar"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.CrearReservacionAction"
+      		name="cotizarRecotizarReservarForm" validate="false">
+      		<forward name="desplegar" path="/servicioCliente/cotizarReservar.jsp" />
+      		<forward name="listado" path="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp" />
+      		<forward name="entregaCalendario" path="/entregaLocalCalendario.do"/>
+      	</action>
+      	<!-- ==================== Acción de crear recotización ============================ -->
+      	<action path="/recotizar"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.CrearRecotizacionAction"
+      		name="cotizarRecotizarReservarForm" validate="false">
+      		<forward name="desplegar" path="/servicioCliente/cotizarReservar.jsp" />
+      		<forward name="listado" path="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp" />
+      	</action>
+      	<!-- ==================== Acción para buscar los pedidos Reservados ============================ -->
+      	<action path="/listaModificarReserva"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ListaModificarReservacionAction"
+      		name="listadoPedidosForm" validate="false">
+      		<forward name="desplegar" path="listarReservacionesDef"/>
+      		<forward name="modificarReservacion" path="/modificarReserva.do"/>
+      	</action>
+      	<!-- ==================== Acción de modificar la reservacion ============================ -->
+      	<action path="/modificarReserva"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ModificarReservacionAction"
+      		name="cotizarRecotizarReservarForm" validate="false">
+      		<forward name="modificarReserva" path="/servicioCliente/cotizarReservar.jsp"/>
+			<forward name="listado" path="listarReservacionesDef"/>
+      	</action>
+		<!-- ============== Acción para crear las entregas de articulos por locales y fecha ============================ -->
+	   	<!-- action path="/entregaLocalCalendario"
+	   		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.EntregaLocalCalendarioActionAnt"
+	   		name="cotizarRecotizarReservarForm" validate="true"
+	   		input="/servicioCliente/cotizarRecotizarReservar/entregas/entregaArticuloLocal.jsp">
+	   		<forward name="desplegar" path="/servicioCliente/cotizarRecotizarReservar/entregas/entregaArticuloLocal.jsp" />
+			<forward name="cotizar" path="/servicioCliente/cotizarReservar.jsp" />
+	   	</action-->
+	   	<!-- ============== Acción para crear las entregas de articulos por locales y fecha NUEVA ESTRUCTURA ============================ -->
+   		<action path="/entregaLocalCalendario"
+	   		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.EntregaLocalCalendarioAction"
+	   		name="cotizarRecotizarReservarForm" validate="true"
+	   		input="/servicioCliente/cotizarRecotizarReservar/entregas/entregaArticuloLocal.jsp">
+	   		<forward name="desplegar" path="/servicioCliente/cotizarRecotizarReservar/entregas/entregaArticuloLocal.jsp" />
+			<forward name="cotizar" path="/servicioCliente/cotizarReservar.jsp" />
+	   	</action>
+      	<!-- ==================== Acción de Control de producción ========================= -->
+      	<action path="/controlProduccion"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ControlProduccionAction"
+      		name="controlProduccionForm" validate="true"
+      		input="/servicioCliente/controlProduccion.jsp">
+      		<forward name="controlProduccion" path="/servicioCliente/controlProduccion.jsp" />
+      		<forward name="rptVistaArticulo" path="/reportes/vistaArticulo/reporteVistaArticulo.jsp" />
+      		<forward name="detallePedido" path="/detalleEstadoPedido.do"/>
+      	</action>
+      	<!-- ==================== Acción para Actualizar la producción ====================== -->
+      	<action path="/actualizarProduccion"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ActualizacionProduccionAction"
+      		name="controlProduccionForm" validate="true"
+      		input="/servicioCliente/ActualizacionProduccion.jsp">
+      		<forward name="actualizacion" path="/servicioCliente/ActualizacionProduccion.jsp" />
+      		<forward name="reporteProduccionPDF" path="/reportes/actualizacionProduccion/reporteActualizacionProduccionPDF.jsp"/>
+      		<forward name="reporteProduccionXLS" path="/reportes/actualizacionProduccion/reporteActualizacionProduccionExcel.jsp"/>
+      		
+      	</action>
+      	<!-- ==================== Acción para Enviar el Despacho ====================== -->
+      	<action path="/actualizarDespacho"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ActualizacionDespachoAction"
+      		name="controlProduccionForm" validate="true"
+      		input="/servicioCliente/actualizacionDespacho.jsp">
+      		<forward name="actualizacionDespacho" path="/servicioCliente/actualizacionDespacho.jsp" />
+      		<forward name="rptDespachoArticulo" path="/reportes/vistaArticulo/reporteVistaArticulo.jsp"/>
+      		<forward name="xlsReporteTotales" path="/reportes/vistaArticulo/rptArticulosSinDespachoPendiente.jsp"/>
+      		<forward name="detallePedido" path="/detalleEstadoPedido.do"/>
+      	</action>
+	  	<!-- ==================== Acción de crear reservacion ============================= -->
+      	<action path="/confirmacionReservacion"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ConfirmarReservacionAction"
+      		name="cotizarRecotizarReservarForm" validate="true" input="/servicioCliente/confirmarReservacion/confirmarReservacion.jsp">
+      		<forward name="desplegar" path="/servicioCliente/confirmarReservacion/confirmarReservacion.jsp"/>
+      		<forward name="lista" path="/servicioCliente/confirmarReservacion/listaConfirmarReserva.jsp"/>
+      		<forward name="listaReservasPorConfirmar" path="/listaConfirmarReservacion.do" redirect="true"/>
+      	</action>
+      	<!-- ====================== Acción de Despachar un pedido =========================== -->
+      	<action path="/despachoPedido"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.DespachosAction"
+      		name="despachosEntregasForm"
+      		input="/servicioCliente/despachoPedido.jsp" validate="true">
+      		<forward name="desplegar" path="/servicioCliente/despachoPedido.jsp"/>
+      	</action>
+      	<!-- ====================== Acción de Despachar reservas =========================== -->
+      	<action path="/despachoEspecial"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.DespachosEspecialesAction"
+      		name="despachosEntregasForm"
+      		input="/servicioCliente/despachoEspecial.jsp" validate="true">
+      		<forward name="desplegar" path="/servicioCliente/despachoEspecial.jsp"/>
+      	</action>
+      	<!-- ====================== Acción de Entregar un pedido =========================== -->
+	  	<action path="/entregaPedido"
+	  		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.EntregasAction"
+	  		name="despachosEntregasForm"
+	  		input="/servicioCliente/entregaPedido.jsp" validate="true">
+	  		<forward name="desplegar" path="/servicioCliente/entregaPedido.jsp" />
+	  	</action>
+	  	<!-- ====================== Acción de Buscar Articulos =========================== -->
+      	<action path="/buscarArticulo"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.BuscarArticuloAction"
+      		name="buscarArticuloForm" validate="true" input="/servicioCliente/estructuraComercial/listaArticulos.jsp">
+      		<forward name="listado" path="/servicioCliente/estructuraComercial/listaArticulos.jsp" />
+      	</action>
+
+      	<!-- ======================= Acción de mostrar catálogo ========================== --> 
+      	<action path="/catalogoArticulos"
+      		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.CatalogoArticulosAction"
+      		name="buscarArticuloForm">
+      		<forward name="catalogo" path="/servicioCliente/estructuraComercial/catalogoArticulos.jsp" />
+      		<forward name="listaArticulos" path="/servicioCliente/estructuraComercial/listaArticulos.jsp" />
+      	</action>
+
+      	<!-- ======================= Acción del estado de los pedidos ====================== -->
+	  	<action path="/estadoPedido"
+	  		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.EstadoPedidoAction"
+	  		name="listadoPedidosForm" validate="true" input="/servicioCliente/estadoPedido/estadoPedido.jsp">
+	  		<forward name="desplegar" path="/servicioCliente/estadoPedido/estadoPedido.jsp" />
+	  		<forward name="detallePedido" path="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"/>
+	  		<forward name="reporteEstadoPedidoXLS" path="/servicioCliente/estadoPedido/estadoPedidoExcel.jsp"/>
+	  	</action>
+	  	
+	  	<!-- ===================== Acción del detalle del estado de los pedidos ======================= -->
+	  	<action path="/detalleEstadoPedido"
+	  		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.DetalleEstadoPedidoAction"
+	  		name="listadoPedidosForm" validate="true" input="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp">
+	  		<forward name="desplegar" path="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"/>
+	  		<forward name="desplegarDetalle" path="/calendarizacion/detallePedido.jsp"/>
+	  		<forward name="reporteEstadoPedidoPDF" path="/reportes/estadoDetallePedido/rptEstadoDetallePedidoPDF.jsp"/>
+	  		<forward name="listaCotizadosRecotizados" path="/servicioCliente/cotizarRecotizarReservar/listaCotizadosRecotizados.jsp"/>
+	  		<forward name="controlProduccion" path="/servicioCliente/controlProduccion.jsp"/>
+	  		<forward name="actualizarProduccion" path="/servicioCliente/ActualizacionProduccion.jsp"/>
+	  		<forward name="enviarDespacho" path="/servicioCliente/actualizacionDespacho.jsp"/>
+	  		<forward name="despacho" path="/servicioCliente/despachoPedido.jsp"/>
+	  		<forward name="despachoEspecial" path="/servicioCliente/despachoEspecial.jsp"/>
+	  		<forward name="entrega" path="/servicioCliente/entregaPedido.jsp"/>
+	  		<forward name="registroPago" path="/servicioCliente/registroAbonosPedido/listaPedidosAbonos.jsp"/>
+	  		<forward name="anulacion" path="/servicioCliente/anulacionPedido.jsp"/>
+	  		<forward name="listaConfirmarReserva" path="/servicioCliente/confirmarReservacion/listaConfirmarReserva.jsp"/>
+	  		<forward name="estadoPedido" path="/servicioCliente/estadoPedido/estadoPedido.jsp"/>
+	  		<forward name="modificarReserva" path="listarReservacionesDef"/>
+	  		<forward name="ordenesCompra" path="registrarOrdenCompraDef"/>
+	  		<!-- Se crea nuevo forward para direccionar la acción de vuelta a kardex.jsp -->
+	  		<forward name="reporteArticuloPedidos" path="/calendarizacion/ingresoKardex.jsp"/>
+	  		<forward name="reporteEntregas" path="/reportes/entregas/reporteEntregas.jsp"/>
+	  		<forward name="reporteVentas" path="/reportes/reporteGeneral.jsp"/>
+	  		<forward name="reporteDespachos" path="/reportes/reporteGeneral.jsp"/>
+	  		<forward name="listaPedidos" path="/servicioCliente/busqueda/listaPedidos.jsp"/>
+	  		<forward name="reporteEstadoXLS" path="/reportes/estadoDetallePedido/rptEstadoDetallePedidoXSL.jsp"/>
+	  		<forward name="consolidarPedido" path="/servicioCliente/consolidarPedido/consolidarPedido.jsp"/>
+	  		<forward name="bloquearReservaPOS" path="/servicioCliente/bloquearReservaPOS/bloquearReservaPOS.jsp"/>
+	  	</action>
+
+		<!-- ============= Acción para mostrar el detalle de un canasto en un determinado estado ============= -->
+		<action path="/estadoDetalleCanasto"
+			type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.EstadoDetalleCanastoAction" name = "listadoPedidosForm">
+			<forward name="estadoDetalleCanasto" path="/servicioCliente/estadoPedido/estadoDetalleCanasto.jsp" />
+			<forward name="estadoDetallePedido" path="/detalleEstadoPedido.do" redirect="true"/>
+			<forward name="desplegarDetalleEntregasKardex" path="/calendarizacion/detallePedido.jsp"/>
+			<forward name="reporteEstadoXLS" path="/reportes/estadoDetallePedido/rptEstadoDetallePedidoXSL.jsp"/>
+		</action>
+
+	  	<!-- =========================== Acción para Anular un pedido ============================== -->
+		<action path="/anulacionPedido" 
+			type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.AnulacionesAction"
+			name="anulacionesForm" 
+			input="/servicioCliente/anulacionPedido.jsp" validate="true">
+			<forward name="desplegar" path="/servicioCliente/anulacionPedido.jsp" />
+		</action>
+
+		<!-- =========================== Acción para Registrar la confirmación de reserva ====================== -->
+		<action path="/listaConfirmarReservacion"
+			type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ListaConfirmarReservacionAction"
+	  		name="listadoPedidosForm" validate="true"
+	  		input="/servicioCliente/confirmarReservacion/listaConfirmarReserva.jsp">
+			<forward name="desplegar" path="/servicioCliente/confirmarReservacion/listaConfirmarReserva.jsp" />
+		</action>
+
+		<!-- ================== Acción para Registrar un abono ===================== -->
+		<action path="/registrarAbonoPedido"
+			type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.RegistrarAbonoPedidoAction"
+			name="registrarAbonoPedidoForm" validate="true"
+			input="/servicioCliente/registroAbonosPedido/registroAbonoPedido.jsp">
+			<forward name="listarPedidosAbonos" path="/servicioCliente/registroAbonosPedido/listaPedidosAbonos.jsp"/>
+			<forward name="registrarAbonos" path="/servicioCliente/registroAbonosPedido/registroAbonoPedido.jsp" />
+		</action>
+		<!-- ================== Acción para reenviar un abono y modificar ===================== -->
+		<action path="/reenviarModificarAbonos"
+			type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ReenviarModificarAbonosAction"
+			name="registrarAbonoPedidoForm" validate="true"
+			input="/servicioCliente/registroAbonosPedido/listaPedidosAbonos.jsp">
+			<forward name="listarPedidosAbonos" path="/servicioCliente/registroAbonosPedido/listaPedidosAbonos.jsp"/>
+			<forward name="registrarAbonos" path="/servicioCliente/registroAbonosPedido/registroAbonoPedido.jsp" />
+		</action>
+		<!-- ================== Acción para Registrar las ordenes de compra ===================== -->
+		<action path="/registrarOrdenCompra"
+			type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.RegistrarOrdenCompraAction"
+			name="registrarOrdenCompraForm" validate="true" input="/servicioCliente/registrarOrdenCompra/registroOrdenCompra.jsp">
+			<forward name="ordenCompra" path="registrarOrdenCompraDef"/>
+			<forward name="registrarOrdenCompra" path="/servicioCliente/registrarOrdenCompra/registroOrdenCompra.jsp" />
+			<forward name="detallePedido" path="/detalleEstadoPedido.do"/>
+		</action>
+		
+		<!-- ======================== Acción de ingreso de usuario ============================== -->
+      	<action path="/logout" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.LogoutAction">
+			<forward name="salir" path="/salir.jsp"/>
+      	</action>
+
+		<!-- ======== Acción para el listado de pedidos para modificar fechas de entrega ======= -->
+		<action path="/listaModificarFechasEntrega"
+			type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ListaModificarFechasEntregaAction"
+	  		name="listadoPedidosForm" validate="true"
+	  		input="/servicioCliente/busqueda/listaPedidos.jsp">
+			<forward name="desplegar" path="/servicioCliente/busqueda/listaPedidos.jsp" />
+		</action>
+		
+		<!-- ======== Acción para la modificación de las fechas de entrega de un pedido ======= -->
+		<action path="/modificarFechasEntrega" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ModificarFechasEntregaAction"
+			name="modificarFechasEntregaForm" validate="true"
+	  		input="/servicioCliente/modificarFechasEntrega/modificarFechasEntrega.jsp">
+			<forward name="principal" path="/servicioCliente/modificarFechasEntrega/modificarFechasEntrega.jsp" />
+			<forward name="busqueda" path="/listaModificarFechasEntrega.do" redirect="true"/>
+		</action>
+		<!-- ======== Acción para bloquear/desbloquear la reserva cuando se esta realizando un pago en el POS ======== -->
+		<action path="/bloquearReservaPOS" type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.ListaBloquearReservaPOSAction"
+			name="bloquearReservaPOSForm" validate="true"
+			input="/servicioCliente/bloquearReservaPOS/bloquearReservaPOS.jsp">
+			<forward name="desplegar" path="/servicioCliente/bloquearReservaPOS/bloquearReservaPOS.jsp" />
+		</action>
+	  	<!-- ======================== Acciones para las pantallas de mantenimiento ========================== -->	
+	  	<!-- ===============================================================================================  -->	
+	  	<!-- ===== Acción general para la administración del listado de las pantallas de mantenimiento ====== -->
+	  	<action path="/administracionListado" type="ec.com.smx.sic.sispe.web.administracion.struts.action.AdministracionListadoAction" name="administracionListadoForm">
+			<!-- <forward name="nuevoParametro" path="/nuevoParametro.do"/>-->
+			<forward name="nuevaTemporada" path="/nuevaTemporada.do"/>
+			<forward name="nuevaAutorizacion" path="/nuevaAutorizacion.do"/>
+			<forward name="nuevoTipoDescuento" path="/nuevoTipoDescuento.do"/>
+			<forward name="tipoDescuentos" path="/tipoDescuentos.do" redirect="true"/>
+			<forward name="nuevoDescuento" path="/nuevoDescuento.do"/>
+			<forward name="listado" path="/administracion/administracionListado.jsp"/>
+			<forward name="nuevoEspecial" path="/nuevoEspecial.do"/>
+		</action>
+		
+	  	<!-- ========================= Acciones para el mantenimiento de parámetros ======================== -->
+  		<action path="/parametros"
+  	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.ParametrosAction"
+  	  		name="parametrosForm">
+  	 	</action>
+  	  	<!-- =============================== Nuevo parámetro ==================================== -->
+  	  	<!-- <action path="/nuevoParametro"
+  	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevoParametroAction"
+  	  		name="parametrosForm" validate="true"
+  	  		input="/administracion/nuevoParametro.jsp">
+  	  		<forward name="desplegar" path="/administracion/nuevoParametro.jsp"/>
+  	  	</action>-->
+  	  	<!-- ============================ Actualizar Parámetro ================================== -->
+  	  	<action path="/actualizarParametro"
+  	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarParametroAction"
+  	  		name="parametrosForm" validate="true"
+  	  		input="/administracion/actualizarParametro.jsp">
+  	  		<forward name="desplegar" path="/administracion/actualizarParametro.jsp"/>
+  	  	</action>
+  	  
+	  	<!-- ======================== Acciones para el mantenimiento de Temporadas ============================= -->
+	  	<action path="/temporadas" name="temporadasForm"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.TemporadasAction">
+	  	</action>
+	  	<!-- =============================== Nueva temporada ==================================== -->
+	  	<action path="/nuevaTemporada"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevaTemporadaAction"
+	  		name="temporadasForm" validate="true"
+	  		input="/administracion/nuevaTemporada.jsp">
+	  		<forward name="desplegar" path="/administracion/nuevaTemporada.jsp"/>
+	  	</action>
+
+	  	<!-- ======================== Acciones para el mantenimiento de Autorizaciones ========================== -->
+	  	<action path="/autorizaciones"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.AutorizacionesAction"
+	  		name="autorizacionesForm" validate="true"
+	  		input="/administracion/administracionListado.jsp">
+			<forward name="desplegar" path="/administracion/administracionListado.jsp"/>
+	  	</action>
+	  	<!-- =============================== Nueva Autorización ==================================== -->	
+	  	<action path="/nuevaAutorizacion"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevaAutorizacionAction"
+	  		name="autorizacionesForm" validate="true" 
+			input="/administracion/nuevaAutorizacion.jsp">
+	  		<forward name="desplegar" path="/administracion/nuevaAutorizacion.jsp"/>
+	  	</action>
+
+	  	<!-- ======================== Acciones para el mantenimiento de Descuentos ========================== -->
+	  	<action path="/descuentos"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.DescuentosAction"
+	  		name="descuentosForm">
+	  	</action>
+	  	<!-- =============================== Nuevo Descuento ==================================== -->	
+	  	<action path="/nuevoDescuento"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevoDescuentoAction"
+	  		name="descuentosForm" input="/administracion/nuevoDescuento.jsp"
+	  		validate="true">
+	  		<forward name="desplegar" path="/administracion/nuevoDescuento.jsp"/>
+	  	</action>
+	  	<!-- =============================== Actualizar Descuento ==================================== -->	
+	  	<action path="/actualizarDescuento"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarDescuentoAction"
+	  		name="descuentosForm"
+	  		input="/administracion/actualizarDescuento.jsp" validate="true">
+	  		<forward name="desplegar" path="/administracion/actualizarDescuento.jsp"/>
+	  	</action>
+
+	  	<!-- ====================== Acciones para el mantenimiento del tipo de Descuentos ====================== -->
+	  	<action path="/tipoDescuentos"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.TipoDescuentoAction"
+	  		name="tipoDescuentoForm">
+	  	</action>
+	  	<!-- =============================== Nuevo Tipo de descuento ==================================== -->	
+	  	<action path="/nuevoTipoDescuento" name="tipoDescuentoForm"
+	  		input="/administracion/nuevoTipoDescuento.jsp" validate="true"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevoTipoDescuentoAction">
+	  		<forward name="desplegar" path="/administracion/nuevoTipoDescuento.jsp"/>
+	  	</action>
+	  	<!-- =============================== Actualizar Tipo de descuento ==================================== -->
+	  	<action path="/actualizarTipoDescuento"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarTipoDescuentoAction"
+	  		name="tipoDescuentoForm" validate="true"
+	  		input="/administracion/actualizarTipoDescuento.jsp">
+	  		<forward name="desplegar" path="/administracion/actualizarTipoDescuento.jsp"/>
+	  	</action>
+	  	<!-- ====================== Acciones para el mantenimiento de Especiales ====================== -->
+	  	<action path="/especiales"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.EspecialAction"
+	  		name="especialForm">
+	  	</action>
+	  	<!-- =============================== Nuevo Especial ==================================== -->	
+	  	<action path="/nuevoEspecial" name="especialForm"
+	  		input="/administracion/nuevoEspecial.jsp" validate="true"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevoEspecialAction">
+	  		<forward name="desplegar" path="/administracion/nuevoEspecial.jsp"/>
+	  	</action>
+	  	<!-- =============================== Actualizar Especial ==================================== -->
+	  	<action path="/actualizarEspecial"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarEspecialAction"
+	  		name="especialForm" validate="true"
+	  		input="/administracion/actualizarEspecial.jsp">
+	  		<forward name="desplegar" path="/administracion/actualizarEspecial.jsp"/>
+	  	</action>
+	
+		<!-- ================= Acciones para el mantenimiento de los Motivos de Descuento ================== -->
+		<action path="/motivoDescuentos"
+			type="ec.com.smx.sic.sispe.web.administracion.struts.action.MotivoDescuentoAction"
+			name="motivoDescuentoForm">
+		</action>
+		<!-- =============================== Actualizar Motivo de descuento ============================== -->
+	  	<action path="/actualizarMotivoDescuento"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarMotivoDescuentoAction"
+	  		name="motivoDescuentoForm" validate="true"
+	  		input="/administracion/actualizarMotivoDescuento.jsp">
+	  		<forward name="desplegar" path="/administracion/actualizarMotivoDescuento.jsp"/>
+		</action>
+
+		
+		<!-- =============== Acción para la actualización de la contraseña del usuario ==================== -->	  
+		<action path="/cambiarClave" type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarPasswordAction" 
+			name="actualizarPasswordForm"
+			validate="true"
+	  		input="/administracion/cambiarClave.jsp">
+			<forward name="desplegar" path="/administracion/cambiarClave.jsp"/>
+		</action>
+
+		<!-- ========== Acciones para el mantenimiento de las Clasificaciones por Usuario =========== -->
+		<action path="/clasificacionUsuario" 
+			type="ec.com.smx.sic.sispe.web.administracion.struts.action.ClasificacionUsuarioAction"
+			name="clasificacionUsuarioForm" validate="false">
+			<forward name="clasificacionUsuario" path="/administracion/clasificacionUsuario/clasificacionUsuario.jsp"/>
+			<forward name="nuevaConfiguracionClasificacion" path="/administracion/clasificacionUsuario/nuevaClasificacionUsuario.jsp"/>
+			<forward name="actualizarConfiguracionClasificacion" path="/administracion/clasificacionUsuario/actualizarClasificacionUsuario.jsp"/>
+		</action>
+		<!-- ========================= Nueva Clasificacion por Usuario ============================= -->
+		<action path="/nuevaClasificacionUsuario"
+			type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevaClasificacionUsuarioAction"
+			name="clasificacionUsuarioForm" validate="true"	input="/administracion/clasificacionUsuario/nuevaClasificacionUsuario.jsp">
+			<forward name="clasificacionUsuario" path="/clasificacionUsuario.do" redirect="true"/>
+			<forward name="nueva" path="/administracion/clasificacionUsuario/nuevaClasificacionUsuario.jsp"/>
+		</action>
+		<!-- ========================= Actualizar Clasificacion por Usuario ============================= -->
+	  	<action path="/actualizarClasificacionUsuario"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarClasificacionUsuarioAction"
+	  		name="clasificacionUsuarioForm" validate="true"	input="/administracion/clasificacionUsuario/actualizarClasificacionUsuario.jsp">
+			<forward name="clasificacionUsuario" path="/clasificacionUsuario.do" redirect="true"/>
+			<forward name="actualizar" path="/administracion/clasificacionUsuario/actualizarClasificacionUsuario.jsp"/>
+		</action>
+		
+		<!-- ========== Acciones para el mantenimiento de Artículos =========== -->
+		<action path="/mantenimientoArticulos" 
+			type="ec.com.smx.sic.sispe.web.administracion.struts.action.MantenimientoArticulosAction"
+			name="mantenimientoArticulosForm" validate="false">
+			<forward name="mantenimientoArticulos" path="/administracion/articulos/listadoArticulos.jsp"/>
+			<forward name="actualizarArticulo" path="/administracion/articulos/actualizarArticulo.jsp"/>
+		</action>
+		<!-- =============== Actualizar datos del artículos ====================== -->
+	  	<action path="/actualizarArticulo"
+	  		type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarArticuloAction"
+	  		name="mantenimientoArticulosForm" validate="true" input="/administracion/articulos/actualizarArticulo.jsp">
+			<forward name="listadoArticulos" path="/administracion/articulos/listadoArticulos.jsp"/>
+			<forward name="actualizarArticulo" path="/administracion/articulos/actualizarArticulo.jsp"/>
+		</action>
+		
+		<!-- ======================== Acción para la pregunta de confirmación genérica ========================== -->	  
+  	  	<action path="/confirmacion" type="ec.com.smx.sic.sispe.web.administracion.struts.action.ConfirmacionAction" 
+			name="confirmacionForm">
+   	  		<forward name="registrar" path="/crearCotizacion.do"/>
+			<forward name="actualizarProduccion" path="/actualizarProduccion.do"/>
+			<forward name="controlProduccion" path="/controlProduccion.do"/>
+			<forward name="recotizarReservar" path="/recotizarReservar.do"/>
+			<forward name="despachoPedido" path="/despachoPedido.do"/>
+			<forward name="entregaPedido" path="/entregaPedido.do"/>
+			<forward name="estadoPedido" path="/estadoPedido.do"/>
+			<forward name="anulacionPedido" path="/anulacionPedido.do"/>
+			<forward name="autorizacion" path="/autorizaciones.do"/>
+			<forward name="cambiarClave" path="/cambiarClave.do"/>
+			<forward name="cotizarRecotizarReservar" path="/servicioCliente/cotizarReservar.jsp"/>
+		</action>
+		<!-- ======================== Acción para el reporte de despacho reservacion ========================== -->	  
+  	  	<action path="/filtrosDespachoReservaciones" type="ec.com.smx.sic.sispe.web.reportes.struts.action.ReporteDespachosAction"
+  	  		name="reporteDespachoReservacionForm" validate="true" input="/servicioCliente/filtrosDespachoReservacion.jsp"> 
+  	  		<forward name="desplegar" path="/servicioCliente/filtrosDespachoReservacion.jsp"/>
+  	  		<forward name="reporteVentasPDF" path="/reportes/produccionPedidos/reporteDespachosPDF.jsp"/>
+  	  		<forward name="reporteVentasExcel" path="/reportes/produccionPedidos/reporteDespachosExcel.jsp"/>
+  	  	</action>
+  	  	
+  	  	<!-- ======================== Acción para el reporte general ========================== 	  -->
+  	  	<action path="/reporteGeneral" 
+  	  			type="ec.com.smx.sic.sispe.web.reportes.struts.action.ReporteGeneralAction"
+  	  			name="reporteGeneralForm" 
+  	  			validate="true" 
+  	  			input="/reportes/reporteGeneral.jsp" > 
+  	  		<forward name="desplegar" path="/reportes/reporteGeneral.jsp"/>
+  	  		<forward name="ventaspdf" path="/reportes/ventas/reporteVentasPDF.jsp"/>
+  	  		<forward name="ventasxls" path="/reportes/ventas/reporteVentasExcel.jsp"/>
+  	  		<forward name="reporteVentas1XLS" path="/reportes/ventas/reporteVentasExcelAux.jsp"/>
+  	  		<forward name="despachospdf" path="/reportes/produccionPedidos/reporteDespachosPDF.jsp"/>
+  	  		<forward name="despachosxls" path="/reportes/produccionPedidos/reporteDespachosExcel.jsp"/>
+  	  	</action>
+  	  	
+  	  	<!-- ======================== Acción para el reporte de ventas ========================== -->	  
+  	  	<action path="/reporteVentas" 
+  	  			type="ec.com.smx.sic.sispe.web.reportes.struts.action.ReporteVentasAction"
+  	  			name="reporteGeneralForm" 
+  	  			validate="true" 
+  	  			input="/reportes/reporteGeneral.jsp" > 
+  	  		<forward name="desplegar" path="/reportes/reporteGeneral.jsp"/>
+  	  		<forward name="reporteVentasPDF" path="/reportes/ventas/reporteVentasPDF.jsp"/>
+  	  		<forward name="reporteVentasExcel" path="/reportes/ventas/reporteVentasExcel.jsp"/>
+  	  	</action>
+  	  	
+  	  	 <!-- ======================== Acción para el reporte de despachos ========================== -->	  
+  	  	<action path="/reporteDespachos" 
+  	  			type="ec.com.smx.sic.sispe.web.reportes.struts.action.ReporteDespachosAction"
+  	  			name="reporteGeneralForm" 
+  	  			validate="true" 
+  	  			input="/reportes/reporteGeneral.jsp" > 
+  	  		<forward name="desplegar" path="/reportes/reporteGeneral.jsp"/>
+  	  		<forward name="reporteVentasPDF" path="/reportes/ventas/reporteVentasPDF.jsp"/>
+  	  		<forward name="reporteVentasExcel" path="/reportes/ventas/reporteVentasExcel.jsp"/>
+  	  	</action>
+  	  	
+  	  	<!-- ======================== Acción para el reporte de entregas ========================== -->	  
+  	  	<action path="/reporteEntregas" 
+  	  			type="ec.com.smx.sic.sispe.web.reportes.struts.action.ReporteEntregasAction"
+  	  			name="listadoPedidosForm"
+  	  			validate="true" 
+  	  			input="/reportes/reporteEntregas.jsp" > 
+  	  		<forward name="desplegar" path="/reportes/entregas/reporteEntregas.jsp"/> 
+  	  		<forward name="reporteEntregasXLS" path="/reportes/entregas/reporteEntregasExcel.jsp"/> 
+  	  		<forward name="detalles" path="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"/>  	  		 	  		 	  		
+  	  	</action>
+  	  	
+  	  	<!-- OANDINO: Acción para desplegar reporte de artículos reservados =================================== -->
+  	  	<!-- ======================== Acción para el reporte de artículos reservados ========================== -->	  
+  	  	<action path="/reporteArticulosReservados" 
+  	  			type="ec.com.smx.sic.sispe.web.reportes.struts.action.ReporteArticulosReservadosAction"
+  	  			name="listadoPedidosForm"
+  	  			validate="true" 
+  	  			input="/reportes/reporteArticulosReservados.jsp" > 
+  	  		<forward name="desplegar" path="/reportes/articulosReservados/reporteArticulosReservados.jsp"/> 
+  	  		<forward name="reporteArticulosReservadosXLS" path="/reportes/articulosReservados/reporteArticulosReservadosExcel.jsp"/> 
+  	  	</action>
+  	  	
+		<!-- ======================== Acción para la calendarizacion ========================== -->	  
+  	  	<action path="/calendarizacion" type="ec.com.smx.sic.sispe.web.calendarizacionlocales.struts.action.CalendarizacionAction"
+  	  		name="calendarizacionForm" validate="true" input="/calendarizacion/nuevaCalendarizacion/calendarizacion.jsp"> 
+  	  		<forward name="calendarizacion" path="/calendarizacion/nuevaCalendarizacion/calendarizacion.jsp"/>
+  	  	</action>
+  	  	<action path="/kardex" type="ec.com.smx.sic.sispe.web.calendarizacionlocales.struts.action.KardexAction"
+  	  		name="kardexForm" validate="true" input="/calendarizacion/ingresoKardex.jsp"> 
+  	  		<forward name="kardex" path="/calendarizacion/ingresoKardex.jsp"/>
+  	  		<!-- Se crea nuevo forward para direccionar a la pantalla de detalleEstadoPedido.jsp  -->
+  	  		<forward name="desplegar" path="/servicioCliente/estadoPedido/detalleEstadoPedido.jsp"/>  	  		
+  	  		<!-- <forward name="condicionReserva" path="/calendarizacion/llamadaVentanaModal.jsp"/> -->
+  	  	</action>
+  	  	<action path="/condicionReserva" type="ec.com.smx.sic.sispe.web.calendarizacionlocales.struts.action.CondicionReservasAction"
+  	  		name="kardexForm" validate="true" input="/calendarizacion/condicionesReservas.jsp"> 
+  	  		<forward name="condiciones" path="/calendarizacion/condicionesReservas.jsp"/>
+  	  		<forward name="kardex" path="/kardex.do"/>
+  	  	</action>
+  	  	<!--================Acción para la administracion de frecuencia de artículos========== -->
+  	  	<action path="/frecuenciaArticulos" type="ec.com.smx.sic.sispe.web.administracion.struts.action.FrecuenciaArticulosAction"
+  	  		name="frecuenciaArticulosForm">
+  	  		<forward name="frecuenciaArticulos" path="/administracion/frecuenciaArticulos.jsp"/>
+  	  		<forward name="nuevaFrecuenciaArticulos" path="/administracion/nuevaFrecuenciaArticulos.jsp"/>
+  	  		<forward name="actualizarFrecuenciaArticulos" path="/administracion/actualizarFrecuenciaArticulos.jsp"/>
+  	  	</action>
+  	  	<action path="/nuevaFrecuenciaArticulos" type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevaFrecuenciaArticulosAction"
+  	  		name="frecuenciaArticulosForm" validate ="true" input="/administracion/nuevaFrecuenciaArticulos.jsp">
+  	  		<forward name="nuevaFrecuenciaArticulos" path="/administracion/nuevaFrecuenciaArticulos.jsp"/>
+  	  		<forward name="frecuenciaArticulos" path="/frecuenciaArticulos.do" redirect="true"/>  	  		
+  	  	</action>
+  	  	<action path="/actualizarFrecuenciaArticulos" type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarFrecuenciaArticulosAction"
+  	  		name="frecuenciaArticulosForm" validate ="true" input="/administracion/actualizarFrecuenciaArticulos.jsp">
+  	  		<forward name="actualizarFrecuenciaArticulos" path="/administracion/actualizarFrecuenciaArticulos.jsp"/>
+ 	  		<forward name="frecuenciaArticulos" path="/frecuenciaArticulos.do" redirect="true"/>
+  	  	</action>
+  	  	<!-- ============ Acción para Motivos de Movimiento ========================== -->	  
+  	  	<action path="/administracionMotivoMovimiento" type="ec.com.smx.sic.sispe.web.calendarizacionlocales.struts.action.AdministracionMotivoMovimientoAction" 
+  	  		name="administracionMotivoMovimientoForm" validate="false"> 
+  	  		<forward name="motivoMovimiento" path="/calendarizacion/administracionMotivoMovimiento.jsp"/>
+  	  	</action>
+  	  	<!--================Acción para la administracion de la forma de Pago========== -->
+  	  	<action path="/formaPago" type="ec.com.smx.sic.sispe.web.administracion.struts.action.FormaPagoAction"
+  	  		name="formaPagoForm" validate="false">
+  	  		<forward name="listadoFormaPago" path="/administracion/formaPago.jsp"/>
+  	  		<forward name="nuevaFormaPago" path="/administracion/nuevaFormaPago.jsp"/>
+  	  		<forward name="actualizarFormaPago" path="/administracion/actualizarFormaPago.jsp"/>
+  	  	</action>
+  	  	<!--================Acción para la administracion de una nueva forma de Pago========== -->
+  	  	<action path="/nuevaFormaPago" type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevaFormaPagoAction"
+  	  		name="formaPagoForm" validate="true" input="/administracion/nuevaFormaPago.jsp">
+  	  		<forward name="guardarFormaPago" path="/formaPago.do" redirect="true"/>
+  	  	</action>
+  	  	  	  	<!--================Acción para la administracion de una nueva forma de Pago========== -->
+  	  	<action path="/actualizarFormaPago" type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarFormaPagoAction"
+  	  		name="formaPagoForm" validate="true" input="/administracion/actualizarFormaPago.jsp">
+  	  		<forward name="guardarActualizacionFormaPago" path="/formaPago.do" redirect="true"/>
+  	  		<forward name="actualizacionFormaPago" path="/administracion/actualizarFormaPago.jsp"/>
+  	  	</action>
+  	  	<!--================Acción para la administracion de un comprador========== -->
+  	  	<action path="/comprador" type="ec.com.smx.sic.sispe.web.administracion.struts.action.CompradorAction"
+  	  		name="compradorForm" validate="false">
+  	  		<forward name="listadoCompradores" path="/administracion/comprador.jsp"/>
+  	  		<forward name="nuevoComprador" path="/administracion/nuevoComprador.jsp"/>
+  	  		<forward name="actualizarComprador" path="/administracion/actualizarComprador.jsp"/>
+  	  	</action>
+  	  	<!--================Acción para la administracion de la actualización de un comprador========== -->
+  	  	<action path="/actualizarComprador" type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarCompradorAction"
+  	  		name="compradorForm" validate="true" input="/administracion/actualizarComprador.jsp">
+  	  		<forward name="guardarActualizacionComprador" path="/comprador.do" redirect="true"/>
+  	  		<forward name="actualizarComprador" path="/administracion/actualizarComprador.jsp"/>
+  	  	</action>
+  	  	<!--================Acción para la administracion de un nuevo comprador========== -->
+  	  	<action path="/nuevoComprador" type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevoCompradorAction"
+  	  		name="compradorForm" validate="true" input="/administracion/nuevoComprador.jsp">
+  	  		<forward name="guardarComprador" path="/comprador.do" redirect="true"/>
+  	  	</action>
+  	  	<!--================Acciones para la administracion de bodegas========== -->
+  	  	<action path="/bodegas" type="ec.com.smx.sic.sispe.web.administracion.struts.action.BodegasAction"
+  	  		name="bodegasForm">
+  	  		<forward name="listarBodegas" path="/administracion/listaBodegas.jsp"/>
+  	  		<forward name="nuevaBodega" path="/administracion/nuevaBodega.jsp"/>
+  	  		<forward name="actualizarBodega" path="/administracion/actualizarBodega.jsp"/>
+  	  	</action>
+  	  	<action path="/nuevaBodega" type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevaBodegaAction"
+  	  		name="bodegasForm" validate= "true" input="/administracion/nuevaBodega.jsp">  	  		
+  	  		<forward name="listarBodegas" path="/bodegas.do" redirect="true"/>  	  		
+  	  	</action>
+  	  	<action path="/actualizarBodega" type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarBodegaAction"
+  	  		name="bodegasForm" validate ="true" input="/administracion/actualizarBodega.jsp">
+ 	  		<forward name="listarBodegas" path="/bodegas.do" redirect="true"/>
+  	  	</action>
+  	  	<!--================Acción para la administracion de un Administrador de autorizadores========== -->
+  	  	<action path="/administracionAutorizadores" type="ec.com.smx.sic.sispe.web.administracion.struts.action.AdministracionAutorizadoresAction"
+  	  		name="administracionAutorizadoresForm" validate="false">
+  	  		<forward name="listadoAdminAutorizadores" path="/administracion/administracionAutorizadores.jsp"/>
+  	  		<forward name="nuevoAdminAutorizadores" path="/administracion/nuevoAdminAutorizadores.jsp"/>
+  	  		<forward name="actualizarAdminAutorizadores" path="/administracion/actualizarAdminAutorizadores.jsp"/>
+  	  	</action>
+  	  	<!--================Actualización de un comprador========== -->
+  	  	<action path="/actualizarAdminAutorizadores" type="ec.com.smx.sic.sispe.web.administracion.struts.action.ActualizarAdminAutorizadoresAction"
+  	  		name="administracionAutorizadoresForm" validate="true" input="/administracion/actualizarAdminAutorizadores.jsp">
+  	  		<forward name="guardarActualizacionAdminAut" path="/administracionAutorizadores.do" redirect="true"/>
+  	  		<forward name="actualizarAdminAut" path="/administracion/actualizarAdminAutorizadores.jsp"/>
+  	  	</action>
+  	  	<!--================Nuevo comprador========== -->
+  	  	<action path="/nuevoAdminAutorizadores" type="ec.com.smx.sic.sispe.web.administracion.struts.action.NuevoAdminAutorizadoresAction"
+  	  		name="administracionAutorizadoresForm" validate="true" input="/administracion/nuevoAdminAutorizadores.jsp">
+  	  		<forward name="guardarAdminAutorizadores" path="/administracionAutorizadores.do" redirect="true"/>
+  	  		<forward name="nuevoAdminAutorizadores" path="/administracion/nuevoAdminAutorizadores.jsp"/>
+  	  	</action>
+  	  	<!--================Catálogo de Canastos========== -->
+  	  	<action path="/catalogoCanastos" type="ec.com.smx.sic.sispe.web.administracion.struts.action.CatalogoCanastosAction"
+  	  		name="catalogoCanastosForm" validate="true" input="catalogoCanastosDef">
+  	  		<forward name="catalogoCanastos" path="catalogoCanastosDef"/>
+  	 		<forward name="detalleCanasto" path="/administracion/catalogoCanastos/detalleCanasto.jsp"/>
+  	 	</action>
+  	 	<!--================Obtener imágenes  ========== -->
+  	  	<action path="/obtenerImagen" type="ec.com.smx.sic.sispe.web.administracion.struts.action.ObtenerImagenAction">
+  	  	</action>
+  	  	<!--================Ingreso de plantillas desde el administrador========== -->
+  	  	<action path="/adminPlantillas" type="ec.com.smx.sic.sispe.web.administracion.struts.action.AdministrarPlantillaAction"
+  	  		name="calendarizacionForm" validate="true" input="administradorPlantillasDef">
+  	  		<forward name="desplegar" path="administradorPlantillasDef"/>
+  	  	</action>
+  	  	<!--================creacion de pedidos especiales========== -->
+  	  	<action path="/crearPedidoEspecial" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.action.CrearPedidoAction"
+  	  		name="crearPedidoEspecialForm" validate="true" input="crearPedidoEspecialDef">
+  	  		<forward name="desplegar" path="crearPedidoEspecialDef"/>
+  	  		<forward name="resumen" path="resumenPedidoEspecialDef"/>
+  	  		<forward name="reportePDF" path="/pedidosEspeciales/pedido/rptPedidoPDF.jsp"/>
+  	  		<forward name="listaCotizadosRecotizados" path="/confirmarPedidoEspecial.do" redirect="true"/>
+  	  	</action>
+  	  	
+  	  	<!--================creacion de pedidos pavos========== -->
+  	  	<action path="/pedidoPavos" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.action.PedidoPerecibleAction"
+  	  		name="crearPedidoEspecialForm" validate="true" input="pedidoEspecialPerecibleDef">
+  	  		
+  	  		<forward name="pedidoEspecial" path="/crearPedidoEspecial.do"/>
+  	  	</action>
+  	  	
+  	  	
+  	  	<!--================Listado de pedidos especiales Carnes========== -->
+		<action path="/confirmarPedidoEspecial" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.action.ListaPedidosEspecialesAction"
+			name="listadoPedidosForm" validate="true" input="confirmarPedidoEspecialDef">
+			<forward name="desplegar" path="confirmarPedidoEspecialDef"/>
+		</action>
+		
+		 <!--================modificacion pedidos pavos========== -->
+  	  	<action path="/modificarPedidoPavos" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.action.ModificarPedidoPerecibleAction"
+  	  		name="listadoPedidosForm" validate="true" input="confirmarPedidoEspecialDef">
+  	  		
+  	  		<forward name="modificarPedidoEspecial" path="/confirmarPedidoEspecial.do"/>
+  	  	</action>
+		  
+		<!--================Listado de pedidos especiales para Control de Producción ========== -->
+		<action path="/controlProduccionPedEsp" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.action.ControlProduccionPedidoEspecialAction"
+			name="controlProduccionPedidoEspecialForm" validate="true" input="controlProduccionPedEspDef">
+			<forward name="desplegar" path="controlProduccionPedEspDef"/>
+			<forward name="mismaAccion" path="/controlProduccionPedEsp.do"/>
+			<forward name="detallePedido" path="/detalleEstadoPedidoEspecial.do"/>
+			<forward name="reporte" path="controlProduccionPedEspDef"></forward>
+		</action>  	  
+		<!--================ Detalle de pedidos especiales tipo carne ========== -->
+		<action path="/detalleEstadoPedidoEspecial" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.action.DetalleEstadoPedidoEspecialAction"
+		name="listadoPedidosForm" validate="true" input="detalleEstadoPedidoEspecialDef">
+			<forward name="detallePedido" path="detalleEstadoPedidoEspecialDef"/>
+			<forward name="listaPedidosEspeciales" path="confirmarPedidoEspecialDef"/>
+			<forward name="listaControlProduccionPedEsp" path="controlProduccionPedEspDef"/>
+			<forward name="resumenDetalle" path="detalleEstadoPedidoEspecialDef"/>
+  	  		<forward name="reportePDF" path="/pedidosEspeciales/detalleEstadoPedidoEspecial/rptPedidoPDF.jsp"/>
+	  		<forward name="estadoPedido" path="/servicioCliente/estadoPedido/estadoPedido.jsp"/>
+	  		<forward name="anulacionPedido" path="/servicioCliente/anulacionPedido.jsp"/>
+	  		<forward name="rptEstadoPedidoEspecialXLS" path="/pedidosEspeciales/detalleEstadoPedidoEspecial/rptEstadoPedidoEspecialXLS.jsp"/>
+		</action>  				
+		
+		<!--=================== Listado de Finales de Gondolas - Planograma Local ==================================-->
+		<action path="/planogramaPorLocal" type="ec.com.smx.sic.sispe.web.planograma.PlanogramaLocalAction">
+			<forward name="desplegar" path="/common/redirectSystem.jsp"/>																																																									
+		</action>
+		<!--====================================Grafica Planograma Local============================================-->
+		<action path="/graficaPlanogramaLocal" type="ec.com.smx.sic.sispe.web.planograma.GraficaPlanogramaLocalAction">
+			<forward name="desplegar" path="/common/redirectSystem.jsp"></forward>
+		</action>
+		
+		<!-- ===============================================================================================  -->
+		<!-- ======================== Acciones para las pantallas de Calendario de Bodega ================== -->	
+	  	<!-- ===============================================================================================  -->	
+	  	<!-- ===== Acción general para el Calendario de Bodega ===== -->
+	  	<action path="/calendarioBodega" type="ec.com.smx.sic.sispe.web.calendarioBodega.struts.action.CalendarioBodegaAction" name="calendarioBodegaForm" validate="true">
+	  		<forward name="estadoDetalleCanasto" path="/servicioCliente/estadoPedido/detalleCanastaComun.jsp" />
+			<forward name="desplegar" path="calendarioBodegaDef"/>
+		</action>
+		
+		<!--======================================================-->
+		<!--             RedirecionarSispev2               -->
+		<!--======================================================-->
+
+		<action path="/calendarioBodegaHoras" type="ec.com.smx.sic.sispe.web.redireccionarCalendarioBodegaHoras.sispev2.struts.action.CalendarioBodegaHoraAction">			
+			<forward name="redirect" path="/redireccionarV2.do?opcion=calendarioHoras" />			
+		</action>
+		
+		<action path="/redireccionarV2" type="ec.com.smx.sic.sispe.web.redireccionar.sispev2.struts.action.RedireccionarV2Action">			
+			<forward name="redirect" path="/common/redireccionarSispev2.jsp" />			
+		</action>
+		
+				<!-- =============== Acción para migrar las autorizaciones de descuento variable a linea comercial  ==================== -->	  
+		<action path="/migrarAutorizaciones" type="ec.com.smx.sic.sispe.web.administracion.struts.action.MigrarAutorizacionesAction" 
+			name="migrarAutorizacionesForm"
+			validate="true"
+	  		input="/administracion/migrarAutorizacionesDesVar.jsp">		
+			<forward name="desplegar" path="/administracion/migrarAutorizacionesDesVar.jsp"/>
+		</action>
+		<!-- ======================= Acción del estado de los pedidos ====================== -->
+	  	<action path="/envioMail"
+	  		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.EnvioMailAction"
+	  		name="envioMailForm" validate="true" input="/servicioCliente/cotizarRecotizarReservar/registroPedido.jsp">
+	  		<forward name="desplegar" path="/servicioCliente/cotizarRecotizarReservar/registroPedido.jsp" />
+	  	</action>
+	  	<action path="/envioMailEsp"
+	  		type="ec.com.smx.sic.sispe.web.servicioCliente.struts.action.EnvioMailAction"
+	  		name="envioMailForm" validate="true" input="resumenPedidoEspecialDef">
+	  		<forward name="desplegar" path="resumenPedidoEspecialDef" />
+	  	</action>
+		
+		
+		<!--================ Creacion de pedidos especiales canastos de catalogo ========== -->
+  	  	<action path="/pedidoCanastosCatalogo" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.action.PedidoCanastoCatalogoAction"
+  	  		name="crearPedidoEspecialForm" validate="true" input="pedidoEspecialPerecibleDef">
+  	  		
+  	  		<forward name="pedidoEspecial" path="/crearPedidoEspecial.do"/>
+  	  	</action>
+  	  	
+  	  	<!--================ Modificacion de pedidos especiales canastos de catalogo ========== -->
+  	  	<action path="/modificarPedidoCanastosCatalogo" type="ec.com.smx.sic.sispe.web.pedidosEspeciales.struts.action.ModificarPedidoCanastoCatalogoAction"
+  	  		name="listadoPedidosForm" validate="true" input="confirmarPedidoEspecialDef">
+  	  		
+  	  		<forward name="modificarPedidoEspecial" path="/confirmarPedidoEspecial.do"/>
+  	  	</action>
+		
+		
+  	  </action-mappings>
+	<!-- ======================================================================================================= -->
+	<!-- 
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"  nocache="true"/>
+	-->
+	<!-- ====================== Recursos de mensaje =============================== -->
+	<message-resources parameter="ec.com.smx.sic.sispe.web.resources.ApplicationResources"></message-resources>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+       <set-property property="definitions-config" value="/WEB-INF/tilesDefinitions.xml" />
+    	<set-property property="definitions-parser-validate" value="true"/>
+    	<set-property property="moduleAware" value="true"/>
+    </plug-in>
+</struts-config>

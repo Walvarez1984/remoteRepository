@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
+	template="/templates/pages/pageLayoutBlank1.xhtml">
+
+	<ui:param name="form" value="#{personaController.form}" />
+	<ui:param name="controller" value="#{personaController}" />
+	<ui:param name="idForm" value="formOpciones" />
+
+	<ui:define name="contentCenter">
+		<h:commandButton id="opcionVisualizarPersona" value="visualizarPersona" action="#{personaController.visualizarPersona}" />
+		<h:commandButton id="opcionEditarPersona"  value="editarPersona" action="#{personaController.editarPersona}" />
+		
+	</ui:define>
+
+</ui:composition>

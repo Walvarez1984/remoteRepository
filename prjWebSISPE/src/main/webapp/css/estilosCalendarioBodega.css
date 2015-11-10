@@ -1,0 +1,216 @@
+@CHARSET "ISO-8859-1";
+
+/*************************
+**Estilos para Secciones**
+**************************/
+
+/*estilo para la cabecera de los contenedores*/
+.contenedorTitulo{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #A0A0A0;
+	
+	font-weight: bolder;
+	background-color: #C8C8C8;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+}
+
+/*estilo para el cuerpo del contenedor*/
+.contenedorCuerpo{
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #A0A0A0;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #A0A0A0;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #A0A0A0;
+	
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: #000000;
+}
+
+/*estilo para el dia HOY*/
+.seccionDiaHoy {
+	border-width: 1px;
+	border-style: solid;
+    border-color: #EAE400;
+    background-color: #FFFF00;
+}
+/*estilo para el dia HOY + 1*/
+.seccionDiaPosHoy {
+	border-width: 1px;
+	border-style: solid;
+    border-color: #0061F2;
+    background-color: #0099FF;
+}
+
+/*estilo para la sección del calendario*/
+.seccionCalendario{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #A0A0A0;
+}
+
+/*estilo para la cabecera del calendario*/
+.cabeceraCalendario{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #A0A0A0;
+	
+	font-weight: bolder;
+	background-color: #C8C8C8;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 18px;
+	color: #000000;
+}
+.textoCabeceraCalendario{
+	font-weight: bolder;
+	background-color: #C8C8C8;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 20px;
+	color: #000000;
+	text-decoration: none;
+}
+.textoCabeceraCalendario:hover{
+	font-weight: bolder;
+	background-color: #C8C8C8;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 20px;
+	color: #000000;
+	text-decoration: none;
+}
+
+/*estilo para el día actual en el calendario*/
+#diaActual a{
+    background-color: #FFFF00;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	color: #000000;
+}
+
+/*estilo para el día seleccionado en el calendario*/
+#diaSeleccionado a {
+    background-color: #0099FF;
+    text-decoration: none;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	color: #000000;
+}
+
+/*estilo para un día normal del mes actual*/
+#mesActual a {
+    background-color: #D8D8D8;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	color: #000000;
+}
+#mesActual a:hover {
+    background-color: #0099FF;
+	cursor: hand;
+}
+
+/*estilo para un día que no sea del mes actual*/
+#mesDistinto a {
+    background-color: #FFC875;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+	color: #000000;
+}
+#mesDistinto a:hover {
+    background-color: #0099FF;
+	cursor: hand;
+}
+
+.diaCalendario{
+	border-width: 1px;
+	border-style: solid;
+    border-color: #A0A0A0;
+}
+
+/*estilo para el número del día*/
+.numeroDia{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	text-decoration: underline;
+	color: #000000;
+	font-weight: bolder;
+}
+
+.diaActualColor{
+	background-color: #FFFF00;
+}
+.diaSeleccionadoColor{
+	background-color: #0099FF;
+}
+
+.mesActualColor{
+	background-color: #D8D8D8;
+}
+
+.mesDistintoColor{
+	background-color: #FFC875;
+}
+
+.cantidadDiaDE{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+}
+
+.cantidadDiaPendienteDE{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: red;
+}
+
+.cantidadDiaP{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9px;
+}
+
+.cantidadDiaPendienteP{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9px;
+	color: red;
+}
+
+.cantidadDiaAdicionalP{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: blue;
+}
+
+.textoCantidad{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8px;
+}
+
+.textoCantidadPendiente{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: red;
+}
+.textoCantidadPendienteV1{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9px;
+	color: red;
+}
+.textoCantidadAdicional{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 11px;
+	color: blue;
+}
+
+.textoCantidadAdicionalV1{
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 9px;
+	color: blue;
+}

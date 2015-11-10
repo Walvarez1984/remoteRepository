@@ -1,0 +1,950 @@
+/*********************************
+*   BOTONES PARA CERRAR MENSAJES
+**********************************/ 
+
+/*boton Exito Cerrar*/
+#botonC a.exitoC {
+	background: url(images/exitoC.gif) no-repeat;
+}
+
+/*boton Error Cerrar*/
+#botonC a.errorC {
+	background: url(images/errorC.gif) no-repeat;
+}
+
+/*boton Advertencia Cerrar*/
+#botonC a.advertenciaC {
+	background: url(images/advertenciaC.gif) no-repeat;
+}
+
+/*boton Mensaje Cerrar*/
+#botonC a.informacionC {
+	background: url(images/infoC.gif) no-repeat;
+}
+
+
+/*********************************
+*   BOTONES PARA PANELES
+**********************************/
+#botonP a.monitorPereciblesP {
+	background: url(images/monitorPereciblesP.gif) no-repeat;
+}
+/*boton Consolidacion Pedidos*/
+#botonP a.consolidacionP {
+	background: url(images/consolidacionP.gif) no-repeat;
+}
+#botonP a.calendarioBodegaHorasP {
+	background: url(images/calendarioBodegaHorasP.gif) no-repeat;
+}
+
+/*boton Linea de Produccion*/
+#botonP a.lineaProduccionP {
+	background: url(images/lineaProduccionP.gif) no-repeat;
+}
+/*boton Calendario Bodega*/
+#botonP a.calendarioBodegaP {
+	background: url(images/calendarioBodegaP.gif) no-repeat;
+}
+
+/*boton Grafica Planograma Local*/
+#botonP a.graficaPlanogramaLocalP {
+	background: url(images/graficaPlanogramaLocalP.gif) no-repeat;
+}
+
+/*boton modificar la Reserva*/
+#botonP a.modificarReservaP {
+	background: url(images/modificarReservaP.gif) no-repeat;
+}
+
+/*boton Pedidos Especiales*/
+#botonP a.pedidosEspecialesP {
+	background: url(images/pedidosEspecialesP.gif) no-repeat;
+}
+	
+/*boton Administracion Plantillas*/
+#botonP a.adminPlantillasP {
+	background: url(images/administracionPlantillasP.gif) no-repeat;
+}
+/*boton Cotizacion*/
+#botonP a.cotizacionP {
+	background: url(images/cotizacionP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.recotizarReservarP {
+	background: url(images/recotizarReservarP.gif) no-repeat;
+}
+/*boton Control de Producccion*/
+#botonP a.controlProduccionP {
+	background: url(images/controlProduccionP.gif) no-repeat;
+}
+/*boton Actualizar Producción*/
+#botonP a.actualizarProduccionP {
+	background: url(images/actualizarProduccionP.gif) no-repeat;
+}
+/*boton Despacho de pedidos*/
+#botonP a.despachoP {
+	background: url(images/despachosP.gif) no-repeat;
+}
+/*boton Despacho especiales*/
+#botonP a.despachoEspecialP {
+	background: url(images/despachoEspecialP.gif) no-repeat;
+}
+/*boton para Confirmar una Reservación*/
+#botonP a.confirmarReservacionP {
+	background: url(images/confirmarReservarP.gif) no-repeat;
+}
+/*boton para Entregar pedidos*/
+#botonP a.entregaP {
+	background: url(images/entregasP.gif) no-repeat;
+}
+/*boton Estado de Pedidos*/
+#botonP a.estadoPedidoP {
+	background: url(images/estadoPedidosP.gif) no-repeat;
+}
+/*boton Reporte de despacho de reservaciones*/
+#botonP a.despachoReservacionesP {
+	background: url(images/despachoReservacionP.gif) no-repeat;
+}
+/*boton Reporte de ventas*/
+#botonP a.ventasP {
+	background: url(images/ventasP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.parametrosP {
+	background: url(images/parametrosP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.temporadasP {
+	background: url(images/temporadasP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.autorizacionesP {
+	background: url(images/autorizacionesP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.tiposDescuentoP {
+	background: url(images/tiposDescuentoP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.especialesP {
+	background: url(images/especialesP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.permisosClasificacionesP {
+	background: url(images/permisosClasificacionesP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.calendarizacionP {
+	background: url(images/calendarizacionP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.temporadasP {
+	background: url(images/temporadaP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.especialesP {
+	background: url(images/especialesP.gif) no-repeat;
+}
+/*boton Recotizar Reservar*/
+#botonP a.tiposDescuentoP {
+	background: url(images/tipoDescuentosP.gif) no-repeat;
+}
+/*boton Registrar Pago*/
+#botonP a.registrarPagoP {
+	background: url(images/registroPagoP.gif) no-repeat;
+}
+/*boton Autorizacion Orden Compra*/
+#botonP a.ordenCompraP {
+	background: url(images/ordenCompraP.gif) no-repeat;
+}
+/*boton para el Planograma*/
+#botonP a.planogramaP {
+	background: url(images/planogramaLocalP.gif) no-repeat;
+}
+/*boton Mantenimiento de Artículos*/
+#botonP a.mantenimientoArticulosP{
+	background: url(images/articuloP.gif) no-repeat;
+}
+/******************************************
+* BOTONES VENTANAS EMERGENTES
+*******************************************/
+
+/*boton Cerrar*/
+#botonWin a.cerrarWin {
+	background: url(images/cerrarWin.gif) no-repeat;
+}
+
+/*********************************
+*   BOTONES BARRA SUPERIOR
+**********************************/ 
+
+/*boton Ayuda*/
+#botonBg a.ayudaBg {
+	background: url(images/ayudaB.gif) no-repeat;
+}
+/*boton Salir*/
+#botonB a.salirB {
+	background: url(images/salirB.gif) no-repeat;
+}
+/*boton SalirP*/
+#botonBp a.salirBp {
+	background: url(images/salirB.gif) no-repeat;
+}
+
+/*********************************
+*   BOTONES TEXTO A LA DERECHA MINI
+**********************************/ 
+
+/*boton Si mini Derecho*/
+#botonDmin a.siDmin {
+	background: url(images/siD.gif) no-repeat;
+}
+/*boton No mini Derecho*/
+#botonDmin a.noDmin {
+	background: url(images/noD.gif) no-repeat;
+}
+
+/*********************************
+*   BOTONES TEXTO A LA DERECHA
+**********************************/
+/*boton Descuento*/
+#botonD a.descuentoD{
+	background: url(images/descuentoD.gif) no-repeat;
+}
+/*boton Copiar*/
+#botonD a.copiarD{
+	background: url(images/copiarD.gif) no-repeat;
+}
+/*boton asignar Despacho*/
+#botonD a.despachoD {
+	background: url(images/despachoD.gif) no-repeat;
+}
+
+/*boton roles Derecho*/
+#botonD a.rolesD {
+	background: url(images/rolesD.gif) no-repeat;
+}
+
+/*boton producir Derecho*/
+#botonD a.producirD {
+	background: url(images/producirD.gif) no-repeat;
+}
+
+/*boton guardar Derecho*/
+#botonD a.guardarD {
+	background: url(images/guardarD.gif) no-repeat;
+}
+/*boton guardar Actualizar*/
+#botonD a.actualizarD {
+	background: url(images/actualizarD.gif) no-repeat;
+}
+/*boton guardar Agregar*/
+#botonD a.agregarD {
+	background: url(images/agregarD.gif) no-repeat;
+}
+/*boton guardar Eliminar*/
+#botonD a.eliminarD {
+	background: url(images/eliminarD.gif) no-repeat;
+}
+/*boton subir archivo*/
+#botonD a.archivoD {
+	background: url(images/archivoD.gif) no-repeat;
+}
+/*boton guardar aceptar*/
+#botonD a.aceptarD {
+	background: url(images/aceptarD.gif) no-repeat;
+}
+
+/*boton guardar cancelar*/
+#botonD a.cancelarD {
+	background: url(images/cancelarD.gif) no-repeat;
+}
+
+/*boton anterior*/
+#botonD a.anteriorD {
+	background: url(images/anteriorD.gif) no-repeat;
+}
+
+/*boton siguiente*/
+#botonD a.siguienterD {
+	background: url(images/siguienteD.gif) no-repeat;
+}
+
+/*boton guardar aceptar desactivado*/
+#botonDesactivadoD a.aceptarDesactivadoD {
+	background: url(images/aceptarDesactivadoD.gif) no-repeat;
+}
+/*boton guardar buscar*/
+#botonD a.buscarD {
+	background: url(images/buscarD.gif) no-repeat;
+}
+/*boton guardar buscar*/
+#botonD a.enviarMailD {
+	background: url(images/enviar_mailD.gif) no-repeat;
+}
+/*boton guardar buscar*/
+#botonD a.atrasD {
+	background: url(images/atrasD.gif) no-repeat;
+}
+/*boton descargar archivoBeneficiario*/
+#botonD a.archivoBeneficiarioD {
+	background: url(images/archivoBeneficiarioD.gif) no-repeat;
+}
+/*boton guardar buscar*/
+#botonD a.imprimirD {
+	background: url(images/imprimirD.gif) no-repeat;
+}
+/*boton guardar buscar*/
+#botonD a.entregarD {
+	background: url(images/entregarD.gif) no-repeat;
+}
+/*boton guardar buscar*/
+#botonD a.excelD {
+	background: url(images/excelD.gif) no-repeat;
+}
+/*boton despacho desactivado*/
+#botonDesactivadoD a.despachoDlock {
+	background: url(images/despachoDlock.gif) no-repeat;
+}
+/*boton nuevo */
+#botonD a.nuevoD {
+	background: url(images/nuevoD.gif) no-repeat;	
+}
+/*boton editar*/
+#botonD a.editarD {
+	background: url(images/editarD.gif) no-repeat;	
+}
+/*********************************
+*   BOTONES TEXTO A LA DERECHA SUPER GRANDE
+**********************************/
+/*boton Despacho Previo*/
+#botonDsg a.despachoPrevioDsg{
+	background: url(images/despachoPrevioDsg.gif) no-repeat;
+}
+
+/*boton Habilitar Despacho*/
+#botonDsg a.despachoDsg{
+	background: url(images/despachoDsg.gif) no-repeat;
+}
+
+/**************************
+*   BOTONES TEXTO ABAJO
+***************************/ 
+
+/*boton Imprimir Dia Seleccionado */
+#botonA a.imprimirDiaSelA {
+	background: url(images/imprimirDiaSelA.gif) no-repeat;
+}
+/*boton Imprimir Dia Hoy */
+#botonA a.imprimirDiaHoyA {
+	background: url(images/imprimirDiaHoyA.gif) no-repeat;
+}
+/*boton Reservacion Abajo*/
+#botonA a.reservacionA {
+	background: url(images/reservacionA.gif) no-repeat;
+}
+
+/*boton Cotizacion*/
+#botonA a.cotizacionA {
+	background: url(images/cotizacionA.gif) no-repeat;
+}
+
+/*boton Ejecutar Procesos*/
+#botonA a.ejecutar_procesosA {
+	background: url(images/ejecutar_procesosA.gif) no-repeat;
+}
+
+/*boton actualizar*/
+#botonA a.nuevoA {
+	background: url(images/nuevoA.gif) no-repeat;
+}
+
+/*boton actualizar*/
+#botonA a.reportesEstdA {
+	background: url(images/reportesEstdA.gif) no-repeat;
+}
+/*boton actualizar*/
+#botonA a.actualizarA {
+	background: url(images/actualizarA.gif) no-repeat;
+}
+
+/*boton imprimir*/
+#botonA a.imprimirA {
+	background: url(images/imprimirA.gif) no-repeat;
+}
+
+/*boton imprimir*/
+#botonA a.responsableA {
+	background: url(images/responsableA.gif) no-repeat;
+}
+
+/*boton atras*/
+#botonA a.atrasA {
+	background: url(images/atrasA.gif) no-repeat;
+}
+
+/*boton enviar Mail*/
+#botonA a.enviar_mailA {
+	background: url(images/enviar_mailA.gif) no-repeat;
+}
+
+/*boton adjuntar*/
+#botonA a.aceptarA {
+	background: url(images/aceptarA.gif) no-repeat;
+}
+
+/*boton guardar*/
+#botonA a.guardarA {
+	background: url(images/guardarA.gif) no-repeat;
+}
+/*boton cancelar*/
+#botonA a.cancelarA {
+	background: url(images/cancelarA.gif) no-repeat;
+}
+
+/*boton Exportar*/
+#botonA a.exportarA {
+	background: url(images/exportarA.gif) no-repeat;
+}
+
+/*boton Diferido*/
+#botonA a.diferidoA {
+	background: url(images/diferidoA.gif) no-repeat;
+}
+
+/*boton Excel Abajo*/
+#botonA a.excelA {
+	background: url(images/excelA.gif) no-repeat;
+}
+
+/*boton Acrobat Reader Abajo*/
+#botonA a.pdfA {
+	background: url(images/pdfA.gif) no-repeat;
+}
+
+/*boton Autorizacion*/
+#botonA a.autorizarA {
+	background: url(images/autorizacionesA.gif) no-repeat;
+}
+	
+/*boton Calendarización*/
+#botonA a.calendarizacionA {
+	background: url(images/calendarizacionA.gif) no-repeat;
+}
+
+/*boton Inicio*/
+#botonA a.inicioA {
+	background: url(images/inicioSISPEA.gif) no-repeat;
+}
+
+/*boton Inicio*/
+#botonA a.confirmarGuardarA {
+	background: url(images/confirmarGuardarA.gif) no-repeat;
+}
+/*boton Cierre de Dia*/
+#botonA a.cierreDiaA {
+	background: url(images/cierreDiaA.gif) no-repeat;
+}
+/*boton Despacho*/
+#botonA a.despachoA {
+	background: url(images/despachoA.gif) no-repeat;
+}
+/*boton Ayuda*/
+#botonA a.ayudaA {
+	background: url(images/ayudaA.gif) no-repeat;
+}
+
+/*boton Autorizacion para reservar la capacidad de la bodega de otro local*/
+#botonAp a.autCapCalA {
+	background: url(images/autorizacionCapacidadAp.gif) no-repeat;
+}
+
+/*boton consolidar pedidos*/
+#botonA a.consolidarPedidoA {
+	background: url(images/consolidarPedidoA.gif) no-repeat;
+}
+/*boton consolidar*/
+#botonA a.consolidarA {
+	background: url(images/consolidarA.gif) no-repeat;
+}
+/*boton consolidar*/
+#botonA a.ordenCompraA {
+	background: url(images/ordenCompraA.gif) no-repeat;
+}
+/*boton pedidos anteriores*/
+#botonA a.pedAntA {
+	background: url(images/historialPedidosA.png) no-repeat;
+}
+
+/*boton mensajes Autorizaciones*/
+#botonA a.mensajesAutorizaciones {
+	background: url(images/preguntarOResponder.gif) no-repeat;
+}
+/*boton Impresión Laser */
+#botonA a.laserA {
+	background: url(images/laserA.gif) no-repeat;
+}
+/*boton Anular Convenio */
+#botonA a.matricialA {
+	background: url(images/matricialA.gif) no-repeat;
+}
+
+
+/*********************************
+*   BOTONES 20 X 20
+**********************************/ 
+/*boton aceptar 20*/
+#boton20 a.aceptar20 {
+	background: url(images/aceptar20.gif) no-repeat;
+}
+/*boton cancelar 20*/
+#boton20 a.cancelar20 {
+	background: url(images/cancelar20.gif) no-repeat;
+}
+
+/***************************************
+*   BOTONES TEXTO ABAJO DESHABILITADO
+****************************************/ 
+
+/*boton Cierre de Dia Deshabilitado*/
+#botonAlock a.cierreDiaAlock {
+	background: url(images/cierreDiaAlock.gif) no-repeat;
+}
+/*boton Guardar Abajo Deshabilitado*/
+#botonAlock a.guardarAlock {
+	background: url(images/guardarAlock.gif) no-repeat;
+}
+/*boton Despacho Abajo Deshabilitado*/
+#botonAlock a.despachoAlock {
+	background: url(images/despachoAlock.gif) no-repeat;
+}
+
+/******************************************
+* Estilo Boton del Panel de Control
+*******************************************/
+/*propiedades del botonP*/
+#botonP a {
+	/*tamaño*/
+	height: 30px;
+	width: 100px;
+	/*letra*/
+	font-family: Arial, Helvetica, sans-serif, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bolder;
+	text-align: center;
+	text-decoration: none;
+	padding: 70px 0 0 0px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonP a:hover {
+	color: #C24733;
+	background-position: 0px -100px;
+}
+
+/******************************************
+* Estilo Boton con el texto Abajo
+*******************************************/
+/*propiedades del botonD*/
+#botonA a {
+	/*tamaño*/
+	height: 15px;
+	width: 50px;
+	/*letra*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	/*font-weight: bolder;*/
+	text-align: center;
+	text-decoration: none;
+	padding: 35px 0 0 0px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonA a:hover {
+	color: #C24733;
+	background-position: 0px -50px;
+	padding: 35px 0 0 0px;
+}
+
+
+/******************************************
+* Estilo Boton con el texto Abajo con imágen mas pequeña
+*******************************************/
+/*propiedades del botonD*/
+#botonAp a {
+	/*tamaño*/
+	height: 15px;
+	width: 50px;
+	/*letra*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bolder;
+	text-align: center;
+	text-decoration: none;
+	padding: 24px 0 0 0px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonAp a:hover {
+	color: #C24733;
+	background-position: 0px -50px;
+	padding: 24px 0 0 0px;
+}
+
+/******************************************
+* Estilo Boton con el texto a la derecha
+*******************************************/
+/*propiedades del botonD*/
+#botonD a {
+	/*tamaño*/
+	height: 18px;
+	width: 74px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	text-align: left;
+	text-decoration: none;
+	padding: 6px 0 0 26px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonD a:active {
+	color: #C24733;
+	background-position: 0px -24px;
+	padding: 6px 0 0 26px;
+}
+
+/*propiedades del botonD desactivado*/
+#botonDesactivadoD a {
+	/*tamaño*/
+	height: 18px;
+	width: 74px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	text-align: left;
+	text-decoration: none;
+	padding: 6px 0 0 26px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/******************************************
+* Estilo Boton Derecho mini con imagen
+*******************************************/
+/*propiedades del botonDmin*/
+#botonDmin a {
+	/*tamaño*/
+	height: 18px;
+	width: 53px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	text-align: left;
+	text-decoration: none;
+	padding: 6px 0 0 26px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonDmin a:hover {
+	color: #999999;
+	background-position: 0px -24px;
+}
+
+/******************************************
+* Estilo Boton de la Barra superior
+*******************************************/
+/*propiedades del botonB*/
+#botonB a {
+	/*tamaño*/
+	height: 18px;
+	width:  90px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bolder;
+	text-align: left;
+	text-decoration: none;
+	padding: 4px 0 0 26px;
+	color:#C24733;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+
+	voice-family: inherit;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonB a:hover {
+	color: #999999;
+	background-position: 0px -22px;
+}
+
+/*propiedades del botonB*/
+#botonBg a {
+	/*tamaño*/
+	height: 18px;
+	width:  50px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bolder;
+	text-align: left;
+	text-decoration: none;
+	padding: 4px 0 0 26px;
+	color:#C24733;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+
+	voice-family: inherit;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonBg a:hover {
+	color: #999999;
+	background-position: 0px -22px;
+}
+
+/*propiedades del botonB pequeño*/
+#botonBp a {
+	/*tamaño*/
+	height: 18px;
+	width:  36px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bolder;
+	text-align: left;
+	text-decoration: none;
+	padding: 4px 0 0 26px;
+	color:#C24733;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+
+	voice-family: inherit;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonBp a:hover {
+	color: #999999;
+	background-position: 0px -22px;
+}
+
+/******************************************
+* Estilo Botones 20x20 solo Imagen
+*******************************************/
+/*propiedades del botonS*/
+#boton20 a {
+	/*tamaño*/
+	height: 20px;
+	width: 20px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/*Evento sobre el botonS*/
+#boton20 a:hover {
+	color: #C24733;
+	background-position: 0px -20px;
+}
+
+/******************************************
+* Estilo Boton Windows emergentes
+*******************************************/
+
+/*propiedades del botonWin*/
+#botonWin a {
+	/*tamaño*/
+	height: 16px;
+	width:  16px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	display: block;
+}
+/*Evento sobre el boton*/
+#botonWin a:active {
+	background-position: 0px -16px;
+}
+
+/******************************************
+* Estilo Botones cerrar solo Imagen
+*******************************************/
+/*propiedades del botonS*/
+#botonC a {
+	/*tamaño*/
+	height: 14px;
+	width: 16px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/*Evento sobre el botonS*/
+#botonC a:hover {
+	color: #C24733;
+	background-position: 0px -14px;
+}
+
+/*BOTON ROJO SIN TEXTO*/
+.botonLogin {
+	background:url(images/barralogin.gif);
+	color:#FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	border:none;
+}
+
+/******************************************
+* Estilo Boton Mostrar - Ocultar
+*******************************************/
+
+/*boton Mostrar contenido*/
+#botonMO a.mostrar {
+	background: url(images/mostrar.gif) no-repeat;
+}
+/*boton Ocultar contenido*/
+#botonMO a.ocultar {
+	background: url(images/ocultar.gif) no-repeat;
+}
+
+/*propiedades del botonWin*/
+#botonMO a {
+	/*tamaño*/
+	height: 51px;
+	width:  12px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonMO a:hover {
+	background-position: -12px 0px;
+}
+
+/************************************************
+* Estilo Boton con el texto Abajo Deshabilitado
+************************************************/
+/*propiedades del botonA Deshabilitado*/
+#botonAlock a {
+	/*tamaño*/
+	height: 15px;
+	width: 50px;
+	/*letra*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-weight: bolder;
+	text-align: center;
+	text-decoration: none;
+	padding: 35px 0 0 0px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-size: 0px;
+	border-width: 0px;
+	cursor:default;
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/******************************************************
+* Estilo Boton con el texto a la derecha super Grande *
+*******************************************************/
+/*propiedades del botonDsg*/
+#botonDsg a {
+	/*tamaño*/
+	height: 18px;
+	width: 114px;
+	/*letra*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bolder;
+	text-align: left;
+	text-decoration: none;
+	padding: 6px 0 0 26px;
+	/*bordes*/
+	border-style: solid solid none solid;
+	border-width: 0px;
+	voice-family: inherit;
+	color:#808080;
+	display: block;
+}
+
+/*Evento sobre el boton*/
+#botonDsg a:hover {
+	color: #C24733;
+	background-position: 0px -24px;
+	padding: 6px 0 0 26px;
+}
