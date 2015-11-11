@@ -7,7 +7,7 @@
 	<name>prjWebSISPE</name>
 	<parent>
 		<groupId>ec.com.smx.sic.sispe</groupId>
-		<version>1.5.1-RELEASE</version>
+		<version>1.5.2-RELEASE</version>
 		<artifactId>sispe-root</artifactId>
 		<relativePath>../prjSISPERoot</relativePath>
 	</parent>
